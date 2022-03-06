@@ -14,7 +14,18 @@ class UsersController extends Controller
     public function index()
     {
         // dd('this is user');
-        return view('admin.index');
+        return view('user.index');
+    }
+
+
+    public function createbill()
+    {
+        return view('user.createbill');
+    }
+
+    public function savebill()
+    {
+        dd('this is save bill funtion');
     }
     //
 

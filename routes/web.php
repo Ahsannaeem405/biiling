@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
 // use App\Http\Middleware;
 
 
@@ -23,7 +24,19 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admins'], function () {
 
-    Route::get('index',[AdminController::class,'index']);
+    Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
+
+});
+
+
+
+
+Route::group(['prefix' => 'user'], function () {
+
+    Route::get('index',[UsersController::class,'index'])->middleware('auth')->name('user/index');
+    Route::get('createbill',[UsersController::class,'createbill'])->middleware('auth')->name('user/createbill');
+    Route::get('savebill',[UsersController::class,'savebill'])->middleware('auth')->name('savebill');
+
 });
 
 
@@ -34,6 +47,7 @@ Route::group(['prefix' => 'admins'], function () {
 
 // Route::post('/login',[UsersController::class,'login']);
 // Route::any('/logout',[UsersController::class,'logout']);
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->middleware('auth');
 
 
 

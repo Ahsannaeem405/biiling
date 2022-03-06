@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -33,12 +34,11 @@ class RegisterController extends Controller
         if(Auth::user()->role=='1')
             {
                 
-                return redirect('admins/index');
+                return route('admins/index');
             }
             else
             {
-                
-                return redirect('user/index');
+                return route('user/index');
             }
     }
 
