@@ -2,9 +2,9 @@
       <!-- partial:../../partials/_sidebar.html -->
 @section('content')
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a href="{{route('user/index')}}"><img width="60px" height="50px" src="../assets/images/phonelogo.jpg" alt="logo" /></a>
+          <!-- <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a> -->
         </div>
         <ul class="nav">
           <li class="nav-item profile">
@@ -50,30 +50,25 @@
           <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
           </li>
+          
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{{ route('user/index') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Basic UI Elements</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">My Bills</span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('user/createbill') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+              <span class="menu-title"> + Create New Bill</span>
+            </a>
+          </li>
+          
+          
           
         </ul>
       </nav>
@@ -82,7 +77,9 @@
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+          
+            <a class="navbar-brand brand-logo-mini" href="{{route('user/index')}}"><img src="../assets/images/phonelogo.jpg" alt="logo" /></a>
+
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -97,11 +94,11 @@
             </ul>
             @auth
             <ul class="navbar-nav navbar-nav-right">
-
               <li class="nav-item dropdown d-none d-lg-block">
                 <a class="nav-link btn btn-success create-new-button" href="{{ route('user/createbill') }}">+ Create New Bill</a>
                 
               </li>
+              
               
               
               
@@ -159,48 +156,38 @@
           <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Basic form elements</h4>
-                    <p class="card-description"> Basic form elements </p>
+                    <h4 class="card-title">New Bill</h4>
                     <form action="{{ route('savebill') }}" class="forms-sample">
+
                       <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <label for="billdate">Bill Date</label>
+                        <input type="date" class="form-control" id="billdate">
+                      </div>
+                      <br>
+                      <p class="card-description"> Seller information </p>
+                      <hr>
+                      <button type="button" class="btn btn-primary mr-2">scan barcode</button><br><br>
+                      <div class="form-group">
+                        <label for="sellername">Seller Name</label>
+                        <input type="text" class="form-control" id="sellername" placeholder="seller name">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="contact">Contact</label>
+                        <input type="text" class="form-control" id="contact" placeholder="contact no">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" id="description" placeholder="write description here">
                       </div>
+
                       <div class="form-group">
-                        <label for="exampleInputPassword4">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                        <label for="price">Price</label>
+                        <input type="text" class="form-control" id="price" placeholder="price">
                       </div>
-                      <div class="form-group">
-                        <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputCity1">City</label>
-                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleTextarea1">Textarea</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                      </div>
+                      
+                      
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
                     </form>
                   </div>
                 </div>
@@ -211,12 +198,27 @@
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+              <!-- <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span> -->
             </div>
           </footer>
           <!-- partial -->
         </div>
+
+
+
+        <!-- barcode camera div start -->
+      <div style="container">
+        <canvas id="qr-canvas" width="320" height="240"></canvas>    
+        <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
+        <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
+        <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
+        <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
+      </div>
+
+        <!-- barcode camera div end -->
+
+
+
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
@@ -235,4 +237,59 @@
             });
         });
     </script>
-    @endsection
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/WebCodeCam.js"></script>
+
+    <script src="js/qrcodelib.js"></script>
+    <script src="js/DecoderWorker.js"></script>
+
+
+    <script>
+      $(document).ready(function(){
+        
+        alert('aert');
+        $('#qr-canvas').WebCodeCam({
+          ReadQRCode: true, 
+          ReadBarecode: true, 
+          width: 320,
+          height: 240,
+
+          <a href="https://www.jqueryscript.net/tags.php?/video/">video</a>Source: {
+            // max Videosource resolution width
+            maxWidth: 640,
+            // max Videosource resolution height
+            maxHeight: 480 
+          },
+
+          flipVertical: false,  
+          flipHorizontal: false,  
+
+          // if zoom = -1, auto zoom for optimal resolution else int
+          zoom: -1, 
+
+          // string, audio file location
+          beep: "js/beep.mp3", 
+
+          // functional when value autoBrightnessValue is int
+          autoBrightnessValue: false, 
+
+          brightness: 0, 
+          grayScale: false, 
+          contrast: 0, 
+          threshold: 0, 
+
+          // or matrix, example for sharpness ->  [0, -1, 0, -1, 5, -1, 0, -1, 0]
+          sharpness: [], 
+
+          resultFunction: function(resText, lastImageSrc) {
+            // resText as decoded code, lastImageSrc as image source 
+            alert(resText);
+          }
+        });
+      });
+
+    </script>
+
+@endsection

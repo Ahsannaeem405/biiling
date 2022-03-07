@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BillsController;
 use App\Http\Controllers\Auth\LoginController;
 // use App\Http\Middleware;
 
@@ -35,7 +36,7 @@ Route::group(['prefix' => 'user'], function () {
 
     Route::get('index',[UsersController::class,'index'])->middleware('auth')->name('user/index');
     Route::get('createbill',[UsersController::class,'createbill'])->middleware('auth')->name('user/createbill');
-    Route::get('savebill',[UsersController::class,'savebill'])->middleware('auth')->name('savebill');
+    Route::get('savebill',[BillsController::class,'savebill'])->middleware('auth')->name('savebill');
 
 });
 

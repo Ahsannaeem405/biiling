@@ -1,287 +1,501 @@
-@extends('layout')
-      <!-- partial:../../partials/_sidebar.html -->
-@section('content')
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
-        </div>
-        <ul class="nav">
-          <li class="nav-item profile">
-            <div class="profile-desc">
-              <div class="profile-pic">
-                <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="../../assets/images/faces/face15.jpg" alt="">
-                  <span class="count bg-success"></span>
-                </div>
-                <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">{{auth()->user()->name}}</h5>
-                  <!-- <span>Gold Member</span> -->
-                </div>
-              </div>
-              <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
-              <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword  text-info"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Flipper Bill</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{asset('Elements/css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+  <!-- slick slider -->
+
+  <link rel="stylesheet" href="{{asset('Elements/css/slick-theme.css')}}" />
+  <!-- font awesome style -->
+  <link href="{{asset('Elements/css/font-awesome.min.css')}}" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="{{asset('Elements/css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <svg height="512" viewBox="0 0 60 42" width="512" xmlns="http://www.w3.org/2000/svg">
+              <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="041---Weight-Training" fill="rgb(0,0,0)" fill-rule="nonzero">
+                  <path id="Shape"
+                    d="m56 6c-.7042532.00414464-1.3946535.19607591-2 .556v-2.556c0-2.209139-1.790861-4-4-4s-4 1.790861-4 4v9h-4.336l-3.664-3.694v-4.128c.000011-.93121067-.3710707-1.82403539-1.0311294-2.48090359-.6600587-.65686819-1.5546709-1.02361943-2.4858706-1.01909641-.6164983.00374687-1.2206258.17334469-1.749.491-.491757-1.19323435-1.6002708-2.01902007-2.8843351-2.14868129s-2.5352883.45784479-3.2556649 1.52868129c-.8625293-.65561163-1.9810837-.87238122-3.0260812-.58643761-1.0449975.2859436-1.8973525 1.04201494-2.3059188 2.04543761-.5391465-.31896561-1.1535724-.4884505-1.78-.491-1.92276.00165486-3.4808973 1.56023957-3.482 3.483v7h-1.96v-9c0-2.209139-1.790861-4-4-4s-4 1.790861-4 4v2.556c-.60534654-.35992409-1.29574677-.55185536-2-.556-2.209139 0-4 1.790861-4 4v15c0 2.209139 1.790861 4 4 4 .70425323-.0041446 1.39465346-.1960759 2-.556v2.556c0 2.209139 1.790861 4 4 4s4-1.790861 4-4v-9h2.96v.63c-.0652084 1.8293296.3904702 3.6395597 1.314 5.22l1.161 2.008c.3063928.448321.4876251.97027.525 1.512v9c.001102.8997673.7302327 1.628898 1.63 1.63h12.73c.9052901-.001102 1.638898-.7347099 1.64-1.64v-9.09c.0000733-.1767456.049608-.3499435.143-.5l5.139-8.77h4.718v9c0 2.209139 1.790861 4 4 4s4-1.790861 4-4v-2.556c.6053465.3599241 1.2957468.5518554 2 .556 2.209139 0 4-1.790861 4-4v-15c0-2.209139-1.790861-4-4-4zm-21.483-2.322c.8231597.00605418 1.4863282.67682476 1.483 1.5l.0000125 2.112-.4730125-.477c-.5722794-.56717384-1.3452769-.88557261-2.151-.886h-.01c-.1226635.0038672-.2449337.01589377-.366.036v-.785c-.0000257-.40078777.160341-.78491772.4453331-1.06671612.2849921-.28179839.6709049-.43782614 1.0716669-.43328388zm-6.517-.178c0-.82842712.6715729-1.5 1.5-1.5s1.5.67157288 1.5 1.5v3.7c-1.0680159 1.64157528-1.0680159 3.7584247 0 5.4v.605c-.2259891.6338058-.8271136 1.056196-1.5 1.054-.3959195.0040002-.7770426-.1502749-1.0586991-.4285515-.2816565-.2782767-.4405212-.6575095-.4413009-1.0534485zm-5 .824c0-.82842712.6715729-1.5 1.5-1.5s1.5.67157288 1.5 1.5v8.451c-.0005508.8200766-.664924 1.4848972-1.485 1.486h-.03c-.820076-.0011028-1.4844492-.6659234-1.485-1.486zm-5 1.676c0-.82842712.6715729-1.5 1.5-1.5s1.5.67157288 1.5 1.5v8.441c0 .8284271-.6715729 1.5-1.5 1.5s-1.5-.6715729-1.5-1.5zm-13.96 21c-1.1045695 0-2-.8954305-2-2v-15c0-1.1045695.8954305-2 2-2s2 .8954305 2 2v15c0 1.1045695-.8954305 2-2 2zm8 4c0 1.1045695-.8954305 2-2 2s-2-.8954305-2-2v-27c0-1.1045695.8954305-2 2-2s2 .8954305 2 2zm2-16h2.017c.2748402 1.6894875 1.7313129 2.9323329 3.443 2.938 1.4169635-.0013033 2.6933397-.8568267 3.233-2.167.5292727.3171495 1.1339909.4863739 1.751.49h.03c.93625.0000291 1.8327835-.3782748 2.486-1.049.011.012.019.026.031.038.6565015.6508777 1.5445415 1.0145101 2.469 1.011 1.308304-.0029539 2.5120182-.7154577 3.144-1.861.1.1.211.212.307.31l1.188 1.2c-1.7938366.8654751-3.3379484 2.1731695-4.487 3.8-.07.1-.125.2-.191.3h-15.421zm20.387 14.738c-.2811454.4614065-.4289464.9916899-.427 1.532v8.73h-12v-8.63c-.0277126-.901063-.3046296-1.776813-.8-2.53l-1.17-2.018c-.732998-1.2717533-1.0901589-2.7253632-1.03-4.192v-.63h9.4c-.132.31-.265.621-.377.947-.1781118.5230137.1014864 1.0913881.6245 1.2695.5230137.1781118 1.0913882-.1014864 1.2695-.6245.2472347-.7318637.5706767-1.4357271.965-2.1.1200203-.2159191.2536221-.4240039.4-.623 1.1945315-1.7018071 2.9085267-2.9705495 4.885-3.616.3481021-.0872646.6227517-.3543699.7196756-.6999071.096924-.3455371.0012588-.7165166-.2506756-.9720929 0 0-.751-.762-2.257-2.277-.423-.433-.911-.92-1.462-1.473l-.079-.08c-.0296867-.0444575-.0631434-.0862784-.1-.125-.7457473-1.037533-.7311677-2.43920372.036-3.461.153086-.16662899.3744689-.25333727.6-.235.2743168-.00048352.5377372.10732839.733.3l7.293 7.343c.5075609.5045675.5984602 1.2931916.219 1.9zm8.028-9.738.881-1.5c.64407-1.0697251.6771268-2.3995963.087-3.5h2.577v5zm9.545 11c0 1.1045695-.8954305 2-2 2s-2-.8954305-2-2v-27c0-1.1045695.8954305-2 2-2s2 .8954305 2 2zm6-6c0 1.1045695-.8954305 2-2 2s-2-.8954305-2-2v-15c0-1.1045695.8954305-2 2-2s2 .8954305 2 2z" />
+                </g>
+              </g>
+            </svg>
+            <span>
+              Selfit
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="product.html">Products</a>
+                </li>
                 
-              </div>
-            </div>
-          </li>
-          <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Basic UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
-          </li>
-          
-        </ul>
-      </nav>
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:../../partials/_navbar.html -->
-        <nav class="navbar p-0 fixed-top d-flex flex-row">
-          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
-          </div>
-          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-              <span class="mdi mdi-menu"></span>
-            </button>
-            <ul class="navbar-nav w-100">
-              <li class="nav-item w-100">
-                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                  <input type="text" class="form-control" placeholder="Search products">
-                </form>
-              </li>
-            </ul>
-            @auth
-            <ul class="navbar-nav navbar-nav-right">
-
-              <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" href="{{ route('user/createbill') }}">+ Create New Bill</a>
-                
-              </li>
-              
-              
-              
-              <!--  -->
-              <li class="nav-item dropdown">
-                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-                  <div class="navbar-profile">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{Auth()->user()->name}}</p>
-                    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-                  </div>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                  <h6 class="p-3 mb-0">Profile</h6>
-                  <div class="dropdown-divider"></div>
-                  <!-- <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                    </div>
-                  </a> -->
-                  <!-- <div class="dropdown-divider"></div>-->
-                  <form method="POST" action="{{ url('logout') }}" class="hidden">
-                    
-                    @csrf
-                    
-                  </form> 
-                  <a class="dropdown-item preview-item" id="logoutuser" href="#">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-logout text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Log out</p>
-                    </div>
-                  </a> 
-                  
-                  
-              </li>
-            </ul>
-            @endauth
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-              <span class="mdi mdi-format-line-spacing"></span>
-            </button>
+            <!-- <div class="quote_btn-container">
+              <a href="">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div> -->
           </div>
         </nav>
-        <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    
+    <!-- end slider section -->
 
-          <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Total table</h4>
-                    <div class="table-responsive">
-                      <table class="table table-bordered">
-                        <thead>
-                          <tr>
-                            <th> # </th>
-                            <th> First name </th>
-                            <th> Progress </th>
-                            <th> Amount </th>
-                            <th> Deadline </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td> 1 </td>
-                            <td> Herman Beck </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 2 </td>
-                            <td> Messsy Adam </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $245.30 </td>
-                            <td> July 1, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 3 </td>
-                            <td> John Richards </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $138.00 </td>
-                            <td> Apr 12, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 4 </td>
-                            <td> Peter Meggik </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 5 </td>
-                            <td> Edward </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 160.25 </td>
-                            <td> May 03, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 6 </td>
-                            <td> John Doe </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 123.21 </td>
-                            <td> April 05, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 7 </td>
-                            <td> Henry Tom </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 150.00 </td>
-                            <td> June 16, 2015 </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
+  <!-- product section -->
+
+  <section class="product_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          New products
+        </h2>
+      </div>
+      <div class="product_container">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box">
+              <a href="" class="p_cart">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <div class="img-box">
+                <img src="images/p1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <span class="p_rating">
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </span>
+                <a href="" class="p_name">
+                  Gym Equipment
+                </a>
+                <h6 class="p_price">
+                  <span class="new_price">
+                    $140
+                  </span>
+                  <span class="old_price">
+                    $165
+                  </span>
+                </h6>
               </div>
             </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box">
+              <a href="" class="p_cart">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <div class="img-box">
+                <img src="images/p2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <span class="p_rating">
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </span>
+                <a href="" class="p_name">
+                  Gym Equipment
+                </a>
+                <h6 class="p_price">
+                  <span class="new_price">
+                    $100
+                  </span>
+                  <span class="old_price">
+                    $120
+                  </span>
+                </h6>
+              </div>
             </div>
-          </footer>
-          <!-- partial -->
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box">
+              <a href="" class="p_cart">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <div class="img-box">
+                <img src="images/p3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <span class="p_rating">
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </span>
+                <a href="" class="p_name">
+                  Gym Equipment
+                </a>
+                <h6 class="p_price">
+                  <span class="new_price">
+                    $110
+                  </span>
+                  <span class="old_price">
+                    $130
+                  </span>
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box">
+              <a href="" class="p_cart">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <div class="img-box">
+                <img src="images/p4.png" alt="">
+              </div>
+              <div class="detail-box">
+                <span class="p_rating">
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </span>
+                <a href="" class="p_name">
+                  Gym Equipment
+                </a>
+                <h6 class="p_price">
+                  <span class="new_price">
+                    $130
+                  </span>
+                  <span class="old_price">
+                    $135
+                  </span>
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box">
+              <a href="" class="p_cart">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <div class="img-box">
+                <img src="images/p5.png" alt="">
+              </div>
+              <div class="detail-box">
+                <span class="p_rating">
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </span>
+                <a href="" class="p_name">
+                  Gym Equipment
+                </a>
+                <h6 class="p_price">
+                  <span class="new_price">
+                    $150
+                  </span>
+                  <span class="old_price">
+                    $170
+                  </span>
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box">
+              <a href="" class="p_cart">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <div class="img-box">
+                <img src="images/p6.png" alt="">
+              </div>
+              <div class="detail-box">
+                <span class="p_rating">
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </span>
+                <a href="" class="p_name">
+                  Gym Equipment
+                </a>
+                <h6 class="p_price">
+                  <span class="new_price">
+                    $135
+                  </span>
+                  <span class="old_price">
+                    $150
+                  </span>
+                </h6>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- main-panel ends -->
       </div>
-      <!-- page-body-wrapper ends -->
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    
-    <script>
-        $(document).ready(function(){
-            $("#logoutuser").click(function(){
-                if (confirm('Are you sure you want to logout')) {
+      <div class="btn-box">
+        <a href="">
+          See More
+        </a>
+      </div>
+    </div>
+  </section>
 
-                    window.location.href = '/logout';
 
-                }
+  <!-- end product section -->
 
-            });
-        });
-    </script>
-    @endsection
+  <!-- about section -->
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 ml-auto">
+          <div class="detail-box">
+            <div class="heading_container ">
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              It is established fact that a reader will be distracted by the
+              readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, generators on the Internet tend to repeat predefined chunks as
+              necessary, making this the first true generator on the
+              Internet.
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="images/about-img.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- why us section -->
+  
+  <!-- end why us section -->
+
+
+
+  <!-- subscribe section -->
+
+ 
+
+  <!-- end subscribe section -->
+
+
+  <!-- client section -->
+  
+  <!-- end client section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 mx-auto">
+          <h4>
+            Contact Us
+          </h4>
+          <div class="contact_items">
+            <a href="">
+              <div class="img-box">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+              </div>
+              <h6>
+                Location
+              </h6>
+            </a>
+            <a href="">
+              <div class="img-box">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </div>
+              <h6>
+                demo@gmail.com
+              </h6>
+            </a>
+            <a href="">
+              <div class="img-box">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+              </div>
+              <h6>
+                (+12 1234456789)
+              </h6>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="info_social">
+          <div>
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-9 mx-auto">
+          <p>
+            &copy; <span id="displayYear"></span> All Rights Reserved By
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer section -->
+
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{{asset('Elements/js/jquery-3.4.1.min.js')}}"></script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{{asset('Elements/js/bootstrap.js')}}"></script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{{asset('Elements/js/custom.js')}}"></script>
+</body>
+
+</html>

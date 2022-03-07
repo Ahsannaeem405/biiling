@@ -23,10 +23,7 @@ class UsersController extends Controller
         return view('user.createbill');
     }
 
-    public function savebill()
-    {
-        dd('this is save bill funtion');
-    }
+    
     //
 
     // public function register(){
