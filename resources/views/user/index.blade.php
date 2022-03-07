@@ -35,7 +35,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="{{route('user/index')}}">
             <svg height="512" viewBox="0 0 60 42" width="512" xmlns="http://www.w3.org/2000/svg">
               <g id="Page-1" fill="none" fill-rule="evenodd">
                 <g id="041---Weight-Training" fill="rgb(0,0,0)" fill-rule="nonzero">
@@ -45,7 +45,7 @@
               </g>
             </svg>
             <span>
-              Selfit
+              Flipper bill
             </span>
           </a>
 
@@ -63,9 +63,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="about.html"> About</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="product.html">Products</a>
-                </li>
+                
                 
               </ul>
             </div>
@@ -96,252 +94,71 @@
   <section class="product_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>
-          New products
+        <h2 class="">
+          New Bill
         </h2>
       </div>
-      <div class="product_container">
-        <div class="row">
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box">
-              <a href="" class="p_cart">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <div class="img-box">
-                <img src="images/p1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <span class="p_rating">
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                </span>
-                <a href="" class="p_name">
-                  Gym Equipment
-                </a>
-                <h6 class="p_price">
-                  <span class="new_price">
-                    $140
-                  </span>
-                  <span class="old_price">
-                    $165
-                  </span>
-                </h6>
-              </div>
+      <div  class="container ">
+          <div style="margin-top: 100px;" class="col-sm-6 offset-md-2 col-md-8 border border-success bg-info rounded">
+            <div style="margin-top: 30px; margin-bottom: 30px;"  class="box col-sm-12">
+            <form>
+                <div class="form-group ">
+                  <label for="Name">Seller’s Name:</label>
+                  <input type="text" class="form-control" id="Name" placeholder="Name">
+                </div>
+                <div class="form-group ">
+                  <label for="address">Seller’s Address:</label>
+                  <textarea class="form-control" id="address" placeholder="seller address"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary">click to scan barcode</button>
+                <div class="form-group ">
+                  <label for="license">Drivers License #:</label>
+                  <input type="text" class="form-control" id="license" placeholder="license number">
+                </div>
+
+                <div class="form-group ">
+                  <label for="dob">DOB:</label>
+                  <input type="date" class="form-control" id="dob">
+                </div>
+
+                <div class="form-group ">
+                  <label for="sellersignature">Signature of Seller:</label>
+                  <input type="text" class="form-control" id="sellersignature">
+                </div>
+
+                <div class="form-group ">
+                  <label for="repsignature">Signature of representative:</label>
+                  <input type="text" class="form-control" id="repsignature">
+                </div>
+
+
+                <!-- <div class="form-group">
+                  <label for="Email1">Email</label>
+                  <input type="email" class="form-control" id="Email1" placeholder="Email">
+                </div>  
+                <div class="form-group">
+                  <label for="Inputselect">Select Number</label>
+                  <select class="form-control" >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>  
+                <div class="form-group">
+                  <label for=" Email1msg">Message:</label>
+
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="yesno"> Yes / No
+                  </label>
+                </div> -->
+
+                <button type="submit" class="btn btn-primary">Submit Information</button>
+              </form>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box">
-              <a href="" class="p_cart">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <div class="img-box">
-                <img src="images/p2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <span class="p_rating">
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                </span>
-                <a href="" class="p_name">
-                  Gym Equipment
-                </a>
-                <h6 class="p_price">
-                  <span class="new_price">
-                    $100
-                  </span>
-                  <span class="old_price">
-                    $120
-                  </span>
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box">
-              <a href="" class="p_cart">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <div class="img-box">
-                <img src="images/p3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <span class="p_rating">
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                </span>
-                <a href="" class="p_name">
-                  Gym Equipment
-                </a>
-                <h6 class="p_price">
-                  <span class="new_price">
-                    $110
-                  </span>
-                  <span class="old_price">
-                    $130
-                  </span>
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box">
-              <a href="" class="p_cart">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <div class="img-box">
-                <img src="images/p4.png" alt="">
-              </div>
-              <div class="detail-box">
-                <span class="p_rating">
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                </span>
-                <a href="" class="p_name">
-                  Gym Equipment
-                </a>
-                <h6 class="p_price">
-                  <span class="new_price">
-                    $130
-                  </span>
-                  <span class="old_price">
-                    $135
-                  </span>
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box">
-              <a href="" class="p_cart">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <div class="img-box">
-                <img src="images/p5.png" alt="">
-              </div>
-              <div class="detail-box">
-                <span class="p_rating">
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                </span>
-                <a href="" class="p_name">
-                  Gym Equipment
-                </a>
-                <h6 class="p_price">
-                  <span class="new_price">
-                    $150
-                  </span>
-                  <span class="old_price">
-                    $170
-                  </span>
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box">
-              <a href="" class="p_cart">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <div class="img-box">
-                <img src="images/p6.png" alt="">
-              </div>
-              <div class="detail-box">
-                <span class="p_rating">
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </a>
-                </span>
-                <a href="" class="p_name">
-                  Gym Equipment
-                </a>
-                <h6 class="p_price">
-                  <span class="new_price">
-                    $135
-                  </span>
-                  <span class="old_price">
-                    $150
-                  </span>
-                </h6>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
       <div class="btn-box">
@@ -357,7 +174,7 @@
 
   <!-- about section -->
 
-  <section class="about_section">
+  <!-- <section class="about_section">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-5 ml-auto">
@@ -387,7 +204,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- end about section -->
 
