@@ -66,7 +66,7 @@
                                     {{ __('Register') }}
                                 </button>
                         </div>
-                        <p class="sign-up text-center">Already have an Account?<a href="{{route('/welcome')}}"> Sign in</a></p>
+                        <p class="sign-up text-center">Already have an Account?<a href="{{route('welcome')}}"> Sign in</a></p>
                     </form>
               </div>
             </div>
