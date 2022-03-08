@@ -102,6 +102,15 @@
           <div style="margin-top: 100px;" class="col-sm-6 offset-md-2 col-md-8 border border-success bg-info rounded">
             <div style="margin-top: 30px; margin-bottom: 30px;"  class="box col-sm-12">
             <form>
+            <button type="button" class="btn btn-primary">click to scan barcode</button>
+            <br><br>
+            <p id="para">having problem while scaning barcode?</p>
+
+
+                <div class="form-group" id="imeidiv" style="display:none;">
+                  <label for="imei">Enter imei No:</label>
+                  <input type="text" class="form-control" id="imei" placeholder="IMEI">
+                </div>
                 <div class="form-group ">
                   <label for="Name">Seller’s Name:</label>
                   <input type="text" class="form-control" id="Name" placeholder="Name">
@@ -110,7 +119,6 @@
                   <label for="address">Seller’s Address:</label>
                   <textarea class="form-control" id="address" placeholder="seller address"></textarea>
                 </div>
-                <button type="button" class="btn btn-primary">click to scan barcode</button>
                 <div class="form-group ">
                   <label for="license">Drivers License #:</label>
                   <input type="text" class="form-control" id="license" placeholder="license number">
@@ -161,72 +169,8 @@
           
         </div>
       </div>
-      <div class="btn-box">
-        <a href="">
-          See More
-        </a>
-      </div>
     </div>
   </section>
-
-
-  <!-- end product section -->
-
-  <!-- about section -->
-
-  <!-- <section class="about_section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-5 ml-auto">
-          <div class="detail-box">
-            <div class="heading_container ">
-              <h2>
-                About Us
-              </h2>
-            </div>
-            <p>
-              It is established fact that a reader will be distracted by the
-              readable content of a page when looking at its layout. The point
-              of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, generators on the Internet tend to repeat predefined chunks as
-              necessary, making this the first true generator on the
-              Internet.
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6 px-0">
-          <div class="img-box">
-            <img src="images/about-img.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- end about section -->
-
-  <!-- why us section -->
-  
-  <!-- end why us section -->
-
-
-
-  <!-- subscribe section -->
-
- 
-
-  <!-- end subscribe section -->
-
-
-  <!-- client section -->
-  
-  <!-- end client section -->
-
-
-  <!-- info section -->
 
   <section class="info_section layout_padding2">
     <div class="container">
@@ -313,6 +257,17 @@
   <script type="text/javascript" src="{{asset('Elements/js/bootstrap.js')}}"></script>
   <!-- custom js -->
   <script type="text/javascript" src="{{asset('Elements/js/custom.js')}}"></script>
+
+  <script>
+  $(document).ready(function(){
+    $("p#para").click(function(){
+      $("#imeidiv").css("display", "block");
+
+    });
+  });
+  </script>
 </body>
+
+
 
 </html>
