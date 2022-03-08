@@ -114,7 +114,7 @@
         </h2>
       </div>
       <div  class="container ">
-          <div style="margin-top: 100px;" class="col-sm-6 offset-md-2 col-md-8 border border-success bg-info rounded">
+          <div style="margin-top: 100px; background-color: #1376b1; box-shadow: 2px 2px 20px grey;" class="col-sm-6 offset-md-2 col-md-8 border rounded">
             <div style="margin-top: 30px; margin-bottom: 30px;"  class="box col-sm-12">
             <form>
             <button id="barscan" type="button" class="btn btn-primary" onclick="scannerr()">click to scan barcode</button>
