@@ -63,29 +63,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
+
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{{route('user/index')}}">new bill <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> My Bills</a>
+                  <a class="nav-link" href=""> My Bills</a>
                 </li>
                 
                 
               </ul>
             </div>
-            <!-- <div class="quote_btn-container">
-              <a href="">
-                <i class="fa fa-user" aria-hidden="true"></i>
+            <div class="quote_btn-container">
+              <a href="{{route('logout')}}">
+                <i class="fa fa-user" aria-hidden="true"> logout</i>
               </a>
-              <a href="">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-            </div> -->
+            </div>
           </div>
         </nav>
       </div>
@@ -295,7 +289,6 @@
 
         let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
         scanner.addListener('scan', function (content) {
-        alert('fkjkdj');
           
         });
         Instascan.Camera.getCameras().then(function (cameras) {
