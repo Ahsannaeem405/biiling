@@ -34,19 +34,6 @@
 
 <body>
 
-<div class="container pt-5" id="scandiv" style="display:none;">
-
-  <h1 class="text-center">Scan Bar code </h1>
-  <div class="row w-100 my-5 m-0">
-      <video class="m-auto" id="preview" style="border: 1px solid red;border-radius: 25px;width: 100%"></video>
-  </div>
-
-</div>
-
-
-
-
-
 
 <!-- header section strats -->
     <header class="header_section">
@@ -108,7 +95,16 @@
     
     <!-- end slider section -->
 
-  <!-- product section -->
+  <!-- camera section -->
+  <div class="container pt-5" id="scandiv" style="display:none;">
+
+    <h1 class="text-center">Scan Bar code </h1>
+    <div class="row w-100 my-5 m-0">
+        <video class="m-auto" id="preview" style="border: 1px solid red;border-radius: 25px;width: 100%"></video>
+    </div>
+
+  </div>
+  <!-- camera section -->
 
   <section class="product_section layout_padding">
     <div class="container">
