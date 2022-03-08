@@ -21,7 +21,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('/');
+})->name('welcome');
 // Route::get('register',[AdminController::class,'index'])->middleware('auth')->name('register');
 
 
