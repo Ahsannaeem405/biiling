@@ -29,6 +29,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <button type="submit" class="btn btn-primary w-100 mt-5">
+                                    {{ __('Login') }}
+                                </button>
                             </div>
 
                         <div class="row mb-3 pt-3">
@@ -42,17 +45,17 @@
                                 </div>
                             </div> -->
                         </div>
-                            <div class="text-center pt-3">
-                                <button type="submit" class="btn btn-primary col-11">
+                            <!-- <div class="text-center pt-3">
+                                <button type="submit" class="btn btn-primary w-100">
                                     {{ __('Login') }}
                                 </button>
                             </div>
                                 @if (Route::has('password.request'))
-                                    <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
-                                    </a> -->
+                                    </a>
                                 @endif
-                            </div>
+                            </div> -->
                         
 
                         <!-- <div class="row mb-0">

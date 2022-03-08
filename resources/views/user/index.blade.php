@@ -28,10 +28,27 @@
   <link href="{{asset('Elements/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
+
+
 </head>
 
 <body>
-    <!-- header section strats -->
+
+<div class="container pt-5" id="scandiv" style="display:none;">
+
+  <h1 class="text-center">Scan Bar code </h1>
+  <div class="row w-100 my-5 m-0">
+      <video class="m-auto" id="preview" style="border: 1px solid red;border-radius: 25px;width: 100%"></video>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -49,6 +66,8 @@
             </span>
           </a>
 
+          
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
@@ -61,7 +80,7 @@
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
+                  <a class="nav-link" href="about.html"> My Bills</a>
                 </li>
                 
                 
@@ -102,7 +121,7 @@
           <div style="margin-top: 100px;" class="col-sm-6 offset-md-2 col-md-8 border border-success bg-info rounded">
             <div style="margin-top: 30px; margin-bottom: 30px;"  class="box col-sm-12">
             <form>
-            <button type="button" class="btn btn-primary">click to scan barcode</button>
+            <button id="barscan" type="button" class="btn btn-primary" onclick="scannerr()">click to scan barcode</button>
             <br><br>
             <p id="para">having problem while scaning barcode?</p>
 
@@ -112,11 +131,11 @@
                   <input type="text" class="form-control" id="imei" placeholder="IMEI">
                 </div>
                 <div class="form-group ">
-                  <label for="Name">Seller’s Name:</label>
+                  <label for="Name">Seller's Name:</label>
                   <input type="text" class="form-control" id="Name" placeholder="Name">
                 </div>
                 <div class="form-group ">
-                  <label for="address">Seller’s Address:</label>
+                  <label for="address">Seller's Address:</label>
                   <textarea class="form-control" id="address" placeholder="seller address"></textarea>
                 </div>
                 <div class="form-group ">
@@ -248,6 +267,7 @@
       </div>
     </div>
   </section>
+  
   <!-- footer section -->
 
 
@@ -260,12 +280,41 @@
 
   <script>
   $(document).ready(function(){
+
     $("p#para").click(function(){
       $("#imeidiv").css("display", "block");
 
     });
+
   });
   </script>
+
+
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+<script type="text/javascript">
+  function scannerr() {
+
+    document.getElementById("scandiv").style.display = "block";
+
+        let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
+        scanner.addListener('scan', function (content) {
+        alert('fkjkdj');
+          
+        });
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error('No cameras found.');
+            }
+        }).catch(function (e) {
+            console.error(e);
+        });
+      }
+
+    </script>
+
 </body>
 
 

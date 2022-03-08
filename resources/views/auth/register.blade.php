@@ -10,6 +10,8 @@
                 <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+                        <!-- <div class="col-12"> -->
+
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name *') }}</label>
 
@@ -56,16 +58,27 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password *') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-                        
-                        <div class="row mb-3 mt-4">
-                            <label class="col-md-4 col-form-label text-md-end"></label>
-                                <button type="submit" class="btn btn-primary col-md-6">
+                                <input id="password-confirm" type="password" class="form-control mb-5" name="password_confirmation" required autocomplete="new-password">
+                               
+                                <button type="submit" class="btn btn-primary float-right w-100">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+                           
                         </div>
+                        
+
+
+                        <!-- <div class="row mb-3">
+                            
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary float-right">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div> -->
+                    <!-- </div> -->
                         <p class="sign-up text-center">Already have an Account?<a href="{{route('welcome')}}"> Sign in</a></p>
                     </form>
               </div>
