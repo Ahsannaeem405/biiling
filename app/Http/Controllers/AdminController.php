@@ -11,6 +11,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        dd('this is admin1');
+        return view('admins.index');
     }
+    
 }
