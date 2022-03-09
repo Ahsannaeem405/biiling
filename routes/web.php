@@ -21,13 +21,15 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+})->middleware('guest')->name('welcome');
 // Route::get('register',[AdminController::class,'index'])->middleware('auth')->name('register');
 
 
 Route::group(['prefix' => 'admins'], function () {
 
     Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
+
+    
 
 });
 

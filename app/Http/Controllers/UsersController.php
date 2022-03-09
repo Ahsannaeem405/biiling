@@ -20,7 +20,7 @@ class UsersController extends Controller
 
     public function createbill()
     {
-        return view('user.createbill');
+        return view('user.allbill');
     }
 
     
