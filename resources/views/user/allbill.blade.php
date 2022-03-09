@@ -4,12 +4,11 @@
   <section class="product_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2 class="">
+        <h2 class="" style="color:black;">
           MY Bill
         </h2>
-        <div class="col-lg-12 grid-margin stretch-card mt-4">
+        <div class="w-100">
                 <div class="card">
-                  <div class="card-body">
                     
                     <div class="table-responsive mt-4">
                       <table class="table table-bordered">
@@ -84,7 +83,6 @@
                         </tbody>
                       </table>
                     </div>
-                  </div>
                 </div>
               </div>
       </div>

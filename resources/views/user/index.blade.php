@@ -1,15 +1,21 @@
 
 @extends('user.layout1')
 @section('content')
-  <section class="product_section layout_padding">
-    <div class="container">
+    <div class="container mt-3">
       <div class="heading_container heading_center">
-        <h2 class="">
-          New Bill
+        <h2 class="" id="toggleBtn" stat="1">
+
+
+          <label class="switch d-none pageslider" >
+            <input type="checkbox" id="togBtn">
+            <div class="slider"></div>
+        </label>
         </h2>
-      </div>
+      </div >
+  <section class="product_section layout_padding" style="background-color: #f8f9fe;!important; padding-top: 15px;" id="formsection">
+
       <div  class="container ">
-          <div style="margin-top: 100px; background-color: #1376b1; box-shadow: 2px 2px 20px grey;" class="col-sm-6 offset-md-2 col-md-8 border rounded">
+          <div style="background-color: white; color:black; box-shadow: 2px 2px 20px grey;" class="col-sm-6 offset-md-2 col-md-8 border rounded">
             <div style="margin-top: 30px; margin-bottom: 30px;"  class="box col-sm-12">
             <form>
             <button id="barscan" type="button" class="btn btn-primary" onclick="scannerr()">click to scan barcode</button>
@@ -81,7 +87,92 @@
       </div>
     </div>
   </section>
-
+  <section class="product_section layout_padding" id="tablesection" style="display:none;">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <div class="w-100">
+                <div class="card">
+                    
+                    <div class="table-responsive mt-4">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th> # </th>
+                            <th> Seller name </th>
+                            <th> Seller address </th>
+                            <th> Drivers License # </th>
+                            <th> DOB </th>
+                            <th> Signature of Seller: </th>
+                            <th> Signature of representative </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td> 1 </td>
+                            <td> Herman Beck </td>
+                            <td> london </td>
+                            <td> li93475-45 </td>
+                            <td> May 15, 2015 </td>
+                            <td> May 15, 2015 </td>
+                            <td> May 15, 2015 </td>
+                          </tr>
+                          <tr>
+                            <td> 2 </td>
+                            <td> Messsy Adam </td>
+                            <td> new york </td>
+                            <td> mti843-468-34 </td>
+                            <td> July 1, 2015 </td>
+                            <td> July 1, 2015 </td>
+                            <td> July 1, 2015 </td>
+                          </tr>
+                          <tr>
+                            <td> 3 </td>
+                            <td> John Richards </td>
+                            <td> austria state of the art countery </td>
+                            <td> tl-0142-387-34 </td>
+                            <td> Apr 12, 2015 </td>
+                            <td> Apr 12, 2015 </td>
+                            <td> Apr 12, 2015 </td>
+                          </tr>
+                          <tr>
+                            <td> 1 </td>
+                            <td> Herman Beck </td>
+                            <td> london </td>
+                            <td> li93475-45 </td>
+                            <td> May 15, 2015 </td>
+                            <td> May 15, 2015 </td>
+                            <td> May 15, 2015 </td>
+                          </tr>
+                          <tr>
+                            <td> 2 </td>
+                            <td> Messsy Adam </td>
+                            <td> new york </td>
+                            <td> mti843-468-34 </td>
+                            <td> July 1, 2015 </td>
+                            <td> July 1, 2015 </td>
+                            <td> July 1, 2015 </td>
+                          </tr>
+                          <tr>
+                            <td> 3 </td>
+                            <td> John Richards </td>
+                            <td> austria state of the art countery </td>
+                            <td> tl-0142-387-34 </td>
+                            <td> Apr 12, 2015 </td>
+                            <td> Apr 12, 2015 </td>
+                            <td> Apr 12, 2015 </td>
+                          </tr>
+                          
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+      </div>
+      
+      </div>
+    </div>
+  </section>
   <script>
   $(document).ready(function(){
 
@@ -89,6 +180,28 @@
       $("#imeidiv").css("display", "block");
 
     });
+
+
+
+
+    $("#toggleBtn").click(function(){
+
+
+      if($(this).attr("stat") == "1")
+      {
+        $("#tablesection").css("display", "block");
+        $("#formsection").css("display", "none");
+        $(this).attr("stat","2");
+
+      } 
+      else{
+        alert('kdjf');
+      }
+
+    });
+
+
+
 
   });
   </script>
