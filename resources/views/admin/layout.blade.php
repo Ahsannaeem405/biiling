@@ -161,19 +161,19 @@ input:checked + .slider:after {
               <ul class="navbar-nav ">
 
                 <li class="nav-item active" style="cursor:pointer;">
-                    <a class="nav-link " href="/admins/index">Bills </a>
+                    <a class="nav-link " href="{{url('/')}}">Bills </a>
                 </li>
 
                 <li class="nav-item active " style="cursor:pointer;">
-                    <a class="nav-link " href="/sells" >Sells</a>
+                    <a class="nav-link " href="{{url('/sells')}}" >Sells</a>
                 </li>
 
                 <li class="nav-item active" style="cursor:pointer;">
-                    <a class="nav-link " href="/user">User</a>
+                    <a class="nav-link " href=" {{url('/user')}}">User</a>
                     
                 </li>
                 <li class="nav-item active" style="cursor:pointer;">
-                    <a class="nav-link" href="/settings">Settings </a>
+                    <a class="nav-link" href="{{url('/settings')}}">Settings </a>
                 </li>
                 
               </ul>

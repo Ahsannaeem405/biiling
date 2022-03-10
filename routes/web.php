@@ -36,7 +36,6 @@ Route::get('/settings', function () {
 
 Route::group(['prefix' => 'admins'], function () {
     Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
-    Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
 });
 
 
