@@ -160,15 +160,14 @@ input:checked + .slider:after {
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav ">
 
-                <li class="nav-item active" style="cursor:pointer;">
-                   <span class="nav-link">new bill</span>
+                <li class="nav-item active" style="cursor:pointer;" onclick="changeTab2()">
+                    <span class="nav-link">New bill</span>
                 </li>
 
-                <li class="nav-item active" style="cursor:pointer;">
-                   <span class="nav-link">my bill</span>
+                <li class="nav-item active" style="cursor:pointer;" onclick="changeTab1()">
+                   <span class="nav-link">All bill</span>
                 </li>
-                
-                
+            
               </ul>
             </div>
             <div class="quote_btn-container">
@@ -186,14 +185,7 @@ input:checked + .slider:after {
     <!-- end slider section -->
 
   <!-- camera section -->
-  <div class="container pt-5" id="scandiv" style="display:none;">
-
-    <h1 class="text-center">Scan Bar code </h1>
-    <div class="row w-100 my-5 m-0">
-        <video class="m-auto" id="preview" style="border: 1px solid red;border-radius: 25px;width: 100%"></video>
-    </div>
-
-  </div>
+  
   <!-- camera section -->
 
 
@@ -304,6 +296,22 @@ input:checked + .slider:after {
 
 <script src="http://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
+<script>
+  function changeTab1(){
+            $('#tab2').removeClass('d-none');
+            $('#tab1').addClass('d-none');
+
+            $('#navtab2').removeClass('active');
+            $("#navtab1").addClass('active');
+        }
+        function changeTab2(){
+            $('#tab1').removeClass('d-none');
+            $('#tab2').addClass('d-none');
+
+            $('#navtab1').removeClass('active')
+            $("#navtab2").addClass('active');
+        }
+</script>
 
 </body>
 

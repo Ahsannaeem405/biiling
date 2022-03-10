@@ -4,37 +4,34 @@
     <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="row w-100 m-0">
           <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
-            <div class="card col-lg-4 mx-auto pb-4" style="box-shadow: 2px 2px 20px grey; border-radius: 20px;">
-              <div class="card-body text-center py-5 ">
-                <h3 class=" text-center mb-3">{{ __('Login') }}</h3>
+            <div class="card login-div col-xl-3 col-lg-4 col-md-6 col-12 mx-auto pb-4" style="box-shadow: 2px 2px 20px grey; border-radius: 20px;">
+              <div class="card-body  py-4 ">
+                <h3 class=" text-center mb-5">{{ __('Login') }}</h3>
                 <form method="POST" action="{{ route('login') }}">
                         @csrf
-                            <div class="row col-12 ">
-                                <label for="email">{{ __('Email') }}</label>
-
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                <label for="password"class="mt-4 ">{{ __('Password') }}</label>
-
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                <button type="submit" class="btn btn-primary w-100 mt-5">
-                                    {{ __('Login') }}
-                                </button>
+                            <div class="row  ">
+                                <div class="col-12 ">
+                                    <label for="email">{{ __('Email') }}</label>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    <label for="password"class="mt-4 ">{{ __('Password') }}</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    <button type="submit" class="btn btn-primary w-100 mt-5">
+                                        {{ __('Login') }}
+                                    </button>
+                                </div>
                             </div>
 
-                        <div class="row mb-3 pt-3">
+                        <div class="row mb-3 pt-3 pt-md-5">
                             <!-- <div class="col-md-6 col-12">
                                 <div class="form-check d-flex">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
