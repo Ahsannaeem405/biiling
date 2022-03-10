@@ -21153,3 +21153,8 @@ div.tagsinput {
     padding: 1.75rem 0.5rem;
   }
 }
+
+.user-table th{
+  font-size: 18px;
+}
+

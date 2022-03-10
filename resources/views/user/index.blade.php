@@ -16,7 +16,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-10 col-md-11 co-12 my-2 my-md-3 my-lg-4">
               <div class="theme-card">
-                  <div class="mobile-menu-bar d-block d-lg-none">
+                  <div class="mobile-menu-bar">
                     <div class="w-100 d-flex justify-content-between">
                       <div id="navtab2" class="w-100 text-center theme-tabs active " onclick="changeTab2()" >New Bill</div>
                       <div id="navtab1" class="w-100 text-center theme-tabs " onclick="changeTab1()" >All Bills</div>

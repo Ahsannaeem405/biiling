@@ -22,26 +22,30 @@ use App\Http\Controllers\Auth\LoginController;
 Route::get('/', function () {
     return view('welcome');
 })->middleware('guest')->name('welcome');
+
+Route::get('/user', function () {
+    return view('admin/user');
+});
+Route::get('/sells', function () {
+    return view('admin/sells');
+});
+Route::get('/settings', function () {
+    return view('admin/settings');
+});
 // Route::get('register',[AdminController::class,'index'])->middleware('auth')->name('register');
 
-
 Route::group(['prefix' => 'admins'], function () {
-
     Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
-
-    
-
+    Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
 });
 
 
 
 
 Route::group(['prefix' => 'user'], function () {
-
     Route::get('index',[UsersController::class,'index'])->middleware('auth')->name('user/index');
     Route::get('createbill',[UsersController::class,'createbill'])->middleware('auth')->name('user/createbill');
     Route::get('savebill',[BillsController::class,'savebill'])->middleware('auth')->name('savebill');
-
 });
 
 

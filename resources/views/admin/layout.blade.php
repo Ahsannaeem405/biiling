@@ -158,16 +158,24 @@ input:checked + .slider:after {
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav d-none">
+              <ul class="navbar-nav ">
 
-                <li class="nav-item active" style="cursor:pointer;" onclick="changeTab2()">
-                    <span class="nav-link">New bill</span>
+                <li class="nav-item active" style="cursor:pointer;">
+                    <a class="nav-link " href="/admins/index">Bills </a>
                 </li>
 
-                <li class="nav-item active" style="cursor:pointer;" onclick="changeTab1()">
-                   <span class="nav-link">All bill</span>
+                <li class="nav-item active " style="cursor:pointer;">
+                    <a class="nav-link " href="/sells" >Sells</a>
                 </li>
-            
+
+                <li class="nav-item active" style="cursor:pointer;">
+                    <a class="nav-link " href="/user">User</a>
+                    
+                </li>
+                <li class="nav-item active" style="cursor:pointer;">
+                    <a class="nav-link" href="/settings">Settings </a>
+                </li>
+                
               </ul>
             </div>
             <div class="quote_btn-container">

@@ -18,13 +18,13 @@
               <div class="theme-card">
                   <div class="mobile-menu-bar">
                     <div class="w-100 d-flex justify-content-between">
-                      <div id="navtab2" class="w-100 text-center theme-tabs active " onclick="changeTab2()" >New Bill</div>
-                      <div id="navtab1" class="w-100 text-center theme-tabs " onclick="changeTab1()" >All Bills</div>
+                      <div id="navtab2" class="w-100 text-center theme-tabs active " onclick="changeTab2()" >New Sell</div>
+                      <div id="navtab1" class="w-100 text-center theme-tabs " onclick="changeTab1()" >All Sells</div>
                     </div>
                   </div><!--mobile-menu-bar-->
 
                   <div id="tab1" class=" mt-5 px-2 py-4 " >
-                    <h4 class="text-center pb-3">Add New Bill</h4>
+                    <h4 class="text-center pb-3">Add New Sell</h4>
                     <form class="text-center px-0 px-lg-5">
                       <div class="scanner text-center">
                         <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i>
@@ -64,7 +64,7 @@
                   </div><!--tab1 close-->
 
                   <div id="tab2" class=" px-2 py-4 py-md-2 d-none">
-                  <h4 class="text-center py-3">All Bills</h4>
+                  <h4 class="text-center py-3">All Sells</h4>
                       <div class="table-responsive mt-4">
                         <table class="table table-bordered">
                           <thead>
