@@ -23,19 +23,19 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('guest')->name('welcome');
 
-Route::get('/user', function () {
-    return view('admin/user');
-});
-Route::get('/sells', function () {
-    return view('admin/sells');
-});
-Route::get('/settings', function () {
-    return view('admin/settings');
-});
+
+
+
 // Route::get('register',[AdminController::class,'index'])->middleware('auth')->name('register');
 
 Route::group(['prefix' => 'admins'], function () {
     Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
+    Route::get('user',[AdminController::class,'user'])->middleware('auth');
+
+    Route::get('sells',[AdminController::class,'sells'])->middleware('auth');
+
+    Route::get('settings',[AdminController::class,'settings'])->middleware('auth');
+
 });
 
 

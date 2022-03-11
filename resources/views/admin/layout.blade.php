@@ -165,15 +165,15 @@ input:checked + .slider:after {
                 </li>
 
                 <li class="nav-item active " style="cursor:pointer;">
-                    <a class="nav-link " href="{{url('/sells')}}" >Sells</a>
+                    <a class="nav-link " href="{{url('admins/sells')}}" >Sells</a>
                 </li>
 
                 <li class="nav-item active" style="cursor:pointer;">
-                    <a class="nav-link " href=" {{url('/user')}}">User</a>
+                    <a class="nav-link " href=" {{url('admins/user')}}">User</a>
                     
                 </li>
                 <li class="nav-item active" style="cursor:pointer;">
-                    <a class="nav-link" href="{{url('/settings')}}">Settings </a>
+                    <a class="nav-link" href="{{url('admins/settings')}}">Settings </a>
                 </li>
                 
               </ul>

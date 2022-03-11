@@ -18,53 +18,14 @@
               <div class="theme-card">
                   <div class="mobile-menu-bar">
                     <div class="w-100 d-flex justify-content-between">
-                      <div id="navtab2" class="w-100 text-center theme-tabs active " onclick="changeTab2()" >New Bill</div>
+                      <!-- <div id="navtab2" class="w-100 text-center theme-tabs active " onclick="changeTab2()" >New Bill</div> -->
                       <div id="navtab1" class="w-100 text-center theme-tabs " onclick="changeTab1()" >All Bills</div>
                     </div>
                   </div><!--mobile-menu-bar-->
 
-                  <div id="tab1" class=" mt-5 px-2 py-4 " >
-                    <h4 class="text-center pb-3">Add New Bill</h4>
-                    <form class="text-center px-0 px-lg-5">
-                      <div class="scanner text-center">
-                        <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i>
-                        <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
-                        <p id="para">Having problem while scaning barcode?</p>
-                      </div>
-                      <div class="form-group text-left" id="imeidiv" style="display:none;">
-                        <label for="imei">Enter imei No:</label>
-                        <input type="text" class="form-control" id="imei" placeholder="IMEI">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="Name">Seller's Name:</label>
-                        <input type="text" class="form-control" id="Name" placeholder="Name">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="address">Seller's Address:</label>
-                        <textarea class="form-control" id="address" placeholder="seller address"></textarea>
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="license">Drivers License #:</label>
-                        <input type="text" class="form-control" id="license" placeholder="license number">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="dob">DOB:</label>
-                        <input type="date" class="form-control" id="dob">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="sellersignature">Signature of Seller:</label>
-                        <input type="text" class="form-control" id="sellersignature">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="repsignature">Signature of representative:</label>
-                        <input type="text" class="form-control" id="repsignature">
-                      </div>
-                      <button type="submit" class="btn btn-primary text-center">Submit Information</button>
-                    </form>
-                  </div><!--tab1 close-->
+                  <!--tab1 close-->
 
-                  <div id="tab2" class=" px-2 py-4 py-md-2 d-none">
-                  <h4 class="text-center py-3">All Bills</h4>
+                  <div id="tab2" class=" px-2 py-4 py-md-2">
                       <div class="table-responsive mt-4">
                         <table class="table table-bordered">
                           <thead>
@@ -192,31 +153,6 @@
 
 <script src="http://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
-<script type="text/javascript">
-  function closeScannerr(){
-    document.getElementById("scandiv").style.display = "none";
-  }
 
-  function scannerr() {
-
-    document.getElementById("scandiv").style.display = "block";
-
-        let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
-        scanner.addListener('scan', function (content) {
-          
-        });
-        Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error('No cameras found.');
-            }
-        }).catch(function (e) {
-            console.error(e);
-        });
-      }
-
-        
-</script>
 
 @endsection

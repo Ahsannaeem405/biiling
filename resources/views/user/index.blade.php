@@ -190,7 +190,7 @@
   </script>
 
 
-<script src="http://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
 <script type="text/javascript">
   function closeScannerr(){
@@ -203,6 +203,7 @@
 
         let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
         scanner.addListener('scan', function (content) {
+          alert(content);
           
         });
         Instascan.Camera.getCameras().then(function (cameras) {
