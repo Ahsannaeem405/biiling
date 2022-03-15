@@ -83,33 +83,5 @@
   </script>
 
 
-<script src="http://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
-<script type="text/javascript">
-  function closeScannerr(){
-    document.getElementById("scandiv").style.display = "none";
-  }
-
-  function scannerr() {
-
-    document.getElementById("scandiv").style.display = "block";
-
-        let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
-        scanner.addListener('scan', function (content) {
-          
-        });
-        Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error('No cameras found.');
-            }
-        }).catch(function (e) {
-            console.error(e);
-        });
-      }
-
-        
-</script>
 
 @endsection
