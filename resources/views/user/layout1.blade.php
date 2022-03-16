@@ -30,6 +30,17 @@
   <!-- responsive style -->
   <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
   <style>
+  .signRow {
+  background: #ededed; 
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+canvas {
+  border: 2px dotted #CCCCCC;
+  border-radius: 15px;
+  cursor: crosshair;
+}
   @media screen and (max-width: 990px) {
     .navbar-toggler{
         display:none!important;

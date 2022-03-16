@@ -25,16 +25,44 @@
 
                   <div id="tab1" class=" mt-5 px-2 py-4 " >
                     <h4 class="text-center pb-3">Add New Bill</h4>
-                    <form class="text-center px-0 px-lg-5">
+                    <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
                       <div class="scanner text-center">
                         <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i>
                         <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
+
+                        <div class="form-group text-left">
+                          <label for="Name">Please Select Company:</label>
+                          <select type="text" class="form-control" aria-label="Default select example" id="mobile">
+                            <option selected>select your mobile</option>
+                            <option value="19"> LG  &#x26A1;</option>
+                            <option value="24"> ZTE &#x26A1;</option>
+                            <option value="5"> SONY &#x26A1;</option>
+                            <option value="23"> ACER &#x26A1;</option>
+                            <option value="34"> ASUS &#x26A1;</option>
+                            <option value="39"> OPPO &#x26A1;</option>
+                            <option value="45"> ITEL &#x26A1;</option>
+                            <option value="2"> NOKIA &#x26A1;</option>
+                            <option value="44"> SONIM &#x26A1;</option>
+                            <option value="45"> TECNO &#x26A1;</option>
+                            <option value="15"> HUAWEI &#x26A1;</option>
+                            <option value="22"> LENOVO &#x26A1;</option>
+                            <option value="1"> SAMSUNG &#x26A1;</option>
+                            <option value="17"> ALCATEL &#x26A1;</option>
+                            <option value="36"> ONEPLUS &#x26A1;</option>
+                            <option value="43"> KYOCERA &#x26A1;</option>
+                            <option value="45"> INFINIX &#x26A1;</option>
+                            <option value="13"> MOTOROLA &#x26A1;</option>
+                            <option value="14"> BLACKBERRY &#x26A1;</option>
+                            <option value="42"> GOOGLE PIXEL &#x26A1;</option>
+                            
+                          </select>
+                        </div>
                         <p id="para">Having problem while scaning barcode?</p>
                       </div>
 
                       <div class="form-group text-left" id="imeidiv" style="display:none;">
                         <label for="imei">Enter imei No:</label>
-                        <input type="text" class="form-control" id="imei" onblur="getrespons()" placeholder="IMEI">
+                        <input type="text" class="form-control" id="imei" placeholder="IMEI">
                       </div>
                       
                       <div class="form-group text-left">
@@ -53,14 +81,44 @@
                         <label for="dob">DOB:</label>
                         <input type="date" class="form-control" id="dob">
                       </div>
-                      <div class="form-group text-left">
-                        <label for="sellersignature">Signature of Seller:</label>
-                        <input type="text" class="form-control" id="sellersignature">
+                      
+                      <!-- signature start -->
+                        	<!-- Content -->
+                    
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h1>Seller Signature</h1> 
+                        </div>
                       </div>
-                      <div class="form-group text-left">
-                        <label for="repsignature">Signature of representative:</label>
-                        <input type="text" class="form-control" id="repsignature">
+                      <div class="row signRow">
+                        <div class="col-md-12">
+                          <canvas id="" width="620" height="160">
+                            Get a better browser, bro.
+                          </canvas>
+                          <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
+                          <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
+                          <textarea class="form-control sig-dataUrl" id="" rows="5"></textarea>
+                        </div> 
                       </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h1>Representative Signature</h1> 
+                        </div>
+                      </div>
+                      <div class="row signRow">
+                        <div class="col-md-12">
+                          <canvas id="" width="620" height="160">
+                            Get a better browser, bro.
+                          </canvas>
+                          <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
+                          <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
+                          <textarea class="form-control sig-dataUrl" id="" rows="5"></textarea>
+                        </div> 
+                      </div>
+                      
+
+
+                      <!--  signature end  -->
                       <button type="submit" class="btn btn-primary text-center">Submit Information</button>
                     </form>
                   </div><!--tab1 close-->
@@ -222,7 +280,198 @@
         
 </script>
 <script>
+$(document).ready(function() {
+  $("#imei").blur(function(){
+    
+    var vali = $("#imei").val();
+    var optselect = $('#mobile').val();
+    if(optselect != 'select your mobile')
+    {
+      
+      $.ajax({
+          method: 'GET',
+          url: '/imeidetail',
+          data: {imeino: vali, serviceid: optselect},
+          success: function( response ){
+              alert(response);
+          },
+          error: function( e ) {
+              alert('erorrrr');
+          }
+      });
+    } else {
+      alert('please ' + optselect + ' company first');
+      $("#imei").val('');
+    }
+
+  });
+});
+</script>
+<script>
+  (function($) {
+  
+  $('.signRow').each(function(){
+    
+    
+    // make dynamic pad id  
+    $(this).find('canvas').attr('id', 'signPad' + $(this).index());
+    var padId = $(this).find('canvas').attr('id');
+
+    // make dynamic submit BTN id  
+    $(this).find('.sig-submitBtn').attr('id', 'sig-submitBtn' + $(this).index());
+    var padSubmitId = $(this).find('.sig-submitBtn').attr('id');
+
+    // make dynamic clear BTN id  
+    $(this).find('.sig-clearBtn').attr('id', 'sig-clearBtn' + $(this).index());
+    var padClearId = $(this).find('.sig-clearBtn').attr('id');
+
+    // make dynamic data url id  
+    $(this).find('.sig-dataUrl').attr('id', 'sig-dataUrl' + $(this).index());
+    var padDataUrlId = $(this).find('.sig-dataUrl').attr('id');
+
+    // make dynamic img id  
+    $(this).find('.sig-image').attr('id', 'sig-image' + $(this).index());
+    var padImageId = $(this).find('.sig-image').attr('id');
+    
+
+    window.requestAnimFrame = (function (callback) {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimaitonFrame ||
+        function (callback) {
+          window.setTimeout(callback, 1000 / 60);
+        };
+    })();
+
+
+    var canvas = document.getElementById(padId);
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#222222";
+    ctx.lineWidth = 4;
+
+    var drawing = false;
+    var mousePos = {
+      x: 0,
+      y: 0
+    };
+    var lastPos = mousePos;
+
+    canvas.addEventListener("mousedown", function (e) {
+      drawing = true;
+      lastPos = getMousePos(canvas, e);
+    }, false);
+
+    canvas.addEventListener("mouseup", function (e) {
+      drawing = false;
+    }, false);
+
+    canvas.addEventListener("mousemove", function (e) {
+      mousePos = getMousePos(canvas, e);
+    }, false);
+
+    // Add touch event support for mobile
+    canvas.addEventListener("touchstart", function (e) {
+
+    }, false);
+
+    canvas.addEventListener("touchmove", function (e) {
+      var touch = e.touches[0];
+      var me = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(me);
+    }, false);
+
+    canvas.addEventListener("touchstart", function (e) {
+      mousePos = getTouchPos(canvas, e);
+      var touch = e.touches[0];
+      var me = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(me);
+    }, false);
+
+    canvas.addEventListener("touchend", function (e) {
+      var me = new MouseEvent("mouseup", {});
+      canvas.dispatchEvent(me);
+    }, false);
+
+    function getMousePos(canvasDom, mouseEvent) {
+      var rect = canvasDom.getBoundingClientRect();
+      return {
+        x: mouseEvent.clientX - rect.left,
+        y: mouseEvent.clientY - rect.top
+      }
+    }
+
+    function getTouchPos(canvasDom, touchEvent) {
+      var rect = canvasDom.getBoundingClientRect();
+      return {
+        x: touchEvent.touches[0].clientX - rect.left,
+        y: touchEvent.touches[0].clientY - rect.top
+      }
+    }
+
+    function renderCanvas() {
+      if (drawing) {
+        ctx.moveTo(lastPos.x, lastPos.y);
+        ctx.lineTo(mousePos.x, mousePos.y);
+        ctx.stroke();
+        lastPos = mousePos;
+      }
+    }
+
+    // Prevent scrolling when touching the canvas
+    document.body.addEventListener("touchstart", function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener("touchend", function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener("touchmove", function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+
+    (function drawLoop() {
+      requestAnimFrame(drawLoop);
+      renderCanvas();
+    })();
+
+    function clearCanvas() {
+      canvas.width = canvas.width;
+    }
+
+    // Set up the UI
+    var sigText = document.getElementById(padDataUrlId);
+    var sigImage = document.getElementById(padImageId);
+    var clearBtn = document.getElementById(padClearId);
+    var submitBtn = document.getElementById(padSubmitId);
+
+    clearBtn.addEventListener("click", function (e) {
+      clearCanvas();
+      // sigText.innerHTML = "Data URL for your signature will go here!";
+      sigImage.setAttribute("src", "");
+    }, false);
+
+    submitBtn.addEventListener("click", function (e) {
+      var dataUrl = canvas.toDataURL();
+      sigText.innerHTML = dataUrl;
+      sigImage.setAttribute("src", dataUrl);
+    }, false);
+    
+  }); // each function  end
+  
+})(jQuery);
 
 </script>
-
 @endsection
