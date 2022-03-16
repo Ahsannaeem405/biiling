@@ -31,10 +31,12 @@
                         <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
                         <p id="para">Having problem while scaning barcode?</p>
                       </div>
+
                       <div class="form-group text-left" id="imeidiv" style="display:none;">
                         <label for="imei">Enter imei No:</label>
-                        <input type="text" class="form-control" id="imei" placeholder="IMEI">
+                        <input type="text" class="form-control" id="imei" onblur="getrespons()" placeholder="IMEI">
                       </div>
+                      
                       <div class="form-group text-left">
                         <label for="Name">Seller's Name:</label>
                         <input type="text" class="form-control" id="Name" placeholder="Name">
@@ -218,6 +220,9 @@
       }
 
         
+</script>
+<script>
+
 </script>
 
 @endsection
