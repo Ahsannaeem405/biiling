@@ -31,8 +31,8 @@
                         <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
 
                         <div class="form-group text-left">
-                          <label for="Name">Please Select Company:</label>
-                          <select type="text" class="form-control" aria-label="Default select example" id="mobile">
+                          <label for="">Please Select Company:</label>
+                          <select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">
                             <option selected>select your mobile</option>
                             <option value="19"> LG  &#x26A1;</option>
                             <option value="24"> ZTE &#x26A1;</option>
@@ -53,7 +53,7 @@
                             <option value="45"> INFINIX &#x26A1;</option>
                             <option value="13"> MOTOROLA &#x26A1;</option>
                             <option value="14"> BLACKBERRY &#x26A1;</option>
-                            <option value="42"> GOOGLE PIXEL &#x26A1;</option>
+                            <option value="42"> GOOGLEPIXEL &#x26A1;</option>
                             
                           </select>
                         </div>
@@ -62,64 +62,60 @@
 
                       <div class="form-group text-left" id="imeidiv" style="display:none;">
                         <label for="imei">Enter imei No:</label>
-                        <input type="text" class="form-control" id="imei" placeholder="IMEI">
+                        <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI">
                       </div>
                       
                       <div class="form-group text-left">
                         <label for="Name">Seller's Name:</label>
-                        <input type="text" class="form-control" id="Name" placeholder="Name">
+                        <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
                       </div>
                       <div class="form-group text-left">
                         <label for="address">Seller's Address:</label>
-                        <textarea class="form-control" id="address" placeholder="seller address"></textarea>
+                        <textarea class="form-control" id="address" name="address" placeholder="seller address"></textarea>
                       </div>
                       <div class="form-group text-left">
                         <label for="license">Drivers License #:</label>
-                        <input type="text" class="form-control" id="license" placeholder="license number">
+                        <input type="text" class="form-control" name="license" id="license" placeholder="license number">
                       </div>
                       <div class="form-group text-left">
                         <label for="dob">DOB:</label>
-                        <input type="date" class="form-control" id="dob">
+                        <input type="date" class="form-control" name="dob" id="dob">
                       </div>
                       
                       <!-- signature start -->
                         	<!-- Content -->
-                    
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h1>Seller Signature</h1> 
-                        </div>
+                      <div class="row form-group text-left">
+                        <label for="Name">Seller's Signaturwe:</label>
                       </div>
+
                       <div class="row signRow">
                         <div class="col-md-12">
-                          <canvas id="" width="620" height="160">
+                          <canvas id="" width="620px" height="130px">
                             Get a better browser, bro.
                           </canvas>
                           <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
                           <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl" id="" rows="5"></textarea>
+                          <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5"></textarea>
                         </div> 
                       </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h1>Representative Signature</h1> 
-                        </div>
+                      <div class="row form-group text-left">
+                        <label for="Name">Seller's Signaturwe:</label>
                       </div>
                       <div class="row signRow">
                         <div class="col-md-12">
-                          <canvas id="" width="620" height="160">
+                          <canvas id="" width="620px" height="130px">
                             Get a better browser, bro.
                           </canvas>
                           <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
                           <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl" id="" rows="5"></textarea>
+                          <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5"></textarea>
                         </div> 
                       </div>
                       
 
 
                       <!--  signature end  -->
-                      <button type="submit" class="btn btn-primary text-center">Submit Information</button>
+                      <button type="submit" class="btn btn-primary text-center" id="billbutton" disabled >Submit Information</button>
                     </form>
                   </div><!--tab1 close-->
 
@@ -129,7 +125,7 @@
                         <table class="table table-bordered">
                           <thead>
                             <tr>
-                              <th> # </th>
+                              <th> Mobile </th>
                               <th> Seller name </th>
                               <th> Seller address </th>
                               <th> Drivers License # </th>
@@ -139,60 +135,20 @@
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach($bills as $bill)
                             <tr>
-                              <td> 1 </td>
-                              <td> Herman Beck </td>
-                              <td> london </td>
-                              <td> li93475-45 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
+                            <td> {{$bill->mobileName->name}} </td>
+
+                              <td> {{$bill['seller_name']}} </td>
+                              <td> {{$bill['seller_address']}} </td>
+                              <td> {{$bill['driv_licence']}} </td>
+                              <td> {{$bill['date_of_birth']}} </td>
+                              <td> <img src="{{$bill['sel_sign']}}" width="100px" height="60px"> </td>
+                              <td> <img src="{{$bill['rep_sign']}}" width="100px" height="60px"> </td>
                             </tr>
-                            <tr>
-                              <td> 2 </td>
-                              <td> Messsy Adam </td>
-                              <td> new york </td>
-                              <td> mti843-468-34 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 3 </td>
-                              <td> John Richards </td>
-                              <td> austria state of the art countery </td>
-                              <td> tl-0142-387-34 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 1 </td>
-                              <td> Herman Beck </td>
-                              <td> london </td>
-                              <td> li93475-45 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 2 </td>
-                              <td> Messsy Adam </td>
-                              <td> new york </td>
-                              <td> mti843-468-34 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 3 </td>
-                              <td> John Richards </td>
-                              <td> austria state of the art countery </td>
-                              <td> tl-0142-387-34 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                            </tr>
+                           @endforeach
+                            
+                            
                           </tbody>
                         </table>
                       </div>
@@ -293,10 +249,22 @@ $(document).ready(function() {
           url: '/imeidetail',
           data: {imeino: vali, serviceid: optselect},
           success: function( response ){
-              alert(response);
-          },
-          error: function( e ) {
-              alert('erorrrr');
+            if(response == 'low balance')
+            {
+              alert('low balance');
+              $("#billbutton").attr("disabled", true);
+
+            }
+            if(response == 'wronge imei number')
+            {
+              alert('wromge imei number');
+              $("#billbutton").attr("disabled", true);
+            }
+              
+              if(response == 'ok')
+              {
+                $("#billbutton").removeAttr('disabled');
+              }
           }
       });
     } else {

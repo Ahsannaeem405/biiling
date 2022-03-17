@@ -28,9 +28,9 @@
                   <div id="tab2" class=" px-2 py-4 py-md-2">
                       <div class="table-responsive mt-4">
                         <table class="table table-bordered">
-                          <thead>
+                        <thead>
                             <tr>
-                              <th> # </th>
+                              <th> Mobile </th>
                               <th> Seller name </th>
                               <th> Seller address </th>
                               <th> Drivers License # </th>
@@ -40,61 +40,19 @@
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach($bills as $bill)
                             <tr>
-                              <td> 1 </td>
-                              <td> Herman Beck </td>
-                              <td> london </td>
-                              <td> li93475-45 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
+                            <td> {{$bill->mobileName->name}} </td>
+
+                              <td> {{$bill['seller_name']}} </td>
+                              <td> {{$bill['seller_address']}} </td>
+                              <td> {{$bill['driv_licence']}} </td>
+                              <td> {{$bill['date_of_birth']}} </td>
+                              <td> <img src="{{$bill['sel_sign']}}" width="100px" height="60px"> </td>
+                              <td> <img src="{{$bill['rep_sign']}}" width="100px" height="60px"> </td>
                             </tr>
-                            <tr>
-                              <td> 2 </td>
-                              <td> Messsy Adam </td>
-                              <td> new york </td>
-                              <td> mti843-468-34 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 3 </td>
-                              <td> John Richards </td>
-                              <td> austria state of the art countery </td>
-                              <td> tl-0142-387-34 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 1 </td>
-                              <td> Herman Beck </td>
-                              <td> london </td>
-                              <td> li93475-45 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
-                              <td> May 15, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 2 </td>
-                              <td> Messsy Adam </td>
-                              <td> new york </td>
-                              <td> mti843-468-34 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                              <td> July 1, 2015 </td>
-                            </tr>
-                            <tr>
-                              <td> 3 </td>
-                              <td> John Richards </td>
-                              <td> austria state of the art countery </td>
-                              <td> tl-0142-387-34 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                              <td> Apr 12, 2015 </td>
-                            </tr>
-                          </tbody>
+                           @endforeach
+                          </tbodyy>
                         </table>
                       </div>
                   </div><!--tab2 -close-->

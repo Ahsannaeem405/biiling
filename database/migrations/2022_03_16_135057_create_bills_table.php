@@ -20,8 +20,8 @@ class CreateBillsTable extends Migration
             $table->string('seller_address');
             $table->string('driv_licence');
             $table->date('date_of_birth')->nullable();
-            $table->string('sel_sign')->nullable();
-            $table->string('rep_sign')->nullable();
+            $table->text('sel_sign')->nullable();
+            $table->text('rep_sign')->nullable();
             $table->timestamps();
         });
     }

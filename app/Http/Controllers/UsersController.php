@@ -7,20 +7,24 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Validation\ValidationException;
-
+use App\Models\Bill;
 use App\Models\User;
 class UsersController extends Controller
 {
     public function index()
     {
         // dd('this is user');
-        return view('user.index');
+        $userid = Auth()->user()->id;
+        $bills = Bill::where('user_id', $userid)->get();
+        return view('user.index', compact('bills'));
     }
 
 
     public function createbill()
     {
+
         return view('user.allbill');
+
     }
 
     
