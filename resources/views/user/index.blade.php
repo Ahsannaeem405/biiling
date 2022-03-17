@@ -85,7 +85,7 @@
                       <!-- signature start -->
                         	<!-- Content -->
                       <div class="row form-group text-left">
-                        <label for="Name">Seller's Signaturwe:</label>
+                        <label for="Name">Seller's Signature:</label>
                       </div>
 
                       <div class="row signRow">
@@ -99,7 +99,7 @@
                         </div> 
                       </div>
                       <div class="row form-group text-left">
-                        <label for="Name">Seller's Signaturwe:</label>
+                        <label for="Name">Seller's Signature:</label>
                       </div>
                       <div class="row signRow">
                         <div class="col-md-12">
