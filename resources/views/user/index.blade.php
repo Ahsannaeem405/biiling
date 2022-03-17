@@ -28,7 +28,7 @@
                     <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
                       <div class="scanner text-center">
                         <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i>
-                        <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
+                        <p class="my-2 my-md-3 text-" onclick="scannerr()"> <strong> Click to scan barcode</strong></p>
 
                         <div class="form-group text-left">
                           <label for="">Please Select Company:</label>
