@@ -49,7 +49,9 @@ Route::group(['prefix' => 'user'], function () {
 
 });
 
-Route::get('imeidetail',[BillsController::class,'imeidetail'])->middleware('auth');
+
+
+Route::get('imeidetail',[BillsController::class,'imeidetail'])->middleware('auth')->name('imeidetail');
 // Route::get('/register',[UsersController::class,'register']);
 // Route::post('/register',[UsersController::class,'adduser']);
 

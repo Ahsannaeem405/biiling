@@ -36,14 +36,8 @@
                     <h4 class="text-center pb-3">Add New Bill</h4>
                     <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
                       <div class="scanner text-center">
-                      <button type="button" name="barcodefield" id="barcodefield" value="">barcode</button>
-                        <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
-                        
-                        <div id="qr-reader" style="width: 400px; margin: auto;"></div>
 
-                        <p class="my-2 my-md-3 text-" onclick="scannerr()"> <strong> Click to scan barcode</strong></p>
-
-                        <div class="form-group text-left">
+                      <div class="form-group text-left">
                           <label for="">Please Select Company:</label>
                           <select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">
                             <option selected>select your mobile</option>
@@ -70,6 +64,15 @@
                             
                           </select>
                         </div>
+
+                      <button type="button" name="barcodefield" id="barcodefield" style="display:none;">barcode</button>
+                        <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
+                        
+                        <div id="qr-reader" style="margin: auto;"></div>
+
+                        <p class="my-2 my-md-3 text-" onclick="scannerr()"> <strong> Click to scan barcode</strong></p>
+
+                        
                         <p id="para">Having problem while scaning barcode?</p>
                       </div>
 
@@ -97,7 +100,7 @@
                       
                       <!-- signature start -->
                         	<!-- Content -->
-                      <div class="row form-group text-left">
+                      <div class=" form-group text-left">
                         <label for="Name">Seller's Signature:</label>
                       </div>
 
@@ -114,7 +117,7 @@
                           <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5"></textarea>
                         </div> 
                       </div>
-                      <div class="row form-group text-left">
+                      <div class="form-group text-left">
                         <label for="Name">Seller's Signature:</label>
                       </div>
                       <div class="row signRow">
@@ -232,6 +235,7 @@
   function onScanSuccess(decodedText, decodedResult) {
     console.log(`Code scanned = ${decodedText}`, decodedResult);
 
+    document.getElementById("imei").value = '';
     document.getElementById("imei").value = decodedText;
     $('#barcodefield').click();
 }
@@ -256,7 +260,7 @@ $("#barcodefield").click(function(){
       
       $.ajax({
           method: 'GET',
-          url: '/imeidetail',
+          url: "{{route('imeidetail')}}",
           data: {imeino: vali, serviceid: optselect},
           success: function( response ){
             if(response == 'low balance')
@@ -363,7 +367,7 @@ $(document).ready(function() {
       
       $.ajax({
           method: 'GET',
-          url: '/imeidetail',
+          url: "{{route('imeidetail')}}",
           data: {imeino: vali, serviceid: optselect},
           success: function( response ){
             if(response == 'low balance')
