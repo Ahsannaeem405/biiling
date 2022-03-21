@@ -36,6 +36,8 @@
                     <h4 class="text-center pb-3">Add New Bill</h4>
                     <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
                       <div class="scanner text-center">
+                      <label for="barcodefield">barcode result:</label>
+                      <input type="text" name="barcodefield" class="form-control" id="barcodefield" placeholder="bardode result">
                         <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
                         
                         <div id="qr-reader" style="width: 600px;"></div>
@@ -225,7 +227,7 @@
 <script>
   function onScanSuccess(decodedText, decodedResult) {
     console.log(`Code scanned = ${decodedText}`, decodedResult);
-    alert(decodedText);
+    document.getElementById("barcodefield").value = decodedText;
 }
 var html5QrcodeScanner = new Html5QrcodeScanner(
 	"qr-reader", { fps: 10, qrbox: 250 });
@@ -292,6 +294,16 @@ html5QrcodeScanner.render(onScanSuccess);
 
         
 </script>
+
+
+<script>
+
+
+
+
+  
+</script>
+
 <script>
 $(document).ready(function() {
   $("#imei").blur(function(){
