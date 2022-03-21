@@ -25,7 +25,6 @@
 
 
 
-                  <div id="qr-reader" style="width: 600px"></div>
 
 <!--  -->
 
@@ -37,7 +36,10 @@
                     <h4 class="text-center pb-3">Add New Bill</h4>
                     <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
                       <div class="scanner text-center">
-                        <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i>
+                        <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
+                        
+                        <div id="qr-reader" style="width: 60%; margin:auto;"></div>
+
                         <p class="my-2 my-md-3 text-" onclick="scannerr()"> <strong> Click to scan barcode</strong></p>
 
                         <div class="form-group text-left">
@@ -225,9 +227,10 @@
 <script>
   function onScanSuccess(decodedText, decodedResult) {
     console.log(`Code scanned = ${decodedText}`, decodedResult);
+    alert(decodedText);
 }
 var html5QrcodeScanner = new Html5QrcodeScanner(
-	"qr-reader", { fps: 10, qrbox: 250 });
+	"qr-reader", { fps: 10, qrbox: 300 });
 html5QrcodeScanner.render(onScanSuccess);
 
 </script>
