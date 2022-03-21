@@ -23,6 +23,16 @@
                     </div>
                   </div><!--mobile-menu-bar-->
 
+
+
+                  <div id="qr-reader" style="width: 600px"></div>
+
+
+
+
+
+
+
                   <div id="tab1" class=" mt-5 px-2 py-4 " >
                     <h4 class="text-center pb-3">Add New Bill</h4>
                     <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
@@ -204,6 +214,47 @@
 
   });
   </script>
+
+
+
+
+<script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+
+
+
+<script>
+  function onScanSuccess(decodedText, decodedResult) {
+    console.log(`Code scanned = ${decodedText}`, decodedResult);
+}
+var html5QrcodeScanner = new Html5QrcodeScanner(
+	"qr-reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
