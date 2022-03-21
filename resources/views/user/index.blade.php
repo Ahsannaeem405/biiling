@@ -36,11 +36,10 @@
                     <h4 class="text-center pb-3">Add New Bill</h4>
                     <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
                       <div class="scanner text-center">
-                      <label for="barcodefield">barcode result:</label>
-                      <input type="text" name="barcodefield" class="form-control" id="barcodefield" placeholder="bardode result">
+                      <button type="button" name="barcodefield" id="barcodefield" value="">barcode</button>
                         <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
                         
-                        <div id="qr-reader" style="width: 600px;"></div>
+                        <div id="qr-reader" style="width: 400px; margin: auto;"></div>
 
                         <p class="my-2 my-md-3 text-" onclick="scannerr()"> <strong> Click to scan barcode</strong></p>
 
@@ -227,11 +226,59 @@
 <script>
   function onScanSuccess(decodedText, decodedResult) {
     console.log(`Code scanned = ${decodedText}`, decodedResult);
-    document.getElementById("barcodefield").value = decodedText;
+
+    document.getElementById("imei").value = decodedText;
+    $('#barcodefield').click();
 }
 var html5QrcodeScanner = new Html5QrcodeScanner(
 	"qr-reader", { fps: 10, qrbox: 250 });
 html5QrcodeScanner.render(onScanSuccess);
+
+
+
+
+
+
+
+
+
+$("#barcodefield").click(function(){
+  var vali = $("#imei").val();
+    var optselect = $('#mobile').val();
+    if(optselect != 'select your mobile')
+    {
+      
+      $.ajax({
+          method: 'GET',
+          url: '/imeidetail',
+          data: {imeino: vali, serviceid: optselect},
+          success: function( response ){
+            if(response == 'low balance')
+            {
+              alert('low balance');
+              $("#billbutton").attr("disabled", true);
+
+            }
+            if(response == 'wronge imei number')
+            {
+              alert('wronge imei number');
+              $("#billbutton").attr("disabled", true);
+            }
+              
+              if(response == 'ok')
+              {
+                $("#billbutton").removeAttr('disabled');
+              }
+          }
+      });
+    } else {
+      alert('please ' + optselect + ' company first');
+      $("#imei").val('');
+    }
+    
+
+  alert('ddddddddddddddddddd');
+});
 
 </script>
 
@@ -296,13 +343,8 @@ html5QrcodeScanner.render(onScanSuccess);
 </script>
 
 
-<script>
 
 
-
-
-  
-</script>
 
 <script>
 $(document).ready(function() {
