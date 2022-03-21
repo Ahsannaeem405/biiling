@@ -7,7 +7,7 @@
             <div class="card login-div col-xl-3 col-lg-4 col-md-6 col-12 mx-auto pb-4" style="box-shadow: 2px 2px 20px grey; border-radius: 20px;">
               <div class="card-body  py-4 ">
                 <h3 class=" text-center mb-5">{{ __('Login') }}</h3>
-                <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
                             <div class="row  ">
                                 <div class="col-12 ">
