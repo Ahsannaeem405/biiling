@@ -58,7 +58,6 @@ Route::get('imeidetail',[BillsController::class,'imeidetail'])->middleware('auth
 // Route::post('/login',[UsersController::class,'login']);
 // Route::any('/logout',[UsersController::class,'logout']);
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->middleware('auth');
-Route::get('test',[BillsController::class,'test'])->middleware('auth')->name('test');
 
 
 

@@ -38,7 +38,7 @@
                       <div class="scanner text-center">
                         <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
                         
-                        <div id="qr-reader" style="width: 60%;"></div>
+                        <div id="qr-reader" style="width: 600px;"></div>
 
                         <p class="my-2 my-md-3 text-" onclick="scannerr()"> <strong> Click to scan barcode</strong></p>
 
