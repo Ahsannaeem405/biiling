@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use\App\Models\Bill;
+use App\Models\Bill;
 use Illuminate\Http\Request;
 
 class BillsController extends Controller
