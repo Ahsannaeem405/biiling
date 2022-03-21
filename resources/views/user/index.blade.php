@@ -103,9 +103,12 @@
 
                       <div class="row signRow">
                         <div class="col-md-12">
-                          <canvas id="" width="620px" height="130px">
+                          <div class="container">
+                          <canvas id=""  height="130px">
                             Get a better browser, bro.
                           </canvas>
+                          </div>
+                       
                           <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
                           <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
                           <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5"></textarea>
@@ -116,9 +119,11 @@
                       </div>
                       <div class="row signRow">
                         <div class="col-md-12">
-                          <canvas id="" width="620px" height="130px">
-                            Get a better browser, bro.
-                          </canvas>
+                          <div class="container">
+                            <canvas id="" width="" height="130px">
+                              Get a better browser, bro.
+                            </canvas>
+                          </div>
                           <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
                           <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
                           <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5"></textarea>
@@ -243,6 +248,7 @@ html5QrcodeScanner.render(onScanSuccess);
 
 
 $("#barcodefield").click(function(){
+  alert('barcode is scan successfully');
   var vali = $("#imei").val();
     var optselect = $('#mobile').val();
     if(optselect != 'select your mobile')
@@ -277,7 +283,7 @@ $("#barcodefield").click(function(){
     }
     
 
-  alert('ddddddddddddddddddd');
+  
 });
 
 </script>

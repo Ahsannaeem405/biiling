@@ -31,7 +31,7 @@
   <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
   <style>
   .signRow {
-  background: #ededed; 
+  background: none !important; 
   padding: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
