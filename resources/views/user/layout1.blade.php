@@ -30,6 +30,27 @@
   <!-- responsive style -->
   <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
   <style>
+  
+#qr-reader #qr-reader__dashboard #qr-reader__dashboard_section div #qr-reader__dashboard_section_csr div button {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  border-radius: 5px;
+}
+#qr-reader #qr-reader__dashboard #qr-reader__dashboard_section div #qr-reader__dashboard_section_swaplink {
+  display:none;
+
+}
+
+
+/* #qr-reader div span {
+  display:none;
+} */
+
+#qr-reader {
+  border:none !important;
+}
+
   .signRow {
   background: none !important; 
   padding: 20px;

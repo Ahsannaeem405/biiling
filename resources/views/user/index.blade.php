@@ -68,9 +68,23 @@
                       <button type="button" name="barcodefield" id="barcodefield" style="display:none;">barcode</button>
                         <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
                         
+
+
+
+
+
                         <div id="qr-reader" style="margin: auto;"></div>
 
-                        <p class="my-2 my-md-3 text-" onclick="scannerr()"> <strong> Click to scan barcode</strong></p>
+
+
+
+
+
+
+
+
+                        
+                        <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
 
                         
                         <p id="para">Having problem while scaning barcode?</p>
@@ -232,6 +246,7 @@
 <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
 
 <script>
+
   function onScanSuccess(decodedText, decodedResult) {
     console.log(`Code scanned = ${decodedText}`, decodedResult);
 
@@ -289,6 +304,24 @@ $("#barcodefield").click(function(){
 
   
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
@@ -394,6 +427,31 @@ $(document).ready(function() {
     }
 
   });
+
+
+
+
+
+
+
+
+
+
+  $("#qr-reader__dashboard_section_csr").click(function(){
+    setTimeout(function() { 
+  
+alert('ddddddd');
+  var length = $('#qr-reader__camera_selection  option').length;
+alert(length);
+
+  var vali = $("#imei").val(length) ;
+
+  }, 2000);
+  });
+
+
+
+
 });
 </script>
 <script>
