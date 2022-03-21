@@ -27,7 +27,7 @@
 
                   <div id="qr-reader" style="width: 600px"></div>
 
-
+<!--  -->
 
 
 
