@@ -46,6 +46,33 @@
 /* #qr-reader div span {
   display:none;
 } */
+#qr-reader__camera_selection {
+  display:none;
+}
+
+#qr-reader__dashboard_section_csr span:first-child {
+  display:none;
+
+}
+
+#qr-reader div:first-child span:first-child {
+  display:none !important;
+}
+
+#qr-reader__status_span {
+  display:none !important;
+}
+
+#qr-reader__dashboard_section_csr button {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  border-radius: 5px;
+}
+
+#qr-reader__dashboard_section_swaplink {
+  display:none !important;
+}
 
 #qr-reader {
   border:none !important;
@@ -85,78 +112,8 @@ canvas {
         
 
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 150px;
-  height: 36px;
-  
-  
-}
 
-.switch input {display:none;}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #1376b1;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 6px;
-  
-}
-
-.slider:before {
-  /* position: absolute; */
-  content: "";
-  height: 34px;
-  width: 12px;
-  top: 1px;
-  left: 1px;
-  right: 1px;
-  bottom: 1px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 6px;
-}
-
-input:checked + .slider {
-    background-color: #1376b1;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(55px);
-}
-
-.slider:after {
-  content:'new bill';
-  text-transform: lowercase;
-  color: white;
-  display: block;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  font-size: 17px;
-  font-family: Verdana, sans-serif;
-}
-input:checked + .slider:after {
-  content:'all bills';
-  text-transform: lowercase;
-  
-
-}
-    </style>
+</style>
 
 </head>
 
