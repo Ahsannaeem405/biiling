@@ -34,7 +34,8 @@
 
                   <div id="tab1" class=" mt-5 px-2 py-4 " >
                     <h4 class="text-center pb-3">Add New Bill</h4>
-                    <form class="text-center px-0 px-lg-5" action="{{route('newbill')}}">
+                    <form class="text-center px-0 px-lg-5" method="POST" action="{{route('newbill')}}">
+                      @csrf
                       <div class="scanner text-center">
 
                       <div class="form-group text-left">

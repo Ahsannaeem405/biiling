@@ -45,7 +45,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('index',[UsersController::class,'index'])->middleware('auth')->name('user/index');
     // Route::get('createbill',[UsersController::class,'createbill'])->middleware('auth')->name('user/createbill');
     // Route::get('savebill',[BillsController::class,'savebill'])->middleware('auth')->name('savebill');
-    Route::get('newbill',[BillsController::class,'newbill'])->middleware('auth')->name('newbill');
+    Route::post('newbill',[BillsController::class,'newbill'])->middleware('auth')->name('newbill');
 
 });
 
