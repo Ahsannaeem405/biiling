@@ -42,31 +42,14 @@
                           <label for="">Please Select Company:</label>
                           <select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">
                             <option selected>select your mobile</option>
-                            <option value="19"> LG  &#x26A1;</option>
-                            <option value="24"> ZTE &#x26A1;</option>
-                            <option value="5"> SONY &#x26A1;</option>
-                            <option value="23"> ACER &#x26A1;</option>
-                            <option value="34"> ASUS &#x26A1;</option>
-                            <option value="39"> OPPO &#x26A1;</option>
-                            <option value="45"> ITEL &#x26A1;</option>
-                            <option value="2"> NOKIA &#x26A1;</option>
-                            <option value="44"> SONIM &#x26A1;</option>
-                            <option value="45"> TECNO &#x26A1;</option>
-                            <option value="15"> HUAWEI &#x26A1;</option>
-                            <option value="22"> LENOVO &#x26A1;</option>
-                            <option value="1"> SAMSUNG &#x26A1;</option>
-                            <option value="17"> ALCATEL &#x26A1;</option>
-                            <option value="36"> ONEPLUS &#x26A1;</option>
-                            <option value="43"> KYOCERA &#x26A1;</option>
-                            <option value="45"> INFINIX &#x26A1;</option>
-                            <option value="13"> MOTOROLA &#x26A1;</option>
-                            <option value="14"> BLACKBERRY &#x26A1;</option>
-                            <option value="42"> GOOGLEPIXEL &#x26A1;</option>
-                            
+                            @foreach($companies as $company)
+
+                            <option value="{{$company->service_id}}"> {{$company->name}}  &#x26A1;</option>
+                            @endforeach
                           </select>
                         </div>
 
-                      <button type="button" name="barcodefield" id="barcodefield" style="display:none;">barcode</button>
+                      <button class="btn btn-primary" type="button" name="barcodefield" id="barcodefield" style="">verify barcode</button>
                         <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
                         
 
@@ -95,7 +78,23 @@
                         <label for="imei">Enter imei No:</label>
                         <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI">
                       </div>
-                      
+                      <div class="form-group text-left mt-4" style="margin: auto; width: 60%;">
+
+                        <table id="imeitable" class="table table-bordered m-auto">
+                          <tr>
+                            <th>Imei NO</th>
+                            <th>Status</th>
+                          </tr>
+                          <tr id="8652180348073495467">
+                          <td> 8652180348073495467</td>
+                          <td> rejected </td>
+                          <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="8652180348073495467">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                          </svg>
+                          </td>
+                          </tr>
+                        </table>
+                      </div>
                       <div class="form-group text-left">
                         <label for="Name">Seller's Name:</label>
                         <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
@@ -115,6 +114,17 @@
                       
                       <!-- signature start -->
                         	<!-- Content -->
+                          <br>
+                      <div class=" form-group text-left px-4">
+                        <p>Seller hereby acknowledges that the above sale price represents the fair market value of said item or items. </p>
+                        <p>Seller is the lawful owner of the above listed items. </p>
+                        <p>Said items are clear of all encumbrances and owner has the right to sell these described items. </p>
+                        <p>Seller hereby certifies that said item has not been stolen and has come to possess said item in a lawful manner. </p>
+                        <p>Seller also makes the representation that the above items are as described, in stated condition, and that all items are 100% authentic and not counterfeit. </p>
+                        <p>Cell Phone Repair Genius LLC will do our best to erase any personal data left on any electronic devices that we purchase; however, we will not be held responsible for any data recovered by any third party, or damages incurred from data left on the device(s). </p>
+                        <p>Please make sure to delete all sensitive data permanently prior to selling your device to Cell Phone Repair Genius LLC. </p>
+                      </div>
+                      <br>
                       <div class=" form-group text-left">
                         <label for="Name">Seller's Signature:</label>
                       </div>
@@ -133,7 +143,7 @@
                         </div> 
                       </div>
                       <div class="form-group text-left">
-                        <label for="Name">Seller's Signature:</label>
+                        <label for="Name">Representative's Signature:</label>
                       </div>
                       <div class="row signRow">
                         <div class="col-md-12">
@@ -253,7 +263,8 @@
 
     document.getElementById("imei").value = '';
     document.getElementById("imei").value = decodedText;
-    $('#barcodefield').click();
+    alert('Barcode is scanned successfully');
+    // $('#barcodefield').click();
 }
 var html5QrcodeScanner = new Html5QrcodeScanner(
 	"qr-reader", { fps: 10, qrbox: 250 });
@@ -268,35 +279,71 @@ html5QrcodeScanner.render(onScanSuccess);
 
 
 $("#barcodefield").click(function(){
-  alert('barcode is scan successfully');
   var vali = $("#imei").val();
     var optselect = $('#mobile').val();
     if(optselect != 'select your mobile')
     {
-      
-      $.ajax({
-          method: 'GET',
-          url: "{{route('imeidetail')}}",
-          data: {imeino: vali, serviceid: optselect},
-          success: function( response ){
-            if(response == 'low balance')
-            {
-              alert('low balance');
-              $("#billbutton").attr("disabled", true);
+        if(vali != '')
+        {
 
-            }
-            if(response == 'wronge imei number')
-            {
-              alert('wronge imei number');
-              $("#billbutton").attr("disabled", true);
-            }
               
-              if(response == 'ok')
+        $.ajax({
+            method: 'GET',
+            url: "{{route('imeidetail')}}",
+            data: {imeino: vali, serviceid: optselect},
+            success: function( response ){
+              if(response == 'low balance or wronge imei No')
               {
-                $("#billbutton").removeAttr('disabled');
+                var html=`<tr id="` + vali + `">
+                  <td> `+ vali + `</td>
+                  <td> rejected </td>
+                  <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="` + vali + `">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                  </td>
+                  </tr>`;
+                $("#billbutton").attr("disabled", true);
+                $('#imeitable').append(html);
+                $('#imei').val('');
+
               }
-          }
-      });
+              if(response == 'wronge imei number')
+              {
+                var html=`<tr id="` + vali + `">
+                  <td> `+ vali + `</td>
+                  <td> rejected </td>
+                  <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="` + vali + `">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                  </td>
+                  </tr>`;
+                alert('wronge imei number');
+                $("#billbutton").attr("disabled", true);
+                $('#imeitable').append(html);
+                $('#imei').val('');
+              }
+                
+                if(response == 'ok')
+                {
+                  var html=`<tr id="` + vali + `">
+                  <td> `+ vali + `</td>
+                  <td> verified </td>
+                  <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="` + vali + `">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                  </td>
+                  </tr>`;
+                  $("#billbutton").removeAttr('disabled');
+                  $('#imeitable').append(html);
+                    $('#imei').val('');
+
+                  
+                }
+            }
+        });
+      } else {
+        alert('Please scan barcode or enter imei number');
+      }
     } else {
       alert('please ' + optselect + ' company first');
       $("#imei").val('');
@@ -307,137 +354,13 @@ $("#barcodefield").click(function(){
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
-<script type="text/javascript">
-  function closeScannerr(){
-    document.getElementById("scandiv").style.display = "none";
-  }
-
-  function scannerr() {
-
-    document.getElementById("scandiv").style.display = "block";
-
-        let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
-        scanner.addListener('scan', function (content) {
-          alert(content);
-          
-        });
-        Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 0) {
-              
-                scanner.start(cameras[0]);
-            } else {
-                console.error('No cameras found.');
-            }
-        }).catch(function (e) {
-            console.error(e);
-        });
-        scanner.addListener('scan',function(c){
-            alert(c);
-            document.getElementById('aadhar').value=c;
-        });
-      }
-
-        
-</script>
-
-
 
 
 
 <script>
 $(document).ready(function() {
-  $("#imei").blur(function(){
-    
-    var vali = $("#imei").val();
-    var optselect = $('#mobile').val();
-    if(optselect != 'select your mobile')
-    {
-      
-      $.ajax({
-          method: 'GET',
-          url: "{{route('imeidetail')}}",
-          data: {imeino: vali, serviceid: optselect},
-          success: function( response ){
-            if(response == 'low balance')
-            {
-              alert('low balance');
-              $("#billbutton").attr("disabled", true);
-
-            }
-            if(response == 'wronge imei number')
-            {
-              alert('wromge imei number');
-              $("#billbutton").attr("disabled", true);
-            }
-              
-              if(response == 'ok')
-              {
-                $("#billbutton").removeAttr('disabled');
-              }
-          }
-      });
-    } else {
-      alert('please ' + optselect + ' company first');
-      $("#imei").val('');
-    }
-
-  });
-
-
-
-
-
-
-
-
-
-
+  
   $("#qr-reader__dashboard_section_csr").click(function(){
     setTimeout(function() { 
       
@@ -448,14 +371,21 @@ $(document).ready(function() {
   }
   // alert(length);
 
-  var vali = $("#imei").val(length) ;
 
-  }, 2000);
+  }, 4000);
   });
 
 
 
+  $(document).on('click', '.crosbtn', function () {
+    var imeino = $(this).attr('iemeno');
+    $( "#"+imeino ).remove();
 
+    // $(event.target).remove()
+  });
+
+
+  
 });
 </script>
 <script>

@@ -9,6 +9,8 @@ use Session;
 use Illuminate\Validation\ValidationException;
 use App\Models\Bill;
 use App\Models\User;
+use App\Models\Mobilecompanie;
+
 class UsersController extends Controller
 {
     public function index()
@@ -16,7 +18,8 @@ class UsersController extends Controller
         // dd('this is user');
         $userid = Auth()->user()->id;
         $bills = Bill::where('user_id', $userid)->get();
-        return view('user.index', compact('bills'));
+        $companies = Mobilecompanie::all();
+        return view('user.index', compact('bills', 'companies'));
     }
 
 

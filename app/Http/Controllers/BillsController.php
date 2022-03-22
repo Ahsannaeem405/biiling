@@ -37,7 +37,7 @@ class BillsController extends Controller
        if($show->status == "error")
        {
 
-        return response()->json('low balance');
+        return response()->json('low balance or wronge imei No');
 
        }
        if($show->status == "rejected")
