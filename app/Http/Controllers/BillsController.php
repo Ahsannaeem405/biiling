@@ -52,8 +52,13 @@ class BillsController extends Controller
     }
 
     public function newbill(Request $request)
-    {
+    { 
+        $imi=implode(",",$request->myfieldid);
+        $status=implode(",",$request->status);
+        $ser_idd=implode(",",$request->ser_idd);
 
+        
+        
         $bill = new Bill;
         $bill->user_id = Auth()->user()->id;
         $bill->seller_name = request()->name;
@@ -62,9 +67,14 @@ class BillsController extends Controller
         $bill->date_of_birth = request()->dob;
         $bill->sel_sign = request()->url1;
         $bill->rep_sign = request()->url2;
-        $bill->service_id = request()->mobcompany;
+        $bill->service_id = $ser_idd;
+        $bill->imi =$imi;
+        $bill->status =$status;
+        
+        
         if($bill->save())
         {
+            dd($bill);
             return back()->with('success', 'New bill created successfull');
         }
         

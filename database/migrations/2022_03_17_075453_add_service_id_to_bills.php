@@ -14,7 +14,7 @@ class AddServiceIdToBills extends Migration
     public function up()
     {
         Schema::table('bills', function (Blueprint $table) {
-            $table->integer('service_id')->nullable();
+            $table->text('service_id')->nullable();
             //
         });
     }
@@ -27,7 +27,7 @@ class AddServiceIdToBills extends Migration
     public function down()
     {
         Schema::table('bills', function (Blueprint $table) {
-            //
+            $table->text('service_id')->nullable();
         });
     }
 }

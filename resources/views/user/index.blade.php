@@ -34,7 +34,7 @@
 
                   <div id="tab1" class=" mt-5 px-2 py-4 " >
                     <h4 class="text-center pb-3">Add New Bill</h4>
-                    <form class="text-center px-0 px-lg-5" method="POST" action="{{route('newbill')}}">
+                    <form class="text-center px-0 px-lg-5" method="POST" action="{{route('newbill')}}" id="form-0">
                       @csrf
                       <div class="scanner text-center">
 
@@ -49,7 +49,7 @@
                           </select>
                         </div>
 
-                      <button class="btn btn-primary" type="button" name="barcodefield" id="barcodefield" style="">verify barcode</button>
+                     
                         <!-- <i class="fa fa-barcode" aria-hidden="true" onclick="scannerr()"></i> -->
                         
 
@@ -72,12 +72,15 @@
 
                         
                         <p id="para">Having problem while scaning barcode?</p>
+                       
                       </div>
+                     
 
                       <div class="form-group text-left" id="imeidiv" style="display:none;">
                         <label for="imei">Enter imei No:</label>
                         <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI">
                       </div>
+                      <button class="btn btn-primary" type="button" name="barcodefield" id="barcodefield" style="">verify barcode</button>
                       <div class="form-group text-left mt-4" style="margin: auto; width: 60%;">
 
                         <table id="imeitable" class="table table-bordered m-auto">
@@ -85,27 +88,20 @@
                             <th>Imei NO</th>
                             <th>Status</th>
                           </tr>
-                          <tr id="8652180348073495467">
-                          <td> 8652180348073495467</td>
-                          <td> rejected </td>
-                          <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="8652180348073495467">
-                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
-                          </svg>
-                          </td>
-                          </tr>
+                         
                         </table>
                       </div>
                       <div class="form-group text-left">
                         <label for="Name">Seller's Name:</label>
-                        <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
+                        <input type="text" class="form-control" id="Name" name="name" placeholder="Name" required>
                       </div>
                       <div class="form-group text-left">
                         <label for="address">Seller's Address:</label>
-                        <textarea class="form-control" id="address" name="address" placeholder="seller address"></textarea>
+                        <textarea class="form-control" id="address" name="address" placeholder="seller address" required></textarea>
                       </div>
                       <div class="form-group text-left">
                         <label for="license">Drivers License #:</label>
-                        <input type="text" class="form-control" name="license" id="license" placeholder="license number">
+                        <input type="text" class="form-control" name="license" id="license" placeholder="license number" required>
                       </div>
                       <div class="form-group text-left">
                         <label for="dob">DOB:</label>
@@ -139,7 +135,7 @@
                        
                           <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
                           <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5"></textarea>
+                          <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5" ></textarea>
                         </div> 
                       </div>
                       <div class="form-group text-left">
@@ -153,8 +149,8 @@
                             </canvas>
                           </div>
                           <button type="button" class="btn btn-primary sig-submitBtn" id="">Submit Signature</button>
-                          <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5"></textarea>
+                          <button type="button" class="btn btn-default sig-clearBtn" id="" >Clear Signature</button>
+                          <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5" ></textarea>
                         </div> 
                       </div>
                       
@@ -279,6 +275,8 @@ html5QrcodeScanner.render(onScanSuccess);
 
 
 $("#barcodefield").click(function(){
+  
+
   var vali = $("#imei").val();
     var optselect = $('#mobile').val();
     if(optselect != 'select your mobile')
@@ -294,7 +292,7 @@ $("#barcodefield").click(function(){
             success: function( response ){
               if(response == 'low balance or wronge imei No')
               {
-                var html=`<tr id="` + vali + `">
+                var html=`<tr class="` + vali + `">
                   <td> `+ vali + `</td>
                   <td> rejected </td>
                   <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="` + vali + `">
@@ -306,10 +304,28 @@ $("#barcodefield").click(function(){
                 $('#imeitable').append(html);
                 $('#imei').val('');
 
+
+                
+                $("<input type='text' value=" + vali + "/>")
+                .attr("class", vali)
+                .attr("name", "myfieldid[]")
+                .appendTo("#form-0");
+
+                $("<input type='text' value='rejected'/>")
+                .attr("class", vali)
+                .attr("name", "status[]")
+                .appendTo("#form-0");
+                $("<input type='text' value=" + optselect + ">")
+                .attr("class", vali)
+                .attr("name", "ser_idd[]")
+                .appendTo("#form-0");
+
+                
+
               }
               if(response == 'wronge imei number')
               {
-                var html=`<tr id="` + vali + `">
+                var html=`<tr class="` + vali + `">
                   <td> `+ vali + `</td>
                   <td> rejected </td>
                   <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="` + vali + `">
@@ -318,14 +334,28 @@ $("#barcodefield").click(function(){
                   </td>
                   </tr>`;
                 alert('wronge imei number');
-                $("#billbutton").attr("disabled", true);
+                $("#billbutton").attr("disabled", false);
                 $('#imeitable').append(html);
                 $('#imei').val('');
+
+
+                $("<input type='text' value=" + vali + " />")
+                .attr("class", vali)
+                .attr("name", "myfieldid[]")
+                .appendTo("#form-0");
+                $("<input type='text' value='rejected'/>")
+                .attr("class", vali)
+                .attr("name", "status[]")
+                .appendTo("#form-0");
+                $("<input type='text' value=" + optselect + ">")
+                .attr("class", vali)
+                .attr("name", "ser_idd[]")
+                .appendTo("#form-0");
               }
                 
                 if(response == 'ok')
                 {
-                  var html=`<tr id="` + vali + `">
+                  var html=`<tr class="` + vali + `">
                   <td> `+ vali + `</td>
                   <td> verified </td>
                   <td><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-x crosbtn" viewBox="0 0 16 16" iemeno="` + vali + `">
@@ -336,6 +366,20 @@ $("#barcodefield").click(function(){
                   $("#billbutton").removeAttr('disabled');
                   $('#imeitable').append(html);
                     $('#imei').val('');
+
+
+                  $("<input type='text' value=" + vali + " />")
+                  .attr("class", vali)
+                  .attr("name", "myfieldid[]")
+                  .appendTo("#form-0");
+                  $("<input type='text' value='verified'/>")
+                  .attr("class", vali)
+                  .attr("name", "status[]")
+                  .appendTo("#form-0");
+                  $("<input type='text' value=" + optselect + ">")
+                .attr("class", vali)
+                .attr("name", "ser_idd[]")
+                .appendTo("#form-0");
 
                   
                 }
@@ -379,7 +423,7 @@ $(document).ready(function() {
 
   $(document).on('click', '.crosbtn', function () {
     var imeino = $(this).attr('iemeno');
-    $( "#"+imeino ).remove();
+    $( "."+imeino ).remove();
 
     // $(event.target).remove()
   });
