@@ -327,16 +327,16 @@ $("#barcodefield").click(function(){
 
 
                 
-                $("<input type='text' value=" + vali + "/>")
+                $("<input type='hidden' value=" + vali + "/>")
                 .attr("class", vali)
                 .attr("name", "myfieldid[]")
                 .appendTo("#form-0");
 
-                $("<input type='text' value='rejected'/>")
+                $("<input type='hidden' value='rejected'/>")
                 .attr("class", vali)
                 .attr("name", "status[]")
                 .appendTo("#form-0");
-                $("<input type='text' value=" + optselect + ">")
+                $("<input type='hidden' value=" + optselect + ">")
                 .attr("class", vali)
                 .attr("name", "ser_idd[]")
                 .appendTo("#form-0");
@@ -360,15 +360,15 @@ $("#barcodefield").click(function(){
                 $('#imei').val('');
 
 
-                $("<input type='text' value=" + vali + " />")
+                $("<input type='hidden' value=" + vali + " />")
                 .attr("class", vali)
                 .attr("name", "myfieldid[]")
                 .appendTo("#form-0");
-                $("<input type='text' value='rejected'/>")
+                $("<input type='hidden' value='rejected'/>")
                 .attr("class", vali)
                 .attr("name", "status[]")
                 .appendTo("#form-0");
-                $("<input type='text' value=" + optselect + ">")
+                $("<input type='hidden' value=" + optselect + ">")
                 .attr("class", vali)
                 .attr("name", "ser_idd[]")
                 .appendTo("#form-0");
@@ -389,15 +389,15 @@ $("#barcodefield").click(function(){
                     $('#imei').val('');
 
 
-                  $("<input type='text' value=" + vali + " />")
+                  $("<input type='hidden' value=" + vali + " />")
                   .attr("class", vali)
                   .attr("name", "myfieldid[]")
                   .appendTo("#form-0");
-                  $("<input type='text' value='verified'/>")
+                  $("<input type='hidden' value='verified'/>")
                   .attr("class", vali)
                   .attr("name", "status[]")
                   .appendTo("#form-0");
-                  $("<input type='text' value=" + optselect + ">")
+                  $("<input type='hidden' value=" + optselect + ">")
                 .attr("class", vali)
                 .attr("name", "ser_idd[]")
                 .appendTo("#form-0");

@@ -74,7 +74,7 @@ class BillsController extends Controller
         
         if($bill->save())
         {
-            dd($bill);
+           
             return back()->with('success', 'New bill created successfull');
         }
         
