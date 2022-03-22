@@ -172,8 +172,8 @@
                           <tbody>
                             @foreach($bills as $bill)
                             <tr>
-                            <td> {{$bill->mobileName->name}} </td>
-
+                            <!-- <td> {{$bill->mobileName->name}} </td> -->
+                              <td> mobile name</td>
                               <td> {{$bill['seller_name']}} </td>
                               <td> {{$bill['seller_address']}} </td>
                               <td> {{$bill['driv_licence']}} </td>
