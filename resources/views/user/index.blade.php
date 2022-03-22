@@ -74,6 +74,23 @@
                         <p id="para">Having problem while scaning barcode?</p>
                        
                       </div>
+                      <style>
+                        .loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+                      </style>
+                      <div class="loader" style="display:none;"></div>
+
                      
 
                       <div class="form-group text-left" id="imeidiv">
@@ -283,6 +300,7 @@ $("#barcodefield").click(function(){
     {
         if(vali != '')
         {
+          $(".loader").css("display", "block");
 
               
         $.ajax({
@@ -290,6 +308,7 @@ $("#barcodefield").click(function(){
             url: "{{route('imeidetail')}}",
             data: {imeino: vali, serviceid: optselect},
             success: function( response ){
+              $(".loader").css("display", "none");
               if(response == 'low balance or wronge imei No')
               {
                 var html=`<tr class="` + vali + `">
