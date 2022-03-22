@@ -82,6 +82,8 @@
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
+  margin: auto;
+
 }
 
 @keyframes spin {
