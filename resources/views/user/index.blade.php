@@ -76,7 +76,7 @@
                       </div>
                      
 
-                      <div class="form-group text-left" id="imeidiv" style="display:none;">
+                      <div class="form-group text-left" id="imeidiv">
                         <label for="imei">Enter imei No:</label>
                         <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI">
                       </div>
