@@ -439,10 +439,13 @@ $(document).ready(function() {
 
   $("#qr-reader__dashboard_section_csr").click(function(){
     setTimeout(function() { 
-  
-alert('ddddddd');
+      
   var length = $('#qr-reader__camera_selection  option').length;
-alert(length);
+  if(length > 1)
+  {
+    $("#qr-reader__camera_selection option:last").attr("selected", "selected");
+  }
+  // alert(length);
 
   var vali = $("#imei").val(length) ;
 
