@@ -425,7 +425,8 @@ $("#barcodefield").click(function(){
 
 <script>
 $(document).ready(function() {
-  $("div#qr-reader__dashboard_section_csr button").click(function(){
+  
+  $("#qr-reader__dashboard_section_csr").click(function(){
     setTimeout(function() { 
       
   var length = $('#qr-reader__camera_selection  option').length;
@@ -437,7 +438,7 @@ $(document).ready(function() {
   // alert(length);
 
 
-  }, 2000);
+  }, 7000);
   });
 
 
