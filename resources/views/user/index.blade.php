@@ -425,11 +425,11 @@ $("#barcodefield").click(function(){
 
 <script>
 $(document).ready(function() {
-  
-  $("#qr-reader__dashboard_section_csr").click(function(){
+  $("div#qr-reader__dashboard_section_csr button").click(function(){
     setTimeout(function() { 
       
   var length = $('#qr-reader__camera_selection  option').length;
+  alert(length);
   if(length > 1)
   {
     $("#qr-reader__camera_selection option:last").attr("selected", "selected");
@@ -437,7 +437,7 @@ $(document).ready(function() {
   // alert(length);
 
 
-  }, 4000);
+  }, 2000);
   });
 
 
