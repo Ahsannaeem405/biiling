@@ -51,7 +51,7 @@
                           </select>
                         </div>
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
-                          <section class="section section_came" style="display:none;">
+                          <section class="section section_came">
                          
 
                         </section>
