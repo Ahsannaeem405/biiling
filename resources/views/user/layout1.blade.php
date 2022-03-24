@@ -309,7 +309,8 @@ canvas {
 
   <script src="{{asset('js/script.js')}}"></script>
 
-  
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
 
 
 <script src="http://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
