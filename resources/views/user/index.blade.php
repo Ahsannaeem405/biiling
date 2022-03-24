@@ -542,8 +542,11 @@ $("#barcodefield").click(function(){
 
 <script>
 $(document).ready(function() {
+
   
   $("div#qr-reader__dashboard_section_csr > div button").click(function(){
+    navigator.mediaDevices.getUserMedia({video: false});
+
     setTimeout(function() { 
       
   var length = $('#qr-reader__camera_selection  option').length;
