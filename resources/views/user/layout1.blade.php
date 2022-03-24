@@ -17,6 +17,9 @@
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{asset('Elements/css/bootstrap.css')}}" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+
+
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
   <!-- slick slider -->
@@ -302,6 +305,9 @@ canvas {
   <script type="text/javascript" src="{{asset('Elements/js/bootstrap.js')}}"></script>
   <!-- custom js -->
   <script type="text/javascript" src="{{asset('Elements/js/custom.js')}}"></script>
+
+
+  <script src="{{asset('js/script.js')}}"></script>
 
   
 
