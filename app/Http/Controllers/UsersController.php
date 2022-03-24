@@ -15,6 +15,7 @@ class UsersController extends Controller
 {
     public function index()
     {
+         
         // dd('this is user');
         $userid = Auth()->user()->id;
         $bills = Bill::where('user_id', $userid)->get();

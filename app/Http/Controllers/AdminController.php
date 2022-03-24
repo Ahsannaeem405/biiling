@@ -13,6 +13,8 @@ class AdminController extends Controller
 
     public function index()
     {
+          
+
         $bills = Bill::all();
         return view('admin.index', compact('bills'));
     }
