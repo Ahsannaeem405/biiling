@@ -51,7 +51,7 @@
                           </select>
                         </div>
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
-                          <section class="section section_came" style="display:none;">
+                          <section class="section section_came" id="section_cameye" style="display:none;">
                           <div class="container">
                             <div class="columns">
                               <div class="column is-four-fifths">
@@ -578,7 +578,7 @@ $(document).ready(function() {
   setTimeout(function() { 
     $("#btnChangeCamera").click();
 
-    var x = document.getElementByClassName("section_came");
+    var x = document.getElementById("section_cameye");
     alert(x);
     if (x.style.display === "none") {
       x.style.display = "block";
