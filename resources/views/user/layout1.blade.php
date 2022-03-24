@@ -55,6 +55,15 @@
 
 }
 
+
+#qr-reader__dashboard_section_csr span:last-child button {
+  display:none;
+
+}
+
+
+
+
 #qr-reader div:first-child span:first-child {
   display:none !important;
 }
