@@ -65,10 +65,11 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td> 1 </td>
-                              <td> Herman Beck </td>
-                              <td> abc@xyz.com</td>
+                          @foreach($users as $user)
+                          <tr>
+                              <td> {{$user->id}} </td>
+                              <td> {{$user->name}}  </td>
+                              <td> {{$user->email}} </td>
                               <td class="d-flex justify-content-center">
                               <button type="button" class="btn btn-outline-primary mx-3  d-flex justify-content-center align-items-center"  data-toggle="modal" data-target="#exampleModal">
                                 <i class="fa fa-pencil-square-o px-2" aria-hidden="true"></i>
@@ -80,51 +81,7 @@
                               </button>
                               </td>
                             </tr>
-                            <tr>
-                              <td> 2 </td>
-                              <td> Herman Beck </td>
-                              <td> abc@xyz.com</td>
-                              <td class="d-flex justify-content-center">
-                              <button type="button" class="btn btn-outline-primary mx-3  d-flex justify-content-center align-items-center"  data-toggle="modal" data-target="#exampleModal">
-                                <i class="fa fa-pencil-square-o px-2" aria-hidden="true"></i>
-                                <span class="d-none d-md-block">Edit</span>
-                              </button>
-                              <button type="button" class="btn btn-outline-danger d-flex justify-content-center align-items-center">
-                                <i class="fa fa-trash-o px-2" aria-hidden="true"></i>
-                                <span class="d-none d-md-block"> Delete</span>
-                              </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 3 </td>
-                              <td> Herman Beck </td>
-                              <td> abc@xyz.com</td>
-                              <td class="d-flex justify-content-center">
-                              <button type="button" class="btn btn-outline-primary mx-3  d-flex justify-content-center align-items-center"  data-toggle="modal" data-target="#exampleModal">
-                                <i class="fa fa-pencil-square-o px-2" aria-hidden="true"></i>
-                                <span class="d-none d-md-block">Edit</span>
-                              </button>
-                              <button type="button" class="btn btn-outline-danger d-flex justify-content-center align-items-center">
-                                <i class="fa fa-trash-o px-2" aria-hidden="true"></i>
-                                <span class="d-none d-md-block"> Delete</span>
-                              </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 1 </td>
-                              <td> Herman Beck </td>
-                              <td> abc@xyz.com</td>
-                              <td class="d-flex justify-content-center">
-                              <button type="button" class="btn btn-outline-primary mx-3  d-flex justify-content-center align-items-center"  data-toggle="modal" data-target="#exampleModal">
-                                <i class="fa fa-pencil-square-o px-2" aria-hidden="true"></i>
-                                <span class="d-none d-md-block">Edit</span>
-                              </button>
-                              <button type="button" class="btn btn-outline-danger d-flex justify-content-center align-items-center">
-                                <i class="fa fa-trash-o px-2" aria-hidden="true"></i>
-                                <span class="d-none d-md-block"> Delete</span>
-                              </button>
-                              </td>
-                            </tr>
+                          @endforeach
                           </tbody>
                         </table>
                       </div>

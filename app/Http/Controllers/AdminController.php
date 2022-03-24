@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bill;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -17,7 +18,8 @@ class AdminController extends Controller
     }
     public function user()
     {
-        return view('admin.user');
+        $users = User::where('role', '2')->get();
+        return view('admin.user', compact('users'));
     }
 
     public function sells()

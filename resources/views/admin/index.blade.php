@@ -30,6 +30,7 @@
                         <table class="table table-bordered">
                         <thead>
                             <tr>
+                              <th> user name </th>
                               <th> Mobile </th>
                               <th> Seller name </th>
                               <th> Seller address </th>
@@ -42,6 +43,7 @@
                           <tbody>
                             @foreach($bills as $bill)
                             <tr>
+                            <td> {{$bill->user->name}} </td>
                             <td> {{$bill->mobileName->name}} </td>
 
                               <td> {{$bill['seller_name']}} </td>
