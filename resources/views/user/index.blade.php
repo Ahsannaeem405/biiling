@@ -571,6 +571,7 @@ $(document).ready(function() {
     // $(event.target).remove()
   });
   $(document).on('click', '.open_cam', function () {
+    initializeCamera();
   $(".section_came").css('display','block');
 });
 
