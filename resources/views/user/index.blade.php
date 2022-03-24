@@ -57,22 +57,22 @@
                               <div class="column is-four-fifths">
                                 
                                 <video autoplay id="video"></video>
-                                <button class="button is-hidden" id="btnPlay">
+                                <button type="button" class="button is-hidden" id="btnPlay">
                                   <span class="icon is-small">
                                     <i class="fas fa-play"></i>
                                   </span>
                                 </button>
-                                <button class="button" id="btnPause">
+                                <button type="button" class="button" id="btnPause">
                                   <span class="icon is-small">
                                     <i class="fas fa-pause"></i>
                                   </span>
                                 </button>
-                                <button class="button is-success" id="btnScreenshot">
+                                <button type="button" class="button is-success" id="btnScreenshot">
                                   <span class="icon is-small">
                                     <i class="fas fa-camera"></i>
                                   </span>
                                 </button>
-                                <button class="button" id="btnChangeCamera">
+                                <button type="button" class="button" id="btnChangeCamera">
                                   <span class="icon">
                                     <i class="fas fa-sync-alt"></i>
                                   </span>
