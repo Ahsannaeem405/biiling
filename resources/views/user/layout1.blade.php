@@ -56,7 +56,7 @@
 }
 
 
-#qr-reader__dashboard_section_csr span:last-child button {
+#qr-reader__dashboard_section_csr span:last-child button:first-child {
   display:none;
 
 }
