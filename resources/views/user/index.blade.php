@@ -1,4 +1,3 @@
-
 @extends('user.layout1')
 @section('content')
     <div class="container mt-3">
