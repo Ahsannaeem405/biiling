@@ -1,4 +1,7 @@
 @extends('user.layout1')
+  @section('css')
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+@endsection
 @section('content')
     <div class="container mt-3">
       <div class="heading_container heading_center">
@@ -47,45 +50,44 @@
                             @endforeach
                           </select>
                         </div>
-                          <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-four-fifths">
-          <h1 class="title">
-            JavaScript Camera
-          </h1>
-          <video autoplay id="video"></video>
-          <button class="button is-hidden" id="btnPlay">
-            <span class="icon is-small">
-              <i class="fas fa-play"></i>
-            </span>
-          </button>
-          <button class="button" id="btnPause">
-            <span class="icon is-small">
-              <i class="fas fa-pause"></i>
-            </span>
-          </button>
-          <button class="button is-success" id="btnScreenshot">
-            <span class="icon is-small">
-              <i class="fas fa-camera"></i>
-            </span>
-          </button>
-          <button class="button" id="btnChangeCamera">
-            <span class="icon">
-              <i class="fas fa-sync-alt"></i>
-            </span>
-            <span>Switch camera</span>
-          </button>
-        </div>
-        <div class="column">
-          <h2 class="title">Screenshots</h2>
-          <div id="screenshots"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+                        <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
+                          <section class="section section_came" style="display:none;">
+                          <div class="container">
+                            <div class="columns">
+                              <div class="column is-four-fifths">
+                                
+                                <video autoplay id="video"></video>
+                                <button class="button is-hidden" id="btnPlay">
+                                  <span class="icon is-small">
+                                    <i class="fas fa-play"></i>
+                                  </span>
+                                </button>
+                                <button class="button" id="btnPause">
+                                  <span class="icon is-small">
+                                    <i class="fas fa-pause"></i>
+                                  </span>
+                                </button>
+                                <button class="button is-success" id="btnScreenshot">
+                                  <span class="icon is-small">
+                                    <i class="fas fa-camera"></i>
+                                  </span>
+                                </button>
+                                <button class="button" id="btnChangeCamera">
+                                  <span class="icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                  </span>
+                                  <span>Switch camera</span>
+                                </button>
+                              </div>
+                              <div class="column">
+                               
+                                <div id="screenshots"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
 
-    <canvas class="is-hidden" id="canvas"></canvas>
+  <canvas class="is-hidden" id="canvas"></canvas>
 
 
                      
@@ -407,6 +409,7 @@ html5QrcodeScanner.render(onScanSuccess);
 
 
 
+
 $("#barcodefield").click(function(){
   
 
@@ -567,6 +570,10 @@ $(document).ready(function() {
 
     // $(event.target).remove()
   });
+  $(document).on('click', '.open_cam', function () {
+  $(".section_came").css('display','block');
+});
+
 
 
   

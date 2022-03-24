@@ -17,7 +17,6 @@
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{asset('Elements/css/bootstrap.css')}}" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
 
 
   <!-- fonts style -->
@@ -32,6 +31,8 @@
   <link href="{{asset('Elements/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
+  @yield('css')
+
     <style>
   
 #qr-reader #qr-reader__dashboard #qr-reader__dashboard_section div #qr-reader__dashboard_section_csr div button {
