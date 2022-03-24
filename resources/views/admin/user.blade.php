@@ -65,22 +65,58 @@
                             </tr>
                           </thead>
                           <tbody>
+                            @php $f=0; @endphp
                           @foreach($users as $user)
+                          @php $f++; @endphp
                           <tr>
                               <td> {{$user->id}} </td>
                               <td> {{$user->name}}  </td>
                               <td> {{$user->email}} </td>
                               <td class="d-flex justify-content-center">
-                              <button type="button" class="btn btn-outline-primary mx-3  d-flex justify-content-center align-items-center"  data-toggle="modal" data-target="#exampleModal">
+                              <button type="button" class="btn btn-outline-primary mx-3  d-flex justify-content-center align-items-center"  data-toggle="modal" data-target="#exampleModal{{$f}}">
                                 <i class="fa fa-pencil-square-o px-2" aria-hidden="true"></i>
                                 <span class="d-none d-md-block">Edit</span>
                               </button>
+                              <a href="{{url('admins/delete/' .$user->id)}}" title="delete" class="delete" onclick="return confirm('Are you sure you want to delete this item')">
+
                               <button type="button" class="btn btn-outline-danger d-flex justify-content-center align-items-center">
                                 <i class="fa fa-trash-o px-2" aria-hidden="true"></i>
                                 <span class="d-none d-md-block"> Delete</span>
-                              </button>
+                              </button></a>
                               </td>
                             </tr>
+                            <div class="modal fade mt-5" id="exampleModal{{$f}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5>Edit User</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                      
+                                      <form class="text-center px-0 px-lg-5" method="POST" action="{{url('admins/update_user')}}" id="form-0">
+                                        @csrf  
+                                                    
+                                                <div class="form-group text-left">
+                                                    <label for="Name">User Name:</label>
+                                                    <input type="text" class="form-control" id="UName" placeholder="User Name" value="{{$user->name}}" name="name">
+                                                    <input type="hidden" class="form-control" id="UName" placeholder="User Name" value="{{$user->id}}" name="id">
+                                                  </div>
+                                                
+                                                  <div class="form-group text-left">
+                                                    <label for="address">Email</label>
+                                                    <input type="email" class="form-control" id="email" placeholder="User Email" value="{{$user->email}}" name="email">
+                                                  </div>
+                                                 
+                                                  
+                                                  <button type="submit" class="btn btn-primary text-center">Save Changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
                           @endforeach
                           </tbody>
                         </table>
@@ -95,44 +131,7 @@
 
       <!-- my theme-card end -->
 <!-- Modal -->
-<div class="modal fade mt-5" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form class="text-center px-0 px-lg-5">
-                        <h3>Edit User</h3>
-                    <div class="form-group text-left">
-                        <label for="Name">User Name:</label>
-                        <input type="text" class="form-control" id="UName" placeholder="User Name">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="Name">First Name:</label>
-                        <input type="text" class="form-control" id="fName" placeholder="First Name">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="Name">Last Name:</label>
-                        <input type="text" class="form-control" id="lName" placeholder="Last Name">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="address">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="User Email">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="address">Password</label>
-                        <input type="password" class="form-control" id="lName" placeholder="User Password">
-                      </div>
-                      
-                      <button type="submit" class="btn btn-primary text-center">Save Changes</button>
-            </form>
-        </div>
-    </div>
-  </div>
-</div>
+
 
 
 <div class="container-fluid p-5" id="scandiv" style="display:none;">

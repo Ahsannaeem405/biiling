@@ -41,20 +41,92 @@
                             </tr>
                           </thead>
                           <tbody>
+                            
+                              
+                            @php $f=0; @endphp
                             @foreach($bills as $bill)
-                            <tr>
-                            <td> {{$bill->user->name}} </td>
-                            <td> {{$bill->mobileName->name}} </td>
+                           
+                            @php $f++;
+                                $imi=explode(",",$bill->imi);
+                                $status=explode(",",$bill->status);
+                                $service_id=explode(",",$bill->service_id);
 
+                             @endphp
+                             
+                            <tr>
+                            <td>{{$bill->user->name}} </td>
                               <td> {{$bill['seller_name']}} </td>
                               <td> {{$bill['seller_address']}} </td>
                               <td> {{$bill['driv_licence']}} </td>
                               <td> {{$bill['date_of_birth']}} </td>
                               <td> <img src="{{$bill['sel_sign']}}" width="100px" height="60px"> </td>
                               <td> <img src="{{$bill['rep_sign']}}" width="100px" height="60px"> </td>
+                              <td>
+  
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$f}}">
+                                    View Mobile list
+                                  </button>
+
+                                  <!-- The Modal -->
+                                  <div class="modal" id="myModal{{$f}}">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                      
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">Mobile</h4>
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                         <table class="table">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">#</th>
+                                              <th scope="col">Mobile</th>
+                                              <th scope="col">Imi</th>
+                                              <th scope="col">Status</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+      
+      
+
+                                             @for ($i=0; $i < count($imi); $i++)
+                                            
+                                             @php 
+                                                                          $mob=App\Models\Mobilecompanie::find($service_id[$i]);
+                                                                          @endphp
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>@if($mob!=null)
+                                                {{$mob->name}}
+                                              @endif</td>
+                                              <td>{{$status[$i]}}</td>
+                                              <td>{{$imi[$i]}}</td>
+                                            </tr>
+                                           
+                                            @endfor
+                                          </tbody>
+                                        </table>
+                                          
+                                          <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+                                          
+                                      </div>
+                                    </div>
+                                  </div>
+                                    
+                                </div>
+                              </td>
                             </tr>
                            @endforeach
-                          </tbodyy>
+                            
+                            
+                          </tbody>
                         </table>
                       </div>
                   </div><!--tab2 -close-->

@@ -13,7 +13,7 @@ class AdminController extends Controller
 
     public function index()
     {
-          
+
 
         $bills = Bill::all();
         return view('admin.index', compact('bills'));
@@ -33,4 +33,20 @@ class AdminController extends Controller
     {
         return view('admin.settings');
     }
+    public function update_user(Request $req)
+    {
+        $data = User::find($req->id);
+        $data->name = $req->name;
+        $data->email = $req->email;
+        $data->update();
+        return back()->with('success', 'User Update Successfully');
+    }
+    public function delete($id)
+    {
+        $data = User::find($id);
+        $data->delete();
+        return back()->with('success', 'User  Delete Successfully');
+    }
+    
+    
 }

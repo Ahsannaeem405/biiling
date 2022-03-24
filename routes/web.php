@@ -35,6 +35,10 @@ Route::group(['prefix' => 'admins'], function () {
     Route::get('sells',[AdminController::class,'sells'])->middleware('auth');
 
     Route::get('settings',[AdminController::class,'settings'])->middleware('auth');
+    Route::post('update_user',[AdminController::class,'update_user']);
+    Route::get('delete/{id}',[AdminController::class,'delete']);
+
+
 
 });
 
