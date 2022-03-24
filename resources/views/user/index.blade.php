@@ -578,8 +578,15 @@ $(document).ready(function() {
   setTimeout(function() { 
     $("#btnChangeCamera").click();
 
+    var x = document.getElementByClassName("section_came");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+
     
-    $(".section_came").css('display','block');
+    
   }, 2000);
 
 });
