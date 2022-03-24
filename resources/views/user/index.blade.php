@@ -431,7 +431,7 @@ $("#barcodefield").click(function(){
 <script>
 $(document).ready(function() {
   
-  $("#qr-reader__dashboard_section_csr").click(function(){
+  $("div#qr-reader__dashboard_section_csr > div button").click(function(){
     setTimeout(function() { 
       
   var length = $('#qr-reader__camera_selection  option').length;
@@ -440,12 +440,13 @@ $(document).ready(function() {
   {
     $("#qr-reader__camera_selection option:last").attr("selected", "selected");
   }
+
+
+  $("div#qr-reader__dashboard_section_csr span:last-child button").css('display', 'block');
   // alert(length);
 
 
-
-
-  }, 7000);
+  }, 4000);
   });
 
 
