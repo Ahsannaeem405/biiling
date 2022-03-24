@@ -573,8 +573,9 @@ $(document).ready(function() {
     // $(event.target).remove()
   });
   $(document).on('click', '.open_cam', function () {
+  $("#qr-reader__dashboard_section_csr > div button").click();
   $("#btnChangeCamera").click();
-   $("#qr-reader__dashboard_section_csr > div button").click();
+
   
   $(".section_came").css('display','block');
 
