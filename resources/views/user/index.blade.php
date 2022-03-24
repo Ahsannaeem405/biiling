@@ -574,7 +574,10 @@ $(document).ready(function() {
   });
   $(document).on('click', '.open_cam', function () {
   $("#btnChangeCamera").click();
+   $("#qr-reader__dashboard_section_csr > div button").click();
+  
   $(".section_came").css('display','block');
+
 });
 
 
