@@ -579,7 +579,6 @@ $(document).ready(function() {
     $("#btnChangeCamera").click();
 
     var x = document.getElementById("section_cameye");
-    alert(x);
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
