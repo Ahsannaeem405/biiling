@@ -66,6 +66,7 @@
 
 #qr-reader div:first-child span:first-child {
   display:none !important;
+  
 }
 
 #qr-reader__status_span {
