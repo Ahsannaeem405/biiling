@@ -274,12 +274,17 @@
 <script>
 
   function onScanSuccess(decodedText, decodedResult) {
+
     console.log(`Code scanned = ${decodedText}`, decodedResult);
 
     document.getElementById("imei").value = '';
     document.getElementById("imei").value = decodedText;
     alert('Barcode is scanned successfully');
-    // $('#barcodefield').click();
+    $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+  
+       
+
+
 }
 var html5QrcodeScanner = new Html5QrcodeScanner(
 	"qr-reader", { fps: 10, qrbox: 250 });
@@ -436,6 +441,8 @@ $(document).ready(function() {
     $("#qr-reader__camera_selection option:last").attr("selected", "selected");
   }
   // alert(length);
+
+
 
 
   }, 7000);
