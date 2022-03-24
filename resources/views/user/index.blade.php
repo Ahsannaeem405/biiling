@@ -545,7 +545,6 @@ $(document).ready(function() {
 
   
   $("div#qr-reader__dashboard_section_csr > div button").click(function(){
-    navigator.mediaDevices.getUserMedia({video: false});
 
     setTimeout(function() { 
       

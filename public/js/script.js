@@ -67,6 +67,7 @@
   // switch camera
   btnChangeCamera.addEventListener("click", function () {
     useFrontCamera = !useFrontCamera;
+    alert(useFrontCamera);
 
     initializeCamera();
   });
