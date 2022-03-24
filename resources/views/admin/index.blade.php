@@ -1,4 +1,3 @@
-
 @extends('admin.layout')
 @section('content')
     <div class="container mt-3">
@@ -10,7 +9,7 @@
         </label>
         </h2> -->
       </div >
-      
+
 
       <section class="theme-navtab">
         <div class="container">

@@ -10,11 +10,23 @@ use Illuminate\Validation\ValidationException;
 use App\Models\Bill;
 use App\Models\User;
 use App\Models\Mobilecompanie;
-
+use thiagoalessio\TesseractOCR\TesseractOCR;
+use File;
 class UsersController extends Controller
 {
     public function index()
     {
+        $tes=public_path('img/test.jpeg');
+        $abs= (new TesseractOCR($tes))
+    ->run();
+
+
+
+
+preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
+$result = $result[0];
+echo $abs."<br>";
+dd($result);
          
         // dd('this is user');
         $userid = Auth()->user()->id;

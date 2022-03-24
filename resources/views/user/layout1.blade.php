@@ -29,7 +29,7 @@
   <link href="{{asset('Elements/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
-  <style>
+    <style>
   
 #qr-reader #qr-reader__dashboard #qr-reader__dashboard_section div #qr-reader__dashboard_section_csr div button {
   color: #fff;
