@@ -549,7 +549,7 @@ $(document).ready(function() {
     setTimeout(function() { 
       
   var length = $('#qr-reader__camera_selection  option').length;
-  alert(length);
+  // alert(length);
   if(length > 1)
   {
     $("#qr-reader__camera_selection option:last").attr("selected", "selected");
