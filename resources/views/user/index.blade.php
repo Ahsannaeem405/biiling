@@ -442,7 +442,7 @@ $(document).ready(function() {
   }
 
 
-  $("div#qr-reader__dashboard_section_csr span:last-child button:last-child").css('display', 'block');
+  $("div#qr-reader__dashboard_section_csr span:last-child button:first-child").css('display', 'block');
 
   // alert(length);
 
