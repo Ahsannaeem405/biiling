@@ -78,6 +78,7 @@
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
                       </div>
+                      <hr>
                     
                     <div class="col-md-6 m-auto">
 
@@ -264,7 +265,7 @@
                               <td>
   
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$f}}">
-    View Mobile list
+    View list
   </button>
   <button type="button" class="btn btn-primary" >
    <a href="{{url('user/print/' .$bill['id'])}}" style="color: white;"> Print</a>

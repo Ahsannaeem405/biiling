@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bill;
+use App\Models\Mobilecompanie;
+
+
 use App\Models\User;
 
 class AdminController extends Controller
@@ -16,7 +19,8 @@ class AdminController extends Controller
 
 
         $bills = Bill::all();
-        return view('admin.index', compact('bills'));
+         $companies = Mobilecompanie::all();
+        return view('admin.index', compact('bills', 'companies'));
     }
     public function user()
     {

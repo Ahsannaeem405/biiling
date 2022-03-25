@@ -31,6 +31,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admins'], function () {
     Route::get('index',[AdminController::class,'index'])->middleware('auth')->name('admins/index');
     Route::get('user',[AdminController::class,'user'])->middleware('auth');
+    Route::post('newbill',[BillsController::class,'newbill'])->middleware('auth')->name('newbill2');
 
     Route::get('sells',[AdminController::class,'sells'])->middleware('auth');
 

@@ -17,6 +17,8 @@
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{asset('Elements/css/bootstrap.css')}}" />
 
+
+
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
   <!-- slick slider -->
@@ -29,15 +31,15 @@
   <link href="{{asset('Elements/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('Elements/css/responsive.css')}}" rel="stylesheet" />
+
+  @yield('css')
+
+   
+
   <style>
   @media screen and (max-width: 990px) {
-    .navbar-toggler{
-        display:none!important;
     
-    }
-    .logout2 {
-        display:block!important;
-    }
+   
     .logo1 {
 
         font-size: 20px!important;
@@ -45,6 +47,75 @@
     .pageslider {
         display:block!important;
     }
+}
+  
+#qr-reader #qr-reader__dashboard #qr-reader__dashboard_section div #qr-reader__dashboard_section_csr div button {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  border-radius: 5px;
+}
+#qr-reader #qr-reader__dashboard #qr-reader__dashboard_section div #qr-reader__dashboard_section_swaplink {
+  display:none;
+
+}
+
+
+/* #qr-reader div span {
+  display:none;
+} */
+#qr-reader__camera_selection {
+  display:none;
+}
+
+#qr-reader__dashboard_section_csr span:first-child {
+  display:none;
+
+}
+
+
+#qr-reader__dashboard_section_csr span:last-child button:first-child {
+  display:none;
+
+}
+
+
+
+
+#qr-reader div:first-child span:first-child {
+  display:none !important;
+  
+}
+
+#qr-reader__status_span {
+  display:none !important;
+}
+
+#qr-reader__dashboard_section_csr button {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  border-radius: 5px;
+}
+
+#qr-reader__dashboard_section_swaplink {
+  display:none !important;
+}
+
+#qr-reader {
+  border:none !important;
+}
+
+  .signRow {
+  background: none !important; 
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+canvas {
+  border: 2px dotted #CCCCCC;
+  border-radius: 15px;
+  cursor: crosshair;
 }
 
 
@@ -292,14 +363,17 @@ input:checked + .slider:after {
   <!-- footer section -->
 
 
-  <!-- jQery -->
   <script type="text/javascript" src="{{asset('Elements/js/jquery-3.4.1.min.js')}}"></script>
   <!-- bootstrap js -->
   <script type="text/javascript" src="{{asset('Elements/js/bootstrap.js')}}"></script>
   <!-- custom js -->
   <script type="text/javascript" src="{{asset('Elements/js/custom.js')}}"></script>
 
-  
+
+  <script src="{{asset('js/script.js')}}"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
 
 
 <script src="http://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
