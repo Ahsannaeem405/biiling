@@ -82,6 +82,7 @@
                     <div class="col-md-6 m-auto">
 
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
+
                         <section class="section section_came" id="section_cameye" style="display:none;">
                           <div class="container">
                             <div class="columns">
@@ -119,6 +120,12 @@
                         </section>
 
                         <canvas class="is-hidden" id="canvas"></canvas>
+                        <input type="file" name="file" class="scan_img d-none" id="imgInp" onchange="encodeImageFileAsURL(this)">
+                        <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="scan_img2" id="blah">
+                        <input type="hidden" name="scam_so" id="scan_img3">
+                          <button type="button" id="form" 
+                          > Upload </button>
+
                     </div>
                   </div>
 
@@ -216,7 +223,7 @@
                       <button type="submit" class="btn btn-primary text-center" id="billbutton" disabled >Submit Information</button>
                     </form>
                   </div><!--tab1 close-->
-
+                </div>
                   <div id="tab2" class=" px-2 py-4 py-md-2 d-none">
                   <h4 class="text-center py-3">All Bills</h4>
                       <div class="table-responsive mt-4">
@@ -257,6 +264,9 @@
   
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$f}}">
     View Mobile list
+  </button>
+  <button type="button" class="btn btn-primary" >
+   <a href="{{url('user/print/' .$bill['id'])}}"> Print</a>
   </button>
 
   <!-- The Modal -->
@@ -375,6 +385,7 @@
 
 
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
 
@@ -601,15 +612,59 @@ $(document).ready(function() {
 
 });
 
+  $(document).on('click', '.sig-submitBtn', function () {
+     Swal.fire(
+      'Signature Added',
+      
+    )
+   });
+   $(document).on('click', '.scan_img2', function () {
+     $(".scan_img").click();
+   });
+   $("#form").on('click',(function(e) {
+   e.preventDefault();
+   var img=$('#scan_img3').val();
+   var _token = $("input[name='_token']").val();
+
+   $.ajax({
+   url: '{{URL::to('scan_img')}}',
+
+   type: "POST",
+   data: {_token: "{{ csrf_token() }}",'img': img},
+
+  
+   
+    success: function(data)
+    {
+      
+                            
+    
+    },
+    error: function(e) 
+      {
+       $("#err").html(e).fadeIn();
+    }          
+  });
+ }));
+  
+
+  
+
+  
+
+
 
 
   
 });
 </script>
 <script>
+  
+
   (function($) {
   
   $('.signRow').each(function(){
+   
     
     
     // make dynamic pad id  
@@ -767,10 +822,27 @@ $(document).ready(function() {
       sigText.innerHTML = dataUrl;
       sigImage.setAttribute("src", dataUrl);
     }, false);
+
     
   }); // each function  end
   
 })(jQuery);
+
+
+function encodeImageFileAsURL(element) {
+             
+              var file = element.files[0];
+              var reader = new FileReader();
+              reader.onloadend = function() {
+                console.log('RESULT', reader.result);
+                $(".scan_img2").attr('src',reader.result);
+                $("#scan_img3").val(reader.result);
+              }
+              reader.readAsDataURL(file);
+
+    
+        }
+
 
 </script>
 @endsection

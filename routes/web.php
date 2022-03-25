@@ -40,7 +40,11 @@ Route::group(['prefix' => 'admins'], function () {
 
 
 
+
 });
+
+    Route::post('scan_img',[UsersController::class,'scan_img']);
+
 
 
 
@@ -50,6 +54,8 @@ Route::group(['prefix' => 'user'], function () {
     // Route::get('createbill',[UsersController::class,'createbill'])->middleware('auth')->name('user/createbill');
     // Route::get('savebill',[BillsController::class,'savebill'])->middleware('auth')->name('savebill');
     Route::post('newbill',[BillsController::class,'newbill'])->middleware('auth')->name('newbill');
+    Route::get('print/{id}',[UsersController::class,'print']);
+
 
 });
 

@@ -42,6 +42,41 @@ class UsersController extends Controller
         return view('user.allbill');
 
     }
+    public function print($id)
+    {
+
+        $bill = Bill::find($id);
+        
+        return view('user.print', compact('bill'));
+
+    }
+     public function scan_img(Request $req)
+    {
+          
+
+        $image =file_get_contents($req->img);
+        file_put_contents(public_path("img".time() . "_."."png"), $image);
+        $cover_img_get="img".time() . "_."."png";
+           $tes=public_path($cover_img_get);
+        $abs= (new TesseractOCR($tes))
+        ->run();
+
+
+
+
+
+        preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
+        $result = $result[0];
+        // echo $abs."<br>";
+
+        return response()->json($result);
+        
+       
+
+    }
+
+
+    
 
     
     //
