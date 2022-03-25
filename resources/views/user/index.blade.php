@@ -534,6 +534,13 @@ $(document).ready(function() {
   
   $("div#qr-reader__dashboard_section_csr > div button").click(function(){
 
+    var x = document.getElementById("section_cameye");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+
     setTimeout(function() { 
       
   var length = $('#qr-reader__camera_selection  option').length;
@@ -559,6 +566,15 @@ $(document).ready(function() {
     $( "."+imeino ).remove();
 
     // $(event.target).remove()
+  });
+
+  $(document)on('click', '#qr-reader__dashboard_section_csr span:last-child button', function () {
+    var x = document.getElementById("section_cameye");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   });
   $(document).on('click', '.open_cam', function () {
   $("#qr-reader__dashboard_section_csr > div button").click();
