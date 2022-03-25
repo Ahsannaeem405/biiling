@@ -1,6 +1,6 @@
 @extends('user.layout1')
   @section('css')
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <link rel="stylesheet" href="{{asset('assets/css/bulma.min.css')}}">
 @endsection
 @section('content')
     <div class="container mt-3">
@@ -87,7 +87,7 @@
                           </div>
                         </section>
 
-  <canvas class="is-hidden" id="canvas"></canvas>
+                        <canvas class="is-hidden" id="canvas"></canvas>
 
 
                      
@@ -116,29 +116,16 @@
                        
                       </div>
                       <style>
-                        .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  margin: auto;
-
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+                        
                       </style>
-                      <div class="loader" style="display:none;"></div>
 
                      
 
                       <div class="form-group text-left" id="imeidiv">
                         <label for="imei">Enter imei No:</label>
-                        <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI">
+                        <div style="display:flex;">
+                        <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
+
                       </div>
                       <button class="btn btn-primary" type="button" name="barcodefield" id="barcodefield" style="">verify barcode</button>
                       <div class="form-group text-left mt-4" style="margin: auto; width: 60%;">

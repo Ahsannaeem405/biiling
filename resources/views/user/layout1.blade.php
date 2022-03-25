@@ -149,7 +149,8 @@ canvas {
           </a>
           <div class="quote_btn-container d-none logout2">
               <a href="{{route('logout')}}">
-                <i class="fa fa-user" aria-hidden="true" style="text-transform: lowercase;!important"> logout</i>
+                
+                <i class="fas fa-sign-out-alt" ></i> logout
               </a>
             </div>
           
@@ -175,7 +176,7 @@ canvas {
             </div>
             <div class="quote_btn-container">
               <a href="{{route('logout')}}">
-                <i class="fa fa-user" aria-hidden="true"> logout</i>
+                <i class="fas fa-sign-out-alt" aria-hidden="true"> </i>logout
               </a>
             </div>
           </div>
@@ -229,7 +230,7 @@ canvas {
           <div class="contact_items">
             <a href="">
               <div class="img-box">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <i class="fas fa-map-marker" aria-hidden="true"></i>
               </div>
               <h6>
                 Location
@@ -237,7 +238,7 @@ canvas {
             </a>
             <a href="">
               <div class="img-box">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
               </div>
               <h6>
                 demo@gmail.com
@@ -245,7 +246,7 @@ canvas {
             </a>
             <a href="">
               <div class="img-box">
-                <i class="fa fa-phone" aria-hidden="true"></i>
+                <i class="fas fa-phone" aria-hidden="true"></i>
               </div>
               <h6>
                 (+12 1234456789)
@@ -259,22 +260,22 @@ canvas {
         <div class="info_social">
           <div>
             <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i class="fab fa-facebook" aria-hidden="true"></i>
             </a>
           </div>
           <div>
             <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
           </div>
           <div>
             <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <i class="fab fa-linkedin" ></i>
             </a>
           </div>
           <div>
             <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <i class="fab fa-instagram" ></i>
             </a>
           </div>
         </div>
