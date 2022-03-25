@@ -568,7 +568,7 @@ $(document).ready(function() {
     // $(event.target).remove()
   });
 
-  $(document)on('click', '#qr-reader__dashboard_section_csr span:last-child button:first-child', function () {
+  $(document).on('click', '#qr-reader__dashboard_section_csr span:last-child button:first-child', function () {
     var x = document.getElementById("section_cameye");
     if (x.style.display === "none") {
       x.style.display = "block";
