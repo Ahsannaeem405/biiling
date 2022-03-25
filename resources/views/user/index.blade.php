@@ -140,8 +140,9 @@
 
                         <table id="imeitable" class="table table-bordered m-auto">
                           <tr>
-                            <th>Imei NO</th>
+                            <th>IMEI NO</th>
                             <th>Status</th>
+                            <th>Action</th>
                           </tr>
                          
                         </table>
@@ -276,7 +277,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Mobile</th>
-      <th scope="col">Imi</th>
+      <th scope="col">IMEI</th>
       <th scope="col">Status</th>
     </tr>
   </thead>
