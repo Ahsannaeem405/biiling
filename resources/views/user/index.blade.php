@@ -579,23 +579,23 @@ $(document).ready(function() {
     }
   });
   
-  $(document).on('click', '.imi_scan', function () {
-    $(".qr-code").empty();
-    $(".botom").empty();
-    $(".qr-code").append('<div id="qr-reader" style="margin: auto;"></div>');
-     function onScanSuccess(decodedText, decodedResult) {
+  // $(document).on('click', '.imi_scan', function () {
+  //   $(".qr-code").empty();
+  //   $(".botom").empty();
+  //   $(".qr-code").append('<div id="qr-reader" style="margin: auto;"></div>');
+  //    function onScanSuccess(decodedText, decodedResult) {
 
-    console.log(`Code scanned = ${decodedText}`, decodedResult);
+  //   console.log(`Code scanned = ${decodedText}`, decodedResult);
 
-    document.getElementById("imei").value = '';
-    document.getElementById("imei").value = decodedText;
-    alert('Barcode is scanned successfully');
-    $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+  //   document.getElementById("imei").value = '';
+  //   document.getElementById("imei").value = decodedText;
+  //   alert('Barcode is scanned successfully');
+  //   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
   
        
 
 
-  }
+  // }
   var html5QrcodeScanner = new Html5QrcodeScanner(
     "qr-reader", { fps: 10, qrbox: 250 });
   html5QrcodeScanner.render(onScanSuccess);
