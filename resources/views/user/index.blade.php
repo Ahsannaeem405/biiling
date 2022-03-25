@@ -60,9 +60,12 @@
 
 
                   <div class="row d-flex">
+                    <div class="col-12">
+                      <div id="qr-reader" style="margin: auto;"></div>
+                    </div>
 
                     <div class="col-6">
-                      <div id="qr-reader" style="margin: auto;"></div>
+                      
 
 
 
