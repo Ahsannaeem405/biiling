@@ -608,23 +608,9 @@ $(document).ready(function() {
   $(".botom").empty();
   $(".botom").append('<div id="qr-reader__scan_region" class="imi_scan" style="width: 100%; min-height: 100px; text-align: center;"><br>'+
   '<img width="64" src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/assets/camera-scan.gif" style="opacity: 0.3;"></div>');
-  $("#qr-reader__dashboard_section_csr > div button").click();
-  $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+ 
+
   
-
-  setTimeout(function() { 
-    $("#btnChangeCamera").click();
-
-    var x = document.getElementById("section_cameye");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-
-    
-    
-  }, 2000);
 
 });
 
