@@ -608,9 +608,58 @@ $(document).ready(function() {
   $(".botom").empty();
   $(".botom").append('<div id="qr-reader__scan_region" class="imi_scan" style="width: 100%; min-height: 100px; text-align: center;"><br>'+
   '<img width="64" src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/assets/camera-scan.gif" style="opacity: 0.3;"></div>');
+  $(".qr-code").append('<section class="section section_came" id="section_cameye" style="display:none;">'+
+                          '<div class="container">'+
+                            '<div class="columns">'+
+                              '<div class="column is-four-fifths">'+
+                                
+                                '<video autoplay id="video"></video>'+
+                                '<button type="button" class="button is-hidden" id="btnPlay">'+
+                                  '<span class="icon is-small">'+
+                                    '<i class="fas fa-play"></i>'+
+                                  '</span>'+
+                                '</button>'+
+                                '<button type="button" class="button" id="btnPause">'+
+                                  '<span class="icon is-small">'+
+                                    '<i class="fas fa-pause"></i>'+
+                                  '</span>'+
+                                '</button>'+
+                                '<button type="button" class="button is-success" id="btnScreenshot">'+
+                                  '<span class="icon is-small">'+
+                                    '<i class="fas fa-camera"></i>'+
+                                  '</span>'+
+                                '</button>'+
+                                '<button type="button" class="button d-none" id="btnChangeCamera">'+
+                                  '<span class="icon">'+
+                                    '<i class="fas fa-sync-alt"></i>'+
+                                  '</span>'+
+                                  '<span>Switch camera</span>'+
+                                '</button>'+
+                              '</div>'+
+                              '<div class="column d-none" >'+
+                               
+                                '<div id="screenshots"></div>'+
+                              '</div>'+
+                            '</div>'+
+                          '</div>'+
+                        '</section>'+
+
+                        '<canvas class="is-hidden" id="canvas"></canvas>');
  
 
-  
+  setTimeout(function() { 
+    $("#btnChangeCamera").click();
+
+    var x = document.getElementById("section_cameye");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+
+    
+    
+  }, 2000);
 
 });
 
