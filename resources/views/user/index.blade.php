@@ -77,8 +77,8 @@
                         
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
-                      </div>
                       <hr>
+                      </div>
                     
                     <div class="col-md-6 m-auto">
 

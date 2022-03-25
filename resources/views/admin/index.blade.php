@@ -77,8 +77,8 @@
                         
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
-                      </div>
                     <hr>
+                      </div>
                     <div class="col-md-6 m-auto">
 
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>

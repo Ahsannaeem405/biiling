@@ -16,17 +16,17 @@ class UsersController extends Controller
 {
     public function index()
     {
-//         $tes=public_path('img/test.jpeg');
-//         $abs= (new TesseractOCR($tes))
-//     ->run();
+        $tes=public_path('img/test.jpeg');
+        $abs= (new TesseractOCR($tes))
+    ->run();
 
 
 
 
-// preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
-// $result = $result[0];
-// echo $abs."<br>";
-// dd($result);
+preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
+$result = $result[0];
+echo $abs."<br>";
+dd($result);
          
         // dd('this is user');
         $userid = Auth()->user()->id;
@@ -55,8 +55,8 @@ class UsersController extends Controller
           
 
         $image =file_get_contents($req->img);
-        file_put_contents(public_path("img".time() . "_."."png"), $image);
-        $cover_img_get="img".time() . "_."."png";
+        file_put_contents(public_path("img/".time() . "_."."png"), $image);
+        $cover_img_get="img/".time() . "_."."png";
            $tes=public_path($cover_img_get);
         $abs= (new TesseractOCR($tes))
         ->run();
