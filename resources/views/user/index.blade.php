@@ -50,7 +50,7 @@
                             @endforeach
                           </select>
                         </div>
-                        
+                      
 
 
                      
@@ -58,7 +58,7 @@
                         
 
 
-                  <div class="row">
+                  <div class="row d-flex">
 
                     <div class="col-6">
                       <div id="qr-reader" style="margin: auto;"></div>
@@ -78,8 +78,8 @@
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
                       </div>
-                    </div>
-                    <div class="col-6">
+                    
+                    <div class="col-6 m-auto">
 
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
                         <section class="section section_came" id="section_cameye" style="display:none;">
@@ -119,8 +119,10 @@
                         </section>
 
                         <canvas class="is-hidden" id="canvas"></canvas>
-                      </div>
                     </div>
+                  </div>
+
+
                       <style>
                         
                       </style>
