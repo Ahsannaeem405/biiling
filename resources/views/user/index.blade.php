@@ -40,7 +40,7 @@
                       @csrf
                       <div class="scanner text-center">
 
-                      <div class="form-group text-left">
+                        <div class="form-group text-left">
                           <label for="">Please Select Company:</label>
                           <select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">
                             <option selected>select your mobile</option>
@@ -50,6 +50,7 @@
                             @endforeach
                           </select>
                         </div>
+                      </div>
                         
 
 
@@ -58,10 +59,10 @@
                         
 
 
+                  <div class="row d-flex">
 
-
-
-                        <div id="qr-reader" style="margin: auto;"></div>
+                    <div class="col-6">
+                      <div id="qr-reader" style="margin: auto;"></div>
 
 
 
@@ -78,8 +79,11 @@
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
                       </div>
-                      <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
-                          <section class="section section_came" id="section_cameye" style="display:none;">
+                    
+                    <div class="col-6 m-auto">
+
+                        <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
+                        <section class="section section_came" id="section_cameye" style="display:none;">
                           <div class="container">
                             <div class="columns">
                               <div class="column is-four-fifths">
@@ -116,6 +120,9 @@
                         </section>
 
                         <canvas class="is-hidden" id="canvas"></canvas>
+                      
+                    </div>
+                </div>
                       <style>
                         
                       </style>
