@@ -50,44 +50,7 @@
                             @endforeach
                           </select>
                         </div>
-                        <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
-                          <section class="section section_came" id="section_cameye" style="display:none;">
-                          <div class="container">
-                            <div class="columns">
-                              <div class="column is-four-fifths">
-                                
-                                <video autoplay id="video"></video>
-                                <button type="button" class="button is-hidden" id="btnPlay">
-                                  <span class="icon is-small">
-                                    <i class="fas fa-play"></i>
-                                  </span>
-                                </button>
-                                <button type="button" class="button" id="btnPause">
-                                  <span class="icon is-small">
-                                    <i class="fas fa-pause"></i>
-                                  </span>
-                                </button>
-                                <button type="button" class="button is-success" id="btnScreenshot">
-                                  <span class="icon is-small">
-                                    <i class="fas fa-camera"></i>
-                                  </span>
-                                </button>
-                                <button type="button" class="button" id="btnChangeCamera">
-                                  <span class="icon">
-                                    <i class="fas fa-sync-alt"></i>
-                                  </span>
-                                  <span>Switch camera</span>
-                                </button>
-                              </div>
-                              <div class="column">
-                               
-                                <div id="screenshots"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-
-                        <canvas class="is-hidden" id="canvas"></canvas>
+                        
 
 
                      
@@ -112,9 +75,47 @@
                         <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
 
                         
-                        <p id="para">Having problem while scaning barcode?</p>
+                        {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
                       </div>
+                      <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
+                          <section class="section section_came" id="section_cameye" style="display:none;">
+                          <div class="container">
+                            <div class="columns">
+                              <div class="column is-four-fifths">
+                                
+                                <video autoplay id="video"></video>
+                                <button type="button" class="button is-hidden" id="btnPlay">
+                                  <span class="icon is-small">
+                                    <i class="fas fa-play"></i>
+                                  </span>
+                                </button>
+                                <button type="button" class="button" id="btnPause">
+                                  <span class="icon is-small">
+                                    <i class="fas fa-pause"></i>
+                                  </span>
+                                </button>
+                                <button type="button" class="button is-success" id="btnScreenshot">
+                                  <span class="icon is-small">
+                                    <i class="fas fa-camera"></i>
+                                  </span>
+                                </button>
+                                <button type="button" class="button d-none" id="btnChangeCamera">
+                                  <span class="icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                  </span>
+                                  <span>Switch camera</span>
+                                </button>
+                              </div>
+                              <div class="column d-none" >
+                               
+                                <div id="screenshots"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <canvas class="is-hidden" id="canvas"></canvas>
                       <style>
                         
                       </style>
@@ -561,6 +562,8 @@ $(document).ready(function() {
   });
   $(document).on('click', '.open_cam', function () {
   $("#qr-reader__dashboard_section_csr > div button").click();
+  $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+  
 
   setTimeout(function() { 
     $("#btnChangeCamera").click();
