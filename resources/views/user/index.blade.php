@@ -535,11 +535,9 @@ $(document).ready(function() {
   $("div#qr-reader__dashboard_section_csr > div button").click(function(){
 
     var x = document.getElementById("section_cameye");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
+    if (x.style.display === "block") {
       x.style.display = "none";
-    }
+    } 
 
     setTimeout(function() { 
       
@@ -569,10 +567,8 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '#qr-reader__dashboard_section_csr span:last-child button:first-child', function () {
-    var x = document.getElementById("section_cameye");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
+   var x = document.getElementById("section_cameye");
+    if (x.style.display === "block") {
       x.style.display = "none";
     }
   });
