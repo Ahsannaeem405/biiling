@@ -588,6 +588,7 @@ $(document).ready(function() {
   });
   $(document).on('click', '.open_cam', function () {
   $(".qr-code").empty();
+  $(".botom").empty();
   $(".botom").append('<div id="qr-reader__scan_region" class="imi_scan" style="width: 100%; min-height: 100px; text-align: center;"><br>'+
   '<img width="64" src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/assets/camera-scan.gif" style="opacity: 0.3;"></div>');
   $("#qr-reader__dashboard_section_csr > div button").click();
