@@ -596,13 +596,13 @@ $(document).ready(function() {
 
 
   // }
-  var html5QrcodeScanner = new Html5QrcodeScanner(
-    "qr-reader", { fps: 10, qrbox: 250 });
-  html5QrcodeScanner.render(onScanSuccess);
+  // var html5QrcodeScanner = new Html5QrcodeScanner(
+  //   "qr-reader", { fps: 10, qrbox: 250 });
+  // html5QrcodeScanner.render(onScanSuccess);
 
-    $(".botom").append('<i class="fas fa-camera open_cam" style="font-size: 40px;"></i>');
+  //   $(".botom").append('<i class="fas fa-camera open_cam" style="font-size: 40px;"></i>');
   
-  });
+  // });
   $(document).on('click', '.open_cam', function () {
   $(".qr-code").empty();
   $(".botom").empty();
