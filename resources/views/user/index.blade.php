@@ -50,7 +50,6 @@
                             @endforeach
                           </select>
                         </div>
-                      </div>
                         
 
 
@@ -61,7 +60,7 @@
 
                   <div class="row">
 
-                    <div class="col-12 qr-code">
+                    <div class="col-6">
                       <div id="qr-reader" style="margin: auto;"></div>
 
 
@@ -73,14 +72,14 @@
 
 
                         
-                      <p class="my-2 my-md-3 text"> <strong> Click to scan barcode</strong></p>
+                        <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
 
                         
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
-                    
+                      </div>
                     </div>
-                    <div class="col-12 botom text-right">
+                    <div class="col-6">
 
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
                         <section class="section section_came" id="section_cameye" style="display:none;">
@@ -578,74 +577,10 @@ $(document).ready(function() {
       x.style.display = "none";
     }
   });
-  
-  // $(document).on('click', '.imi_scan', function () {
-  //   $(".qr-code").empty();
-  //   $(".botom").empty();
-  //   $(".qr-code").append('<div id="qr-reader" style="margin: auto;"></div>');
-  //    function onScanSuccess(decodedText, decodedResult) {
-
-  //   console.log(`Code scanned = ${decodedText}`, decodedResult);
-
-  //   document.getElementById("imei").value = '';
-  //   document.getElementById("imei").value = decodedText;
-  //   alert('Barcode is scanned successfully');
-  //   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
-  
-       
-
-
-  // }
-  // var html5QrcodeScanner = new Html5QrcodeScanner(
-  //   "qr-reader", { fps: 10, qrbox: 250 });
-  // html5QrcodeScanner.render(onScanSuccess);
-
-  //   $(".botom").append('<i class="fas fa-camera open_cam" style="font-size: 40px;"></i>');
-  
-  // });
   $(document).on('click', '.open_cam', function () {
-  $(".qr-code").empty();
-  $(".botom").empty();
-  $(".botom").append('<div id="qr-reader__scan_region" class="imi_scan" style="width: 100%; min-height: 100px; text-align: center;"><br>'+
-  '<img width="64" src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/assets/camera-scan.gif" style="opacity: 0.3;"></div>');
-  $(".qr-code").append('<section class="section section_came" id="section_cameye" style="display:none;">'+
-                          '<div class="container">'+
-                            '<div class="columns">'+
-                              '<div class="column is-four-fifths">'+
-                                
-                                '<video autoplay id="video"></video>'+
-                                '<button type="button" class="button is-hidden" id="btnPlay">'+
-                                  '<span class="icon is-small">'+
-                                    '<i class="fas fa-play"></i>'+
-                                  '</span>'+
-                                '</button>'+
-                                '<button type="button" class="button" id="btnPause">'+
-                                  '<span class="icon is-small">'+
-                                    '<i class="fas fa-pause"></i>'+
-                                  '</span>'+
-                                '</button>'+
-                                '<button type="button" class="button is-success" id="btnScreenshot">'+
-                                  '<span class="icon is-small">'+
-                                    '<i class="fas fa-camera"></i>'+
-                                  '</span>'+
-                                '</button>'+
-                                '<button type="button" class="button d-none" id="btnChangeCamera">'+
-                                  '<span class="icon">'+
-                                    '<i class="fas fa-sync-alt"></i>'+
-                                  '</span>'+
-                                  '<span>Switch camera</span>'+
-                                '</button>'+
-                              '</div>'+
-                              '<div class="column d-none" >'+
-                               
-                                '<div id="screenshots"></div>'+
-                              '</div>'+
-                            '</div>'+
-                          '</div>'+
-                        '</section>'+
-
-                        '<canvas class="is-hidden" id="canvas"></canvas>');
- 
+  $("#qr-reader__dashboard_section_csr > div button").click();
+  $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+  
 
   setTimeout(function() { 
     $("#btnChangeCamera").click();
