@@ -579,7 +579,7 @@ $(document).ready(function() {
     }
   });
   $(document).on('click', '.open_cam', function () {
-  $(".qr-code".empty();
+  $(".qr-code").empty();
   $("#qr-reader__dashboard_section_csr > div button").click();
   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
   
