@@ -142,7 +142,7 @@ canvas {
               <span>
               <img src="{{asset('Elements/images/cellphone.svg')}}" height="40px" width="40px" alt="logo">
               </span>
-            <span class="logo1" style="text-transform: lowercase;!important">
+            <span class="logo1" style="">
             Cellphone Repair
             </span>
             

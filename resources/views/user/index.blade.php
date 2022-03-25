@@ -581,6 +581,7 @@ $(document).ready(function() {
   
   $(document).on('click', '.imi_scan', function () {
     $(".qr-code").empty();
+    $(".botom").empty();
     $(".qr-code").append('<div id="qr-reader" style="margin: auto;"></div>');
 
     $(".botom").append('<i class="fas fa-camera open_cam" style="font-size: 40px;"></i>');
