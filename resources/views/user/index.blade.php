@@ -80,7 +80,7 @@
                        
                     
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 botom">
 
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
                         <section class="section section_came" id="section_cameye" style="display:none;">
@@ -578,8 +578,18 @@ $(document).ready(function() {
       x.style.display = "none";
     }
   });
+  
+  $(document).on('click', '.imi_scan', function () {
+    $(".qr-code").empty();
+    $(".qr-code").append('<div id="qr-reader" style="margin: auto;"></div>');
+
+    $(".botom").append('<i class="fas fa-camera open_cam" style="font-size: 40px;"></i>');
+  
+  });
   $(document).on('click', '.open_cam', function () {
   $(".qr-code").empty();
+  $(".botom").append('<div id="qr-reader__scan_region" class="imi_scan" style="width: 100%; min-height: 100px; text-align: center;"><br>'+
+  '<img width="64" src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/assets/camera-scan.gif" style="opacity: 0.3;"></div>');
   $("#qr-reader__dashboard_section_csr > div button").click();
   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
   
