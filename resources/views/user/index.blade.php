@@ -73,14 +73,14 @@
 
 
                         
-                      <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
+                      <p class="my-2 my-md-3 text"> <strong> Click to scan barcode</strong></p>
 
                         
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
                     
                     </div>
-                    <div class="col-12 botom">
+                    <div class="col-12 botom text-right">
 
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
                         <section class="section section_came" id="section_cameye" style="display:none;">
@@ -583,6 +583,22 @@ $(document).ready(function() {
     $(".qr-code").empty();
     $(".botom").empty();
     $(".qr-code").append('<div id="qr-reader" style="margin: auto;"></div>');
+     function onScanSuccess(decodedText, decodedResult) {
+
+    console.log(`Code scanned = ${decodedText}`, decodedResult);
+
+    document.getElementById("imei").value = '';
+    document.getElementById("imei").value = decodedText;
+    alert('Barcode is scanned successfully');
+    $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+  
+       
+
+
+  }
+  var html5QrcodeScanner = new Html5QrcodeScanner(
+    "qr-reader", { fps: 10, qrbox: 250 });
+  html5QrcodeScanner.render(onScanSuccess);
 
     $(".botom").append('<i class="fas fa-camera open_cam" style="font-size: 40px;"></i>');
   
