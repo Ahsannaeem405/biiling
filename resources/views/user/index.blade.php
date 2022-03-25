@@ -434,7 +434,7 @@ $("#barcodefield").click(function(){
                   </svg>
                   </td>
                   </tr>`;
-                $("#billbutton").attr("disabled", true);
+                $("#billbutton").attr("disabled", false);
                 $('#imeitable').append(html);
                 $('#imei').val('');
 
