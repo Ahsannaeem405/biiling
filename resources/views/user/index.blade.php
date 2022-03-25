@@ -40,7 +40,7 @@
                       @csrf
                       <div class="scanner text-center">
 
-                        <div class="form-group text-left">
+                      <div class="form-group text-left">
                           <label for="">Please Select Company:</label>
                           <select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">
                             <option selected>select your mobile</option>
@@ -59,13 +59,10 @@
                         
 
 
-                  <div class="row d-flex">
-                    <div class="col-12">
-                      <div id="qr-reader" style="margin: auto;"></div>
-                    </div>
+                  <div class="row">
 
-                    <div class="col-6">
-                      
+                    <div class="col-12 qr-code">
+                      <div id="qr-reader" style="margin: auto;"></div>
 
 
 
@@ -76,14 +73,14 @@
 
 
                         
-                        <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
+                      <p class="my-2 my-md-3 text-"> <strong> Click to scan barcode</strong></p>
 
                         
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
-                      </div>
                     
-                    <div class="col-6 m-auto">
+                    </div>
+                    <div class="col-12">
 
                         <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
                         <section class="section section_came" id="section_cameye" style="display:none;">
@@ -123,9 +120,8 @@
                         </section>
 
                         <canvas class="is-hidden" id="canvas"></canvas>
-                      
+                      </div>
                     </div>
-                </div>
                       <style>
                         
                       </style>
@@ -583,6 +579,7 @@ $(document).ready(function() {
     }
   });
   $(document).on('click', '.open_cam', function () {
+  $(".qr-code".empty();
   $("#qr-reader__dashboard_section_csr > div button").click();
   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
   
