@@ -67,9 +67,9 @@ class UsersController extends Controller
 
         preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
         $result = $result[0];
-        // echo $abs."<br>";
+        //echo $abs."<br>";
 
-        return response()->json($result);
+        return response()->json(['msg'=>$result]);
         
        
 

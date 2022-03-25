@@ -41,7 +41,7 @@
                       <div class="scanner text-center">
 
                       <div class="form-group text-left">
-                          <label for="">Please Select Company:</label>
+                        <label for="">Please Select Company:</label>
                           <select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">
                             <option selected>select your mobile</option>
                             @foreach($companies as $company)
@@ -133,6 +133,7 @@
                       <style>
                         
                       </style>
+                      <div class="sel_imi"></div>
 
                      
 
@@ -266,7 +267,7 @@
     View Mobile list
   </button>
   <button type="button" class="btn btn-primary" >
-   <a href="{{url('user/print/' .$bill['id'])}}"> Print</a>
+   <a href="{{url('user/print/' .$bill['id'])}}" style="color: white;"> Print</a>
   </button>
 
   <!-- The Modal -->
@@ -625,7 +626,7 @@ $(document).ready(function() {
    e.preventDefault();
    var img=$('#scan_img3').val();
    var _token = $("input[name='_token']").val();
-
+var op="";
    $.ajax({
    url: '{{URL::to('scan_img')}}',
 
@@ -636,14 +637,23 @@ $(document).ready(function() {
    
     success: function(data)
     {
+      for (var i = 0; i < data['msg'].length; i++) {
+                               
+
+                                    op +='<option value="">'+data['msg'][i]+'</option>';
+                           
+                                
+      }
+       $('.sel_imi').append( '<label for="">Please Select Company:</label>'+
+                          '<select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">'+op+'</select>');
+       
+
       
+
                             
     
     },
-    error: function(e) 
-      {
-       $("#err").html(e).fadeIn();
-    }          
+             
   });
  }));
   

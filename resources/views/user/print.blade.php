@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<style>
+    body{
+
+    }
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -88,11 +91,14 @@ Signature of representative:<img src="{{$bill->rep_sign}}"  style="width:20%;"> 
 
 <script type="text/javascript">
 	
-	$(document).ready(function(){
+	
 
-  window.print();
-  window.location.href = "{{ route('user/index')}}";
-
-});
+  $(document).ready(function () {
+        window.print();
+        setTimeout("closePrintView()", 1000);
+    });
+    function closePrintView() {
+          window.location.href = "{{ route('user/index')}}";
+    }
 </script>
 </html>
