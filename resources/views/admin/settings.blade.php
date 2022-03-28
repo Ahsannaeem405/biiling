@@ -37,7 +37,7 @@
 
             <div class="col-xl-8 col-lg-7 col-12">
                 <h4>Personal Details</h4>
-                  <form class="text-center px-0 px-lg-5" method="POST" action="{{url('admins/update_user')}}" id="form-0">
+                  <form class="text-center px-0 px-lg-5" method="POST" action="{{url('admins/update_admin')}}" id="form-0" enctype="multipart/form-data">
                     @csrf  
                                                     
                                                
@@ -51,6 +51,14 @@
                     <div class="col-12 mt-3">
                         <label style="float: left;">Email</label>
                         <input type="email" class="form-control"  value="{{Auth::user()->email}}" name="email">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <label style="float: left;">Company Name</label>
+                        <input type="text" class="form-control"  value="{{Auth::user()->comp_name}}" name="comp_name" >
+                    </div>
+                    <div class="col-12 mt-3">
+                        <label style="float: left;">Company Logo</label>
+                        <input type="file" class="form-control"  name="file" >
                     </div>
                     <div class="col-12 mt-5 text-right">
                         <button class="btn btn-primary w-50">Save Changes</button>

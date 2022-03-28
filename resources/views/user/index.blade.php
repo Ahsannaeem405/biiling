@@ -172,6 +172,10 @@
                         <label for="dob">DOB:</label>
                         <input type="date" class="form-control" name="dob" id="dob">
                       </div>
+                      <div class="form-group text-left">
+                        <label for="address">Sold Amount:</label>
+                        <input class="form-control" id="" name="amount" placeholder="Sold Amount" required>
+                      </div>
                       
                       <!-- signature start -->
                         	<!-- Content -->

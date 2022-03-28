@@ -70,6 +70,7 @@ tr:nth-child(even) {
     @endfor
   </tbody>
 </table>
+<p>Sold for the amount ${{$bill->amount}}.</p>
 <hr>
 <p>Seller hereby acknowledges that the above sale price represents the fair market value of said item or items.<br>
 Seller is the lawful owner of the above listed items. Said items are clear of all encumbrances and owner has the right to sell these described items.<br>
@@ -98,7 +99,16 @@ Signature of representative:<img src="{{$bill->rep_sign}}"  style="width:20%;"> 
         setTimeout("closePrintView()", 1000);
     });
     function closePrintView() {
-          window.location.href = "{{ route('user/index')}}";
+          var user = "{{ Auth::user()->role }}";
+          if(user==1){
+            window.location.href = "{{ route('admins/index')}}";
+
+          }
+          else{
+            window.location.href = "{{ route('user/index')}}";
+
+          }
+          
     }
 </script>
 </html>

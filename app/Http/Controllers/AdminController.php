@@ -56,6 +56,31 @@ class AdminController extends Controller
         $data->update();
         return back()->with('success', 'User Update Successfully');
     }
+    public function update_admin(Request $req)
+    {
+        $req->validate([
+          
+            'name'   => 'required',
+            'email' => 'unique:users,email,'.$req->id
+            
+           
+
+        ]);
+        $data = User::find($req->id);
+        $data->name = $req->name;
+        $data->email = $req->email;
+        $data->comp_name = $req->comp_name;
+        if ($req->hasFile('file')) {
+            $file      = $req->file('file');
+            $extension = $req->file->extension();
+            $fileName  = time() . "_." . $extension;
+            $req->file->move('upload/images/', $fileName);
+            $data->comp_logo = $fileName;
+        }
+
+        $data->update();
+        return back()->with('success', 'User Update Successfully');
+    }
     public function add_user(Request $req)
     {
         $req->validate([
@@ -69,7 +94,7 @@ class AdminController extends Controller
         $data->name = $req->name;
         $data->email = $req->email;
         $data->password = Hash::make($req->input('password'));
-         $data->role =2;
+        $data->role =2;
 
         $data->save();
         return back()->with('success', 'User Successfully Add');

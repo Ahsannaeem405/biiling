@@ -67,6 +67,8 @@ class BillsController extends Controller
         $bill->date_of_birth = request()->dob;
         $bill->sel_sign = request()->url1;
         $bill->rep_sign = request()->url2;
+        $bill->amount = request()->amount;
+        
         $bill->service_id = $ser_idd;
         $bill->imi =$imi;
         $bill->status =$status;

@@ -3,8 +3,6 @@
   <link rel="stylesheet" href="{{asset('assets/css/bulma.min.css')}}">
 @endsection
 @section('content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.5/signature_pad.min.js" integrity="sha512-kw/nRM/BMR2XGArXnOoxKOO5VBHLdITAW00aG8qK4zBzcLVZ4nzg7/oYCaoiwc8U9zrnsO9UHqpyljJ8+iqYiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <div class="container mt-3">
       <div class="heading_container heading_center">
         <!-- <h2 class="" id="toggleBtn" stat="1">
@@ -223,15 +221,7 @@
                           <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5" ></textarea>
                         </div> 
                       </div>
-                      <div class="flex-row">
-                         <div class="wrapper">
-                             <canvas id="signature-pad" width="400" height="200"></canvas>
-                         </div>
-                         <div class="clear-btn">
-                             <button id="clear"><span> Clear </span></button>
-                         </div>
-                      </div>
-                                        
+                      
 
 
                       <!--  signature end  -->
@@ -869,26 +859,4 @@ function encodeImageFileAsURL(element) {
 
 
 </script>
-
-
-<script>
-       var canvas = document.getElementById("signature-pad");
-
-       function resizeCanvas() {
-           var ratio = Math.max(window.devicePixelRatio || 1, 1);
-           canvas.width = canvas.offsetWidth * ratio;
-           canvas.height = canvas.offsetHeight * ratio;
-           canvas.getContext("2d").scale(ratio, ratio);
-       }
-       window.onresize = resizeCanvas;
-       resizeCanvas();
-
-       var signaturePad = new SignaturePad(canvas, {
-        backgroundColor: 'rgb(250,250,250)'
-       });
-
-       document.getElementById("clear").addEventListener('click', function(){
-        signaturePad.clear();
-       })
-   </script>
 @endsection

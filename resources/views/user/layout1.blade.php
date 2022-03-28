@@ -138,15 +138,25 @@ canvas {
     <header class="header_section" >
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container " >
-          <a class="navbar-brand" href="{{route('user/index')}}">
+            <a class="navbar-brand" href="{{route('user/index')}}">
               <span>
-              <img src="{{asset('Elements/images/cellphone.svg')}}" height="40px" width="40px" alt="logo">
+                @if(Auth::user()->comp_logo!=null)
+                 
+                <img src="{{asset('upload/images/'.Auth()->user()->comp_logo)}}" height="40px" width="40px" alt="logo">
+                @else
+                  <img src="{{asset('Elements/images/cellphone.svg')}}" height="40px" width="40px" alt="logo">
+                @endif
               </span>
-            <span class="logo1" style="">
-            Cellphone Repair
-            </span>
+              <span class="logo1" style="text-transform: lowercase;!important">
+                @if(Auth::user()->comp_name!=null)
+                {{Auth::user()->comp_name}}
+                @else
+                Cellphone Repair
+                @endif
+              
+              </span>
             
-          </a>
+            </a>
           <div class="quote_btn-container d-none logout2">
               <a href="{{route('logout')}}">
                 

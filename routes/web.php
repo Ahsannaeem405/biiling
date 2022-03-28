@@ -37,6 +37,8 @@ Route::group(['prefix' => 'admins'], function () {
 
     Route::get('settings',[AdminController::class,'settings'])->middleware('auth');
     Route::post('update_user',[AdminController::class,'update_user']);
+    Route::post('update_admin',[AdminController::class,'update_admin']);
+
     Route::get('delete/{id}',[AdminController::class,'delete']);
     Route::post('add_user',[AdminController::class,'add_user']);
     Route::post('change-password',[AdminController::class,'change_password']);
