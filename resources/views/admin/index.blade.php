@@ -164,6 +164,10 @@
                         <textarea class="form-control" id="address" name="address" placeholder="seller address" required></textarea>
                       </div>
                       <div class="form-group text-left">
+                        <label for="address">Sold Amount:</label>
+                        <input class="form-control" id="" name="amount" placeholder="Sold Amount" required>
+                      </div>
+                      <div class="form-group text-left">
                         <label for="license">Drivers License #:</label>
                         <input type="text" class="form-control" name="license" id="license" placeholder="license number" required>
                       </div>

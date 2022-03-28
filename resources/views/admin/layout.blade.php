@@ -217,7 +217,8 @@ input:checked + .slider:after {
           </a>
           <div class="quote_btn-container d-none logout2">
               <a href="{{route('logout')}}">
-                <i class="fa fa-user" aria-hidden="true" style="text-transform: lowercase;!important"> logout</i>
+                                <i class="fas fa-sign-out-alt" aria-hidden="true"></i> logout
+
               </a>
             </div>
           
@@ -251,7 +252,7 @@ input:checked + .slider:after {
             </div>
             <div class="quote_btn-container">
               <a href="{{route('logout')}}">
-                <i class="fa fa-user" aria-hidden="true"> logout</i>
+                               <i class="fas fa-sign-out-alt" aria-hidden="true"></i> logout
               </a>
             </div>
           </div>
@@ -322,22 +323,22 @@ input:checked + .slider:after {
         <div class="info_social">
           <div>
             <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i class="fab fa-facebook" aria-hidden="true"></i>
             </a>
           </div>
           <div>
             <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
           </div>
           <div>
             <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <i class="fab fa-linkedin" ></i>
             </a>
           </div>
           <div>
             <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <i class="fab fa-instagram" ></i>
             </a>
           </div>
         </div>

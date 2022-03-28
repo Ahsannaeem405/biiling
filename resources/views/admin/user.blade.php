@@ -12,6 +12,20 @@
 
       <section class="theme-navtab">
         <div class="container">
+          @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+@if (session()->has('success'))
+            <div class="alert alert-success">
+              {{ session()->get('success') }}
+            </div>
+            @endif
           <div class="row justify-content-center">
             <div class="col-lg-10 col-md-11 co-12 my-2 my-md-3 my-lg-4">
               <div class="theme-card">
@@ -24,27 +38,28 @@
 
                   <div id="tab1" class=" mt-5 px-2 py-4 " >
                     <h4 class="text-center pb-3">Add New User</h4>
-                    <form class="text-center px-0 px-lg-5">
-                    <div class="form-group text-left">
-                        <label for="Name">User Name:</label>
-                        <input type="text" class="form-control" id="UName" placeholder="User Name">
+                    
+                    <form class="text-center px-0 px-lg-5" method="POST" action="{{url('admins/add_user')}}" >
+                    @csrf 
+                  
+                      <div class="form-group text-left">
+                        <label for="Name">Name*:</label>
+                        <input type="text" class="form-control" id="fName" placeholder="First Name" name="name">
+                      </div>
+                     
+                      <div class="form-group text-left">
+                        <label for="address">Email*</label>
+                        <input type="email" class="form-control" id="email" placeholder="User Email" name="email">
                       </div>
                       <div class="form-group text-left">
-                        <label for="Name">First Name:</label>
-                        <input type="text" class="form-control" id="fName" placeholder="First Name">
+                        <label for="address">Password*</label>
+                        <input type="password" class="form-control" id="lName" placeholder="Password" name="password">
                       </div>
-                      <div class="form-group text-left">
-                        <label for="Name">Last Name:</label>
-                        <input type="text" class="form-control" id="lName" placeholder="Last Name">
+                       <div class="form-group text-left">
+                        <label for="address">Confirm Password *</label>
+                        <input type="password" class="form-control" id="lName" placeholder="Confirm Password" name="password_confirmation">
                       </div>
-                      <div class="form-group text-left">
-                        <label for="address">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="User Email">
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="address">Password</label>
-                        <input type="password" class="form-control" id="lName" placeholder="User Password">
-                      </div>
+                      
                       
                       <button type="submit" class="btn btn-primary text-center">Add User</button>
                     </form>
@@ -73,15 +88,14 @@
                               <td> {{$user->email}} </td>
                               <td class="d-flex justify-content-center">
                               <button type="button" class="btn btn-outline-primary mx-3  d-flex justify-content-center align-items-center"  data-toggle="modal" data-target="#exampleModal{{$f}}">
-                                <i class="fa fa-pencil-square-o px-2" aria-hidden="true"></i>
+                                <i class="fas fa-edit" aria-hidden="true"></i>
                                 <span class="d-none d-md-block">Edit</span>
                               </button>
-                              <a href="{{url('admins/delete/' .$user->id)}}" title="delete" class="delete" onclick="return confirm('Are you sure you want to delete this item')">
-
+                              
                               <button type="button" class="btn btn-outline-danger d-flex justify-content-center align-items-center">
-                                <i class="fa fa-trash-o px-2" aria-hidden="true"></i>
-                                <span class="d-none d-md-block"> Delete</span>
-                              </button></a>
+                                
+                                <a href="{{url('admins/delete/' .$user->id)}}" title="delete" class="delete" onclick="return confirm('Are you sure you want to delete this item')"><i class="fas fa-trash" ></i></a>
+                              </button>
                               </td>
                             </tr>
                             <div class="modal fade mt-5" id="exampleModal{{$f}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
