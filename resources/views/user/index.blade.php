@@ -84,7 +84,7 @@
 
                         <i class="fas fa-camera open_cam scan_img2" style="font-size: 40px; color: rgb(0, 105, 217);"></i><br><br>
 
-                        <section class="section section_came" id="section_cameye" style="display:none;">
+                        <!-- <section class="section section_came" id="section_cameye" style="display:none;"> -->
                           <!-- <div class="container">
                             <div class="columns">
                               <div class="column is-four-fifths">
@@ -118,13 +118,13 @@
                               </div>
                             </div>
                           </div> -->
-                        </section>
+                        <!-- </section> -->
 
-                        <canvas class="is-hidden" id="canvas"></canvas>
+                        <!-- <canvas class="is-hidden" id="canvas"></canvas> -->
                         <input type="file" name="file" class="scan_img d-none" id="imgInp" onchange="encodeImageFileAsURL(this)">
                         <!-- <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="" id="blah"> -->
                         <input type="hidden" name="scam_so" id="scan_img3">
-                          <button style="display:none;" type="button" id="form" 
+                          <button  type="button" id="form" 
                           > Upload </button>
 
                     </div>
@@ -628,7 +628,7 @@ $(document).ready(function() {
      $(".scan_img").click();
    });
    $("#form").on('click',(function(e) {
-     alert('successfully clicked');
+     
    e.preventDefault();
    var img=$('#scan_img3').val();
    alert(img);
@@ -644,7 +644,7 @@ var op="";
    
     success: function(data)
     {
-      alert(data['msg'][0])
+      alert(data['msg'][0]);
       for (var i = 0; i < data['msg'].length; i++) {
                                
 
@@ -661,10 +661,6 @@ var op="";
                             
     
     },
-    error: function()
-    {
-      alert('something went wrong');
-    }
              
   });
  }));
@@ -859,7 +855,7 @@ function encodeImageFileAsURL(element) {
                 console.log('RESULT', reader.result);
                 // $(".scan_img2").attr('src',reader.result);
                 $("#scan_img3").val(reader.result);
-                $("#form").click();
+                // $("#form").click();
                 
               }
               reader.readAsDataURL(file);
