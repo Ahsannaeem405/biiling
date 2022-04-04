@@ -628,6 +628,7 @@ $(document).ready(function() {
      $(".scan_img").click();
    });
    $("#form").on('click',(function(e) {
+     alert('successfully clicked');
    e.preventDefault();
    var img=$('#scan_img3').val();
    var _token = $("input[name='_token']").val();
@@ -642,6 +643,7 @@ var op="";
    
     success: function(data)
     {
+      alert(data['msg'][0])
       for (var i = 0; i < data['msg'].length; i++) {
                                
 
