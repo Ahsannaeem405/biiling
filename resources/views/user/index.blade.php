@@ -653,7 +653,7 @@ $(document).ready(function() {
                                     op +='<option value="">'+data['msg'][i]+'</option>';
       }
        $('.sel_imi').append( '<label for="">Please Select Company:</label>'+
-                          '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
+                          '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="'+op+'">Select An IMEI</option>'+op+'</select>');
     },
     error: function()
     {
