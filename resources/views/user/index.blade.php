@@ -125,7 +125,7 @@
                         <!-- <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="" id="blah"> -->
                         <input type="hidden" name="scam_so" id="scan_img3">
                           <button  type="button" id="form" style="display: none;">Upload </button>
-                          <div class="spinner-border text-success loader2" style="display: none;"></div>
+                          <div class="spinner-border text-success loader2" style="display: none;margin-right: auto;margin-left: auto;"></div>
                     </div>
                   </div>
 
