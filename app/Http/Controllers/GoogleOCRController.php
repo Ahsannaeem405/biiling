@@ -41,7 +41,7 @@ $credentialsLocation='test.json';
 
 
 $annotation = $client->annotateImage(
-   fopen('test.png', 'r'),
+   fopen($tes, 'r'),
    [Type::TEXT_DETECTION]
 );
         dd($annotation);
