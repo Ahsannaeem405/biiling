@@ -20,7 +20,7 @@ class GoogleOCRController extends Controller
     /**
      * handle the image
      *
-     * @param 
+     * @param
      * @return void
      */
     public function submit(Request $request)
@@ -41,10 +41,10 @@ $annotation = $client->annotateImage(
    [Type::TEXT_DETECTION]
 );
 
-        $result = $annotation;
-      dd($annotation->TextAnnotation);
-   
-           
+
+      dd($annotation->getFullTextAnnotation());
+
+
 
 
             preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
