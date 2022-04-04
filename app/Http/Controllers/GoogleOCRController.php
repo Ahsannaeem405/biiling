@@ -25,7 +25,7 @@ class GoogleOCRController extends Controller
      */
     public function submit(Request $request)
     {
-        if($request->file('image')) {
+        
 $credentialsLocation='test.json';
 
             // convert to base64
@@ -43,14 +43,18 @@ $annotation = $client->annotateImage(
 
 
       $res=$annotation->getFullTextAnnotation();
-     dd( $res->getText());
+      $result = $res->getText();
 
+    //   $subject="aa999999999999999aa888888888888888as555555ssd555fs22aa999999999999999a";
+      preg_match_all('/(?:[0-9]{15,17})+/s', $result, $resul, PREG_PATTERN_ORDER);
+      $resul = $resul[0];
 
+    //  $array = explode('\n', $result);
+dd($resul);
 
-
-            preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
-            $result = $result[0];
+            // preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
+            // $result = $result[0];
         }
-    }
+    
 
 }

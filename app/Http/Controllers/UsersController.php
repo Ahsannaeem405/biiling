@@ -12,6 +12,11 @@ use App\Models\User;
 use App\Models\Mobilecompanie;
 use thiagoalessio\TesseractOCR\TesseractOCR;
 use File;
+
+use Google\Cloud\Vision\V1\Feature\Type;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+use Google\Cloud\Vision\V1\Likelihood;
+
 class UsersController extends Controller
 {
     public function index()
@@ -57,19 +62,42 @@ class UsersController extends Controller
         $image =file_get_contents($req->img);
         file_put_contents(public_path("img/".time() . "_."."png"), $image);
         $cover_img_get="img/".time() . "_."."png";
-           $tes=public_path($cover_img_get);
-        $abs= (new TesseractOCR($tes))
-        ->run();
+        $tes=public_path($cover_img_get);
+
+        $credentialsLocation='test.json';
+
+        // convert to base64
+
+        $client = new 	ImageAnnotatorClient([
+            'credentials' => $credentialsLocation
+        ]);
+
+
+        $annotation = $client->annotateImage(
+        fopen($tes, 'r'),
+        [Type::TEXT_DETECTION]
+        );
+
+
+      $res=$annotation->getFullTextAnnotation();
+      $result = $res->getText();
+
+   
+      preg_match_all('/(?:[0-9]{15,17})+/s', $result, $resul, PREG_PATTERN_ORDER);
+      $resul = $resul[0];
+
+
+
+        
 
 
 
 
 
-        preg_match_all('/(?:[0-9]{15,17})+/s', $abs, $result, PREG_PATTERN_ORDER);
-        $result = $result[0];
+        
         //echo $abs."<br>";
 
-        return response()->json(['msg'=>$result]);
+        return response()->json(['msg'=>$resul]);
         
        
 
