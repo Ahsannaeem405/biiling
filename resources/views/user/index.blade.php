@@ -628,6 +628,12 @@ $(document).ready(function() {
    $(document).on('click', '.scan_img2', function () {
      $(".scan_img").click();
    });
+    $(document).on('change', '.select_imi', function () {
+       var value=$(this).val();
+       alert(value);
+   });
+
+   
    $("#form").on('click',(function(e) {
    $('.sel_imi').empty();
 
@@ -647,7 +653,7 @@ $(document).ready(function() {
                                     op +='<option value="">'+data['msg'][i]+'</option>';
       }
        $('.sel_imi').append( '<label for="">Please Select Company:</label>'+
-                          '<select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
+                          '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
     },
     error: function()
     {
