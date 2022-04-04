@@ -138,7 +138,7 @@
                      
 
                       <div class="form-group text-left" id="imeidiv">
-                        <label for="imei">Enter imei No:</label>
+                        <label for="imei">Enter IMEI No:</label>
                         <div style="display:flex;">
                         <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
 
@@ -650,7 +650,7 @@ $(document).ready(function() {
     {
       $(".loader2").css("display", "none");
       for (var i = 0; i < data['msg'].length; i++) {
-                                    op +='<option value="'+op+'">'+data['msg'][i]+'</option>';
+                                    op +='<option value="'+data['msg'][i]+'">'+data['msg'][i]+'</option>';
       }
        $('.sel_imi').append( '<label for="">Please Select Company:</label>'+
                           '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
