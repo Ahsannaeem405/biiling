@@ -5,6 +5,8 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BillsController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\GoogleOCRController;
+
 // use App\Http\Middleware;
 
 
@@ -52,6 +54,9 @@ Route::group(['prefix' => 'admins'], function () {
 
     Route::post('scan_img',[UsersController::class,'scan_img']);
 
+
+    Route::get('google-ocr', [GoogleOCRController::class, 'index'])->name('index');
+    Route::post('google-ocr', [GoogleOCRController::class, 'submit'])->name('submit');
 
 
 
