@@ -29,7 +29,11 @@ class GoogleOCRController extends Controller
 $credentialsLocation='test.json';
 
             // convert to base64
-            $image = base64_encode(file_get_contents($request->file('image')));
+             
+        $image =file_get_contents($request->image);
+        file_put_contents(public_path("img/".time() . "_."."png"), $image);
+        $cover_img_get="img/".time() . "_."."png";
+        $tes=public_path($cover_img_get);
 
             $client = new 	ImageAnnotatorClient([
     'credentials' => $credentialsLocation
@@ -37,9 +41,10 @@ $credentialsLocation='test.json';
 
 
 $annotation = $client->annotateImage(
-   fopen('test.png', 'r'),
+   fopen($tes, 'r'),
    [Type::TEXT_DETECTION]
 );
+        dd($annotation);
 
 
       $res=$annotation->getFullTextAnnotation();
