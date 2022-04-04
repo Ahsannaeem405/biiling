@@ -660,6 +660,10 @@ var op="";
                             
     
     },
+    error: function()
+    {
+      alert('something went wrong');
+    }
              
   });
  }));
