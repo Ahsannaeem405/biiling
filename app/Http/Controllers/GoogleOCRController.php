@@ -30,7 +30,7 @@ $credentialsLocation='test.json';
 
             // convert to base64
              
-        $image =file_get_contents($request->img);
+        $image =file_get_contents($request->image);
         file_put_contents(public_path("img/".time() . "_."."png"), $image);
         $cover_img_get="img/".time() . "_."."png";
         $tes=public_path($cover_img_get);
