@@ -140,7 +140,7 @@
                       <div class="form-group text-left" id="imeidiv">
                         <label for="imei">Enter IMEI No:</label>
                         <div style="display:flex;">
-                        <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
+                        <input type="text" name="imei" class="form-control app_imi" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
 
                       </div>
                       <button class="btn btn-primary" type="button" name="barcodefield" id="barcodefield" style="">verify barcode</button>
@@ -630,7 +630,7 @@ $(document).ready(function() {
    });
     $(document).on('change', '.select_imi', function () {
        var value=$(this).val();
-       alert(value);
+       $(".app_imi").val(value);
    });
 
    
