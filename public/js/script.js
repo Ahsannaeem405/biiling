@@ -62,6 +62,10 @@
     canvas.getContext("2d").drawImage(video, 0, 0);
     img.src = canvas.toDataURL("image/png");
     alert(img.src);
+    $(".scan_img2").attr('src',img.src);
+    $("#scan_img3").val(img.src);
+
+    
     screenshotsContainer.prepend(img);
   });
 
