@@ -82,10 +82,10 @@
                     
                     <div class="col-md-6 m-auto">
 
-                        <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
+                        <i class="fas fa-camera open_cam scan_img2" style="font-size: 40px; color: rgb(0, 105, 217);"></i><br><br>
 
                         <section class="section section_came" id="section_cameye" style="display:none;">
-                          <div class="container">
+                          <!-- <div class="container">
                             <div class="columns">
                               <div class="column is-four-fifths">
                                 
@@ -117,14 +117,14 @@
                                 <div id="screenshots"></div>
                               </div>
                             </div>
-                          </div>
+                          </div> -->
                         </section>
 
                         <canvas class="is-hidden" id="canvas"></canvas>
                         <input type="file" name="file" class="scan_img d-none" id="imgInp" onchange="encodeImageFileAsURL(this)">
-                        <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="scan_img2" id="blah">
+                        <!-- <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="" id="blah"> -->
                         <input type="hidden" name="scam_so" id="scan_img3">
-                          <button type="button" id="form" 
+                          <button style="display:none;" type="button" id="form" 
                           > Upload </button>
 
                     </div>
@@ -597,26 +597,26 @@ $(document).ready(function() {
       x.style.display = "none";
     }
   });
-  $(document).on('click', '.open_cam', function () {
-  $("#qr-reader__dashboard_section_csr > div button").click();
-  $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+//   $(document).on('click', '.open_cam', function () {
+//   $("#qr-reader__dashboard_section_csr > div button").click();
+//   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
   
 
-  setTimeout(function() { 
-    $("#btnChangeCamera").click();
+//   setTimeout(function() { 
+//     $("#btnChangeCamera").click();
 
-    var x = document.getElementById("section_cameye");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+//     var x = document.getElementById("section_cameye");
+//     if (x.style.display === "none") {
+//       x.style.display = "block";
+//     } else {
+//       x.style.display = "none";
+//     }
 
     
     
-  }, 2000);
+//   }, 2000);
 
-});
+// });
 
   $(document).on('click', '.sig-submitBtn', function () {
      Swal.fire(
@@ -850,8 +850,10 @@ function encodeImageFileAsURL(element) {
               var reader = new FileReader();
               reader.onloadend = function() {
                 console.log('RESULT', reader.result);
-                $(".scan_img2").attr('src',reader.result);
+                // $(".scan_img2").attr('src',reader.result);
                 $("#scan_img3").val(reader.result);
+                $("#form").click();
+                
               }
               reader.readAsDataURL(file);
 
