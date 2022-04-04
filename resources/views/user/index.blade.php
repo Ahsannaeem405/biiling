@@ -124,9 +124,8 @@
                         <input type="file" name="file" class="scan_img d-none" id="imgInp" onchange="encodeImageFileAsURL(this)">
                         <!-- <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="" id="blah"> -->
                         <input type="hidden" name="scam_so" id="scan_img3">
-                          <button  type="button" id="form" 
-                          > Upload </button>
-
+                          <button  type="button" id="form" style="display: none;">Upload </button>
+                          <div class="spinner-border text-success loader2" style="display: none;"></div>
                     </div>
                   </div>
 
@@ -624,44 +623,36 @@ $(document).ready(function() {
       
     )
    });
+
+
    $(document).on('click', '.scan_img2', function () {
      $(".scan_img").click();
    });
    $("#form").on('click',(function(e) {
-     
+   $('.sel_imi').empty();
+
+   $(".loader2").css("display", "block");
    e.preventDefault();
    var img=$('#scan_img3').val();
-   alert(img);
    var _token = $("input[name='_token']").val();
-var op="";
+   var op="";
    $.ajax({
    url: '{{URL::to('scan_img')}}',
-
    type: "POST",
    data: {_token: "{{ csrf_token() }}",'img': img},
-
-  
-   
     success: function(data)
     {
-      // alert(data['msg'][0]);
+      $(".loader2").css("display", "none");
       for (var i = 0; i < data['msg'].length; i++) {
-                               
-
                                     op +='<option value="">'+data['msg'][i]+'</option>';
-                           
-                                
       }
        $('.sel_imi').append( '<label for="">Please Select Company:</label>'+
-                          '<select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">'+op+'</select>');
-       
-
-      
-
-                            
-    
+                          '<select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
     },
-             
+    error: function()
+    {
+      alert('something went wrong');
+    },
   });
  }));
   
@@ -855,7 +846,8 @@ function encodeImageFileAsURL(element) {
                 console.log('RESULT', reader.result);
                 // $(".scan_img2").attr('src',reader.result);
                 $("#scan_img3").val(reader.result);
-                // $("#form").click();
+
+                $("#form").click();
                 
               }
               reader.readAsDataURL(file);
