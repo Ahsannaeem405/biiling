@@ -1,0 +1,3281 @@
+
+
+
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+
+  <title>Dashboard</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"  media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="assets/css/dashboard.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Oswald:wght@600&display=swap" rel="stylesheet">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+   <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+   <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.2.6/css/dx.common.css" />
+   <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.2.6/css/dx.light.css" />
+   <script src="https://cdn3.devexpress.com/jslib/20.2.6/js/dx.all.js"></script>
+   <script src="data.js"></script>
+   <link rel="stylesheet" type="text/css" href="styles.css" />
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+   <script src="index.js"></script>
+
+
+<style>
+@media only screen and (max-width: 985px) {
+  #support-btn {
+    margin-top: 0px !important;
+  }
+
+
+  #more-info-btn {
+    margin-top: 230px !important;
+  }
+  #container{
+    height: 15px !important;
+  }
+  #more-info-btn2 {
+    margin-top: 0px !important;
+  }
+
+
+}
+@media only screen and (min-width: 1510px) {
+  #triangle-span{
+    margin-top: -75px !important;
+  }
+}
+@media only screen and (min-width: 942px) {
+  #triangle-span{
+    margin-top: -75px !important;
+  }
+}
+@media only screen and (min-width: 942px) {
+  #triangle-span{
+    margin-top: -80px !important;
+  }
+}
+@media only screen and (max-width: 756px) {
+  #triangle-span{
+    margin-top: -48px !important;
+  }
+}
+@media only screen and (max-width: 756px) {
+  #triangle-span{
+    margin-top: -48px !important;
+  }
+}
+@media only screen and (max-width: 756px) {
+  #triangle-span{
+    margin-top: -48px !important;
+  }
+}
+@media only screen and (max-width: 756px) {
+  #triangle-span{
+    margin-top: -48px !important;
+  }
+}
+@media only screen and (min-width: 1396px) {
+  #triangle-span{
+    margin-top: -71px !important;
+  }
+}
+
+
+html,
+body,
+#container {
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+}
+@font-face {
+  font-family: gotham-black;
+  src: url(fonts/GOTHAM-BLACK.TTF) format("truetype");
+}
+#page1-headings{
+  font-family: gotham-black;
+}
+
+  #header_bar{
+    background-color: transparent;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Oswald', sans-serif;
+  }
+  #ol-tag{
+    font-family: Open Sans Condensed Light !important;
+  }
+  #p-heading{
+    text-decoration: none;
+    background-color:white !important;
+    color: #0e0e0e !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px
+  }
+  #below-heading{
+    font-size: 16px;
+    color:#213f7b;
+    font-family: 'Oswald', sans-serif;
+  }
+  #below-heading2{
+    font-size: 16px;
+    color:#213f7b;
+    font-family: 'Oswald', sans-serif;
+  }
+  #below-heading3{
+    font-size: 16px;
+    color:#213f7b;
+    font-family: 'Oswald', sans-serif;
+  }
+  #below-heading4{
+    color:#213f7b;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+  }
+  #below-heading-values{
+    font-size: 16px;
+  }
+  #paragraphp{
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: Open Sans Condensed Light !important;
+  }
+
+  .active a {
+      background-color: #1f477d !important;
+      color: white !important;
+  }
+  #moretext
+  {
+    display: none;
+  }
+  #moretext2
+  {
+    display: none;
+  }
+  #moretext3
+  {
+    display: none;
+  }
+  #more
+  {
+    display: none;
+  }
+  .ms-choice{
+    height: 34px !important;
+    border: 1px solid #ccc !important;
+    background-color: #fff !important;
+  }
+  .triangle-up {
+    width: 0;
+    height: 0;
+    border-left:12px solid transparent;
+    border-right:12px solid transparent;
+    border-bottom:21px solid #c92626;
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+</head>
+<body style="font-family: Open Sans Condensed;" class="dx-viewport">
+<!---- Mian Section start------>
+<div class="container-fluid" style="margin-top: 1%;padding-right: 3%;padding-left:3%;">
+  <h1 style="text-align: center;font-weight: bolder;margin-bottom: 30px;">DASHBOARD</h1>
+   <!---- Tabs item section start------>
+    <ul class="nav nav-tabs" style="border-bottom: 2px solid #ddd;">
+    <!----Left Side Tabs----->
+      <li class="not_acyive dashy" style="" ><a id="header_bar" data-toggle="tab" href="#home">DASHBOARD</a></li>
+       
+     <li class="qualified-tab-active listy not_acyive" id="DASHBOARD"><a onclick="myfun()" class="append" data-toggle="tab" id="header_bar" style="" href="#LISTINGS">LISTINGS</a></li>
+
+      <li class="qualified-tab-active matchy not_acyive"><a onclick="myfunmatch()" id="header_bar" data-toggle="tab" href="#MATCH">MATCH</a></li>
+      <li class="qualified-tab-active opper not_acyive"><a onclick="myopperunity()" id="header_bar" data-toggle="tab" href="#OPPORTUNITIES">OPPORTUNITIES</a></li>
+      <!----Left Side Tabs end----->
+
+       <!----Right Side Tabs----->
+      <li style="float: right;" class="qualified-tab-active not_acyive"><a   id="header_bar" href="logout.php">Logout</a></li>
+      <li class="qualified-tab" style="float: right;" class="qualified-tab-active qualified not_acyive">
+                
+          
+          
+          <a id="header_bar" data-toggle="tab" href="#Qualified">Qualified</a>
+          
+          
+                  
+          
+          
+          </li>
+      <li style="float: right;" class="qualified-tab-active serch not_acyive">
+          
+              
+          
+          <a id="header_bar" data-toggle="tab" href="#Search">Search Criteria</a>
+          
+                    
+          </li>
+      <li style="float: right;" class="qualified-tab-active register not_acyive"><a id="header_bar" data-toggle="tab" href="#Registered">Registered</a></li>
+      <!----Right Side Tabs----->
+    </ul>
+     <!---- Tabs item section end------>
+
+
+   <!---- Tabs Section start------>
+  <div class="tab-content" style="border-left: 2px solid #ddd;border-right: 2px solid #ddd;border-bottom: 2px solid #ddd;margin-top: -1px;padding-left: 5px;padding-top: 0px;margin-bottom: 40px;">
+
+     <!-----------DASHBOARD section Start-------->
+
+    <div id="home" class="tab-pane dashy_tab fade not_acyive_tab">
+        
+         
+        
+         <h2 class="mb-5">Hello Ans Mustafa Welcome Back</h2>
+                <!--<img src="310320221648709645_">-->
+        <!---First Row--->
+        <div class="row" style="margin-left:-4px;margin-right:5px;">
+         <div class="col-12 col-md-6">
+           <h3 id="page1-headings">SUMMARY</h3>
+           <div class="row">
+              <div class="col-sm-10" style="background-color:black;border-top:5px solid #1F477D;">
+              </div>
+           </div><br>
+                      
+                 <div class="container-fluid">
+             <div class="row">
+              <div class="col-12 col-md-5">
+                 <div class="table-responsive" style="">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td style="border-top: 1px solid white;border-left: 1px solid white;"></td>
+                        <th style="font-family: Open Sans Condensed Light !important;">No</th>
+                      </tr>
+                      
+                      <tr>
+                       <th style="background-color: #e3bfb8;font-family: Open Sans Condensed Light !important;">LISTINGS</th>
+                       <td style="font-family: Open Sans Condensed Light !important;">3</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color:#d7e2c5; font-family: Open Sans Condensed Light !important;">MATCHES</th>
+                                                <td style="font-family: Open Sans Condensed Light !important;">1</td>
+                      </tr>
+                       <tr>
+                                                   <th style="background-color:#dbe4ee;font-family: Open Sans Condensed Light !important;">OPPORTUNITIES</th>
+                        <td style="font-family: Open Sans Condensed Light !important;">0</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+
+                  <div>
+                    <span class="parcentagespan" style="display: inline-block;width: 15%;height: 39px;text-align: center;background-color: #e3bfb8;font-size: 23px">3%</span>
+                    <span style="display: inline-block;width:28%;height:39px;text-align: center;background-color: #d7e2c5; font-size:23px;margin-left:-4px">1%</span>
+                    <span style="display: inline-block;width:46%;height:39px;text-align:center;background-color:#dbe4ee;font-size: 23px;margin-left:-4px;">0%</span>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-1">
+                </div>
+            </div>
+          </div>
+          </div>
+         <div class="col-12 col-md-6">
+           <h3 id="page1-headings">RESEARCH</h3>
+           <div class="row">
+              <div class="col-sm-10" style="background-color:black;border-top:5px solid #1F477D;">
+              </div>
+           </div><br>
+           
+
+           <ol id="ol-tag">
+                                    <li>
+                 <a href="admin/files/1642951313itsolutionstuff (7) (1).pdf" download style="color:red;font-sixe:33px;">
+                 heyu                 </a>
+                 </li>
+             <li>
+                 <a href="admin/files/1642952870itsolutionstuff (2) (2).pdf" download style="color:red;font-sixe:33px;">
+                 kkk                 </a>
+                 </li>
+             <li>
+                 <a href="admin/files/1643371937saop.pdf" download style="color:red;font-sixe:33px;">
+                 soap                 </a>
+                 </li>
+             <li>
+                 <a href="admin/files/16433775421643376192saop (1).pdf" download style="color:red;font-sixe:33px;">
+                 yes h                 </a>
+                 </li>
+             
+             
+                        </ol>
+         </div>
+
+      </div>
+         <!---First Row end--->
+         <!----Second row start---->
+        <div class="container-fluid">
+            <div class="row" style="margin-left:-18px;margin-right:-7px;">
+              <div class="col-12 col-md-6">
+                <h3 id="page1-headings">OPPORTUNITIES</h3>
+                <div class="row">
+                   <div class="col-sm-10" style="background-color:black;border-top:5px solid #1F477D;">
+                   </div>
+                </div><br>
+                 <ol id="ol-tag">
+                                    </ol>
+
+
+                 <div class="col-12"><br>
+                  <h3 id="page1-headings">HISTORY</h3>
+
+                  <div class="row">
+                     <div class="col-sm-10" style="background-color:black;border-top:5px solid #1F477D;">
+                     </div>
+                  </div><br>
+
+                     <ol id="ol-tag">
+                                        </ol>
+
+                   </div>
+
+              </div>
+
+              <div class="col-12 col-md-6">
+                <h3 id="page1-headings">LEARN</h3>
+                <div class="row">
+                   <div class="col-sm-10" style="background-color:black;border-top:5px solid #1F477D;">
+                   </div>
+                </div><br>
+                <div class="row">
+                                      <div class="col-12 col-md-6" style="padding-top:5px;">
+                    <iframe width="330" height="200" src="https://www.youtube.com/embed/22GKYGkKTTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+                  </div>
+                                                        <div class="col-12 col-md-6" style="padding-top:5px;">
+                    <iframe width="330" height="200" src="https://www.youtube.com/embed/22GKYGkKTTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+                  </div>
+                                                        <div class="col-12 col-md-6" style="padding-top:5px;">
+                    <iframe width="330" height="200" src="https://www.youtube.com/embed/22GKYGkKTTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+                  </div>
+                                                        <div class="col-12 col-md-6" style="padding-top:5px;">
+                    <iframe width="330" height="200" src="https://www.youtube.com/embed/22GKYGkKTTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+                  </div>
+                                      
+
+              </div>
+           </div>
+           <div class="col-12">
+             <div class="col-12 col-md-6" style="">
+                   <h3 id="page1-headings" >EVENTS</h3>
+                   <div class="row">
+                      <div class="col-sm-10" style="background-color:black;border-top:5px solid #1F477D;">
+                      </div>
+                   </div><br>
+                      <div class="table-responsive" style="font-family: Open Sans Condensed Light !important;">
+                       <table class="table table-bordered">
+                         <tr>
+                           <th>Name</th>
+                           <th>Description</th>
+                           <th>Location</th>
+                           <th>Date / TIme</th>
+<th>Action</th>
+                         </tr>
+                         
+
+                                   
+
+                         <!--  <tr style="font-family: Open Sans Condensed Light !important;">-->
+                         <!-- <td>BUYING A BUSINESS 101</td>-->
+                         <!-- <td>Surrey</td>-->
+                         <!-- <td>June 10, 2021 @ 7pm</td>-->
+                         <!--<td style="border: 1px solid white;"> <button type="button" class="btn btn-primary">Register</button></td>-->
+                         <!--</tr>-->
+                         <!--  <tr style="font-family: Open Sans Condensed Light !important;">-->
+                         <!-- <td>SUCCESSFUL DUE DILIGENCE</td>-->
+                         <!-- <td>Vancouver</td>-->
+                         <!-- <td>Aug 4, 2021 @ 10am</td>-->
+                         <!-- <td style="border: 1px solid white;"> <button type="button" class="btn btn-primary">Register</button></td>-->
+                         <!--</tr>-->
+                         <!--  <tr style="font-family: Open Sans Condensed Light !important;">-->
+                         <!-- <td>RETAIL BUSINESSES – BOOM or BUST</td>-->
+                         <!-- <td>On-line</td>-->
+                         <!-- <td>Aug 11, 2021 @ 5pm</td>-->
+                         <!-- <td style="border: 1px solid white;"> <button type="button" class="btn btn-primary">Register</button></td>-->
+                         <!--</tr>-->
+
+                       </table>
+                     </div>
+             </div>
+                <button class="btn btn-primary" id="support-btn" style="margin-top: 290px;float: right;margin-bottom: 8px;padding:5px;">SUPPORT</button>
+           </div>
+
+
+
+             <!-- <div class="container-fluid position: relative;">
+               <div class="col-12 col-sm-6 mtbutton">
+                 <div class="w-25 float-bottom-right" style=" position: absolute; bottom: 60px;right: 16px;">
+                   <button  type="button" class="btn btn-primary">SUPPORT</button>
+                 </div>
+               </div>
+              </div> -->
+               </div>
+  </div>
+          </div>
+         <!------second row end ----->
+      <!--  <div class="row"style="    margin-left: 0px;margin-right: 23px;">
+          <div class="col-12 col-md-6" style="margin-top: -20%;">
+
+                <h3>HISTORY</h3>
+                 <hr style="border-top:5px solid #1F477D;">
+                 <ol>
+                   <li>Coffee Shop with Kitchen</li>
+                   <li>Truck Repair Business</li>
+                   <li>On-line Gambling Business</li>
+                   <li>Thai Restaurant</li>
+                   <li>Print Shop on Vancouver Island</li>
+                 </ol>
+
+          </div>
+          <div class="col-12 col-md-6">
+
+          </div>
+
+        </div>-->
+        <!------3rd row end------>
+
+
+
+
+       <!-----------DASHBOARD section end-------->
+
+
+
+
+
+     <!----------- First LISTINGS section Start-------->
+    
+          <div id="LISTINGS" class="tab-pane fade listy_tab not_acyive">
+       <div id="myid">
+         <div class="container-fluid"  style="margin-top:15px;">
+                         <div class="row">
+
+             <div class="col-12 col-md-3" style="width:auto !important;">
+               <img src="https://crm.omniumbusiness.com/uploads/gallery/_21.jpg" style="padding-bottom:5px;" width="150px" height="150px"  id="icon" alt="User Icon">
+             </div>
+                <div class="col-12 col-md-9" style="margin-top: 10px;">
+                    
+
+
+                    <p style="font-size:20px;margin-left: -3px;font-weight: bold;"><a  href="list_get.php?id=189&pre=1"> Widget Manufacturing Company(Ref. ID #189)</a></p>
+                    
+                </div> 
+                <div class="row" style="font-weight: bolder;">
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">Asking Price:</span>
+    $750,000</p>
+                    </div>
+                    
+                    
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">REVENUE:</span>
+    $1,548,786</p>
+                    </div>
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                      <p id="below-heading-values">
+                          <span id="below-heading2" style="color:#213f7b;">EBITDA:</span>
+     $150,000                          </p>
+                    </div>
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Location:</span>
+                                      ["Manitoba"]          </p>
+                    </div>
+                    <div class="col-12 col-md-8" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Description:</span>
+                                      This business manufactures high quality widgets for international sale.           </p>
+                    </div>
+                </div>
+                </div>
+                        <div class="row">
+
+             <div class="col-12 col-md-3" style="width:auto !important;">
+               <img src="https://crm.omniumbusiness.com/uploads/gallery/_24.jpg" style="padding-bottom:5px;" width="150px" height="150px"  id="icon" alt="User Icon">
+             </div>
+                <div class="col-12 col-md-9" style="margin-top: 10px;">
+                    
+
+
+                    <p style="font-size:20px;margin-left: -3px;font-weight: bold;"><a  href="list_get.php?id=241&pre=1"> Virtual Reality Software Provider(Ref. ID #241)</a></p>
+                    
+                </div> 
+                <div class="row" style="font-weight: bolder;">
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">Asking Price:</span>
+    $1,180,000</p>
+                    </div>
+                    
+                    
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">REVENUE:</span>
+    $2,450,000</p>
+                    </div>
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                      <p id="below-heading-values">
+                          <span id="below-heading2" style="color:#213f7b;">EBITDA:</span>
+     $263,000                          </p>
+                    </div>
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Location:</span>
+                                      Capital          </p>
+                    </div>
+                    <div class="col-12 col-md-8" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Description:</span>
+                                      Producers of virtual reality software and hardware          </p>
+                    </div>
+                </div>
+                </div>
+                        <div class="row">
+
+             <div class="col-12 col-md-3" style="width:auto !important;">
+               <img src="https://crm.omniumbusiness.com/uploads/gallery/_25.jpg" style="padding-bottom:5px;" width="150px" height="150px"  id="icon" alt="User Icon">
+             </div>
+                <div class="col-12 col-md-9" style="margin-top: 10px;">
+                    
+
+
+                    <p style="font-size:20px;margin-left: -3px;font-weight: bold;"><a  href="list_get.php?id=142&pre=1"> Specialized Tech Company(Ref. ID #142)</a></p>
+                    
+                </div> 
+                <div class="row" style="font-weight: bolder;">
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">Asking Price:</span>
+    $8,778,000</p>
+                    </div>
+                    
+                    
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">REVENUE:</span>
+    $12,500,000</p>
+                    </div>
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                      <p id="below-heading-values">
+                          <span id="below-heading2" style="color:#213f7b;">EBITDA:</span>
+     $1,497,000                          </p>
+                    </div>
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Location:</span>
+                                      Ontario          </p>
+                    </div>
+                    <div class="col-12 col-md-8" style="font-weight: bolder;">
+                        <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Description:</span>
+                                      Algorithm development for lossless compression of data          </p>
+                    </div>
+                </div>
+                </div>
+                    
+        </div>
+
+      </div>
+        <!-- Tab panes -->
+       <!-----second tab end------->
+
+    </div>
+       <!----- second section end---->
+
+
+    <!-----------First LISTINGS section end-------->
+
+
+
+
+     <!-----------MATCH section Start-------->
+         <div id="MATCH" class="tab-pane matchy_tab  fade not_acyive">
+      <div id="matchid">
+       <div class="container-fluid" style="margin-top:15px;">
+           
+         
+   <div class='container-fluid' style='margin-top:-8px;'>
+          
+                          
+               <!--- second row---------->
+          </div>
+  <div class='container-fluid' style='margin-top:15px;'>
+         
+           <div class="row">
+<h2 style='color:red;font-family:italic;font-style:italic'> To see available listings ranked by score, please submit details of your search criteria... </h2>                 
+                  
+                  
+               <!--- second row---------->
+      <!--  <div class="row">
+              <div class="col-12 col-md-12">
+                <p id="paragraphp">
+                </p>
+              </div>
+            </div>-->
+         
+       <!--    <div class='container-fluid' style='margin-top:15px;'>
+        
+           <div class="row">
+
+             <div class="col-12 col-md-3" style="width:auto !important;">
+               <img src="https://crm.omniumbusiness.com/uploads/gallery/_25.jpg" width="150px" height="150px"  id="icon" alt="User Icon">
+             </div>
+              <div class="col-12 col-md-9" style="margin-top: 10px;">
+                   <p style="font-size:20px;margin-left: -3px;font-weight: bold;"><a class="match" data="5"  href="javascript:void(0)">(241) Virtual Reality Software Provider</a></p>
+                   </div>
+                  <div class="row" style="font-weight: bolder;">
+                    <div class="col-12 col-md-3" style="font-weight: bolder;" >
+                      <p id="below-heading-values"><span id="below-heading">REVENUE:</span> 12500000.00</p>
+                    </div>
+                    <div class="col-12 col-md-3"style="font-weight: bolder;">
+                      <p id="below-heading-values"><span id="below-heading2" >EBITDA:</span>1497000.00</p>
+                    </div>
+                    <div class="col-12 col-md-3" style="font-weight: bolder;">
+                      <p id="below-heading-values"><span id="below-heading4">LOCATION:</span>Ontario</p>
+                    </div>
+                  </div>
+                  -->
+         <!-- Third Row --->
+          <!--<div class="row">
+              <div class="col-12 col-md-12">
+                <p id="paragraphp">
+                </p>
+              </div>
+            </div>-->
+            
+       
+
+         <!---- row end ------>
+
+         <!-- second row start--->
+       <!--<div class="container-fluid" style="margin-top: 15px;">-->
+       <!-- <div class="row">-->
+       <!--   <div class="col-12 col-md-3" style="width: auto !important;">-->
+       <!--     <img src="assets/images/car.jpg" width="200px" height="200px"  id="icon" alt="User Icon" />-->
+       <!--   </div>-->
+       <!--   <div class="col-12 col-md-9" style="margin-top: auto;">-->
+       <!--   <p id="p-heading" style="font-size:20px;color:#0e0e0e;margin-left: -3px;font-weight: bold;"><a onclick="innermatch()" data-toggle="tab" href="#menu1" style="text-decoration: none;background-color:white !important;color: #0e0e0e !important;">CAR SALES</a></p>-->
+       <!--     <div class="row" style=" font-weight: bolder;">-->
+
+       <!--       <div class="col-12 col-md-3" style="font-weight: bolder;" >-->
+
+       <!--         <p id="below-heading-values"><span id="below-heading" style="color:#213f7b;" >REVENUE:</span> $1,400,000</p>-->
+       <!--       </div>-->
+       <!--       <div class="col-12 col-md-3"style="font-weight: bolder;">-->
+       <!--         <p id="below-heading-values"><span id="below-heading2" style="color:#213f7b;" >EBITDA:</span>$75,000</p>-->
+       <!--       </div>-->
+       <!--       <div class="col-12 col-md-3" style="font-weight: bolder;">-->
+       <!--         <p id="below-heading-values"><span id="below-heading3" style="color:#213f7b;" >#FTE:</span>6</p>-->
+       <!--       </div>-->
+
+       <!--       <div class="col-12 col-md-3 locationtop"style="font-weight: bolder;">-->
+       <!--         <p style="font-size:20px;color:#0e0e0e;margin-left: 8px;">$333,000</p>-->
+       <!--         <p id="below-heading-values"><span id="below-heading4" style="color:#213f7b;" >LOCATION:</span>Vancouver</p>-->
+       <!--       </div>-->
+       <!--     </div>-->
+               <!--- second row---------->
+       <!--     <div class="row">-->
+       <!--       <div class="col-12 col-md-12">-->
+       <!--         <p id="paragraphp" style="font-family: Open Sans Condensed Light !important;">-->
+       <!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud-->
+       <!--           exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.-->
+       <!--           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+       <!--         </p>-->
+       <!--       </div>-->
+
+       <!--     </div>-->
+
+       <!--   </div>-->
+
+       <!-- </div>-->
+
+       <!--</div>-->
+       
+       <!-- <div class="container-fluid" style="margin-top: 15px;">-->
+       <!-- <div class="row">-->
+       <!--   <div class="col-12 col-md-3" style="width: auto !important;">-->
+       <!--     <img src="assets/images/truck.jpg" width="200px" height="200px"  id="icon" alt="User Icon" />-->
+       <!--   </div>-->
+       <!--   <div class="col-12 col-md-9" style="margin-top: auto;">-->
+       <!--   <p id="p-heading" style="font-size:20px;color:#0e0e0e;margin-left: -3px;font-weight: bold;"><a onclick="innermatch()" data-toggle="tab" href="#menu1" style="text-decoration: none;background-color:white !important;color: #0e0e0e !important;">-->
+       <!--   TRUCK REPAIR BUSINESS</a></p>-->
+       <!--     <div class="row" style="font-weight: bolder;">-->
+
+       <!--       <div class="col-12 col-md-3" style="font-weight: bolder;" >-->
+
+       <!--         <p id="below-heading-values"><span id="below-heading" style="color:#213f7b;" >REVENUE:</span> $1,450,000</p>-->
+       <!--       </div>-->
+       <!--       <div class="col-12 col-md-3"style="font-weight: bolder;">-->
+       <!--         <p id="below-heading-values"><span id="below-heading2" style="color:#213f7b;" >EBITDA:</span>$75,000</p>-->
+       <!--       </div>-->
+       <!--       <div class="col-12 col-md-3" style="font-weight: bolder;">-->
+       <!--         <p id="below-heading-values"><span id="below-heading3" style="color:#213f7b;" >#FTE:</span>6</p>-->
+       <!--       </div>-->
+
+       <!--       <div class="col-12 col-md-3 locationtop"style="font-weight: bolder;">-->
+       <!--         <p style="font-size:20px;color:#0e0e0e;margin-left: 8px;">$$1,450,000</p>-->
+       <!--         <p id="below-heading-values"><span id="below-heading4" style="color:#213f7b;" >LOCATION:</span>Vancouver</p>-->
+       <!--       </div>-->
+       <!--     </div>-->
+               <!--- second row---------->
+       <!--     <div class="row">-->
+       <!--       <div class="col-12 col-md-12">-->
+       <!--         <p id="paragraphp" style="font-family: Open Sans Condensed Light !important;">-->
+       <!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud-->
+       <!--           exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.-->
+       <!--           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+       <!--         </p>-->
+       <!--       </div>-->
+
+       <!--     </div>-->
+
+       <!--   </div>-->
+
+       <!-- </div>-->
+
+       <!-- </div>-->
+       
+       <!-- <div class="container-fluid" style="margin-top: 15px;">-->
+       <!-- <div class="row">-->
+       <!--   <div class="col-12 col-md-3" style="width: auto !important;">-->
+       <!--     <img src="assets/images/ceramic.jpg" width="200px" height="200px"  id="icon" alt="User Icon" style="margin-bottom: 25px;" />-->
+       <!--   </div>-->
+       <!--   <div class="col-12 col-md-9" style="margin-top: auto;">-->
+       <!--   <p id="p-heading" style="font-size:20px;color:#0e0e0e;margin-left: -3px;font-weight: bold;"><a onclick="innermatch()" data-toggle="tab" href="#menu1" style="text-decoration: none;background-color:white !important;color: #0e0e0e !important;">-->
+       <!--   HIGH END CERAMIC BUSINESS </a></p>-->
+
+       <!--     <div class="row" style="font-weight:bolder;">-->
+
+       <!--       <div class="col-12 col-md-3" style="font-weight: bolder;" >-->
+
+       <!--         <p id="below-heading-values"><span id="below-heading" style="color:#213f7b;" >REVENUE:</span> $1,400,000</p>-->
+       <!--       </div>-->
+       <!--       <div class="col-12 col-md-3"style="font-weight: bolder;">-->
+       <!--         <p id="below-heading-values"><span id="below-heading2" style="color:#213f7b;" >EBITDA:</span>$75,000</p>-->
+       <!--       </div>-->
+       <!--       <div class="col-12 col-md-3" style="font-weight: bolder;">-->
+       <!--         <p id="below-heading-values"><span id="below-heading3" style="color:#213f7b;" >#FTE:</span>6</p>-->
+       <!--       </div>-->
+
+       <!--       <div class="col-12 col-md-3 locationtop"style="font-weight: bolder;">-->
+       <!--         <p style="font-size:20px;color:#0e0e0e;margin-left: 8px;">$3,500,000</p>-->
+       <!--         <p id="below-heading-values"><span id="below-heading4" style="color:#213f7b;" >LOCATION:</span>Vancouver</p>-->
+       <!--       </div>-->
+       <!--     </div>-->
+               <!--- second row---------->
+       <!--     <div class="row">-->
+       <!--       <div class="col-12 col-md-12">-->
+       <!--         <p id="paragraphp" style="font-family: Open Sans Condensed Light !important;">-->
+       <!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud-->
+       <!--           exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.-->
+       <!--           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+       <!--         </p>-->
+       <!--       </div>-->
+
+       <!--     </div>-->
+
+       <!--   </div>-->
+
+       <!-- </div>-->
+
+       <!-- </div>-->
+       <!------ row end ------->
+       <!--- second tab start---->
+        <!-- Tab panes -->
+    <!--<div id="tab2" class="tab-content">
+
+        
+         <h2 class="mb-5" style="font-family: 'Oswald', sans-serif;" class="mb-5">Hello Welcome Back</h2>
+          <div class="container-fluid" style="padding-left: 9px;">
+            <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="" style="">
+                  <table class="table">
+                      <tr>
+                        <th style="text-align: center;font-weight: bolder;font-size: 17px;border: 1px solid;">BUYER STATUS</th>
+                       <th style="text-align: center;background-color:#fcebdd;border: 1px solid;border-right:1px solid;">REGISTERED</th>
+                      </tr>
+                  </table>
+            </div>
+            <div class="col-12">
+              <p class="qualified-tab-call" href="#Qualified" data-toggle="tab" id="header_bar" style="font-size:14px;cursor:pointer;color:#082a75;">
+                Upgrade Buyers status to qualified by completing all mandatory fields here.
+              </p>
+              <script>
+              $(document).ready(function() {
+                $(".qualified-tab-call").click(function () {
+                  $(".qualified-tab").addClass("active");
+                  $(".qualified-tab-active").removeClass("active");
+                });
+                });
+              </script>
+            </div>
+          </div>
+           <div class="col-12 col-md-6">
+            <p>
+              Complete all the mandatory field in Qualifed section to upgrade your Buyer Status to QUALIFIED.
+            </p>
+
+          </div> 
+            </div>
+          </div><br>
+          <div class="container-fluid">
+            <div class="row">
+          <div class="col-12 col-md-3" style="width:auto;" >
+            <img src="assets/images/coffee.jpg" width="239px" height="220px"  id="icon" alt="User Icon" />
+          </div>
+          <div class="col-12 col-md-9">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-6 pddingtop" style="" >
+                <p style="font-size:22px;color: black;font-weight: bold;font-family: 'Oswald', sans-serif;">COFFEE SHOP</p>
+                <p style="font-size: 12px;margin-left:1px;font-family: Open Sans Condensed Light !important;"><span style="color:#213f7b;font-family: Open Sans Condensed  !important;font-weight: bold;" >REVENUE:</span>  $1400000</p>
+                <p style="font-size: 12px;margin-left:1px;font-family: Open Sans Condensed Light !important;"><span style="color:#213f7b;font-family: Open Sans Condensed  !important;font-weight: bold;" >EBITDA:</span>  $200,000</p>
+                <p style="font-size: 12px;margin-left: 1px;"><span style="color:#213f7b;font-family: Open Sans Condensed  !important;font-weight: bold;" >#FTE:</span>10</p>
+                <p style="font-size: 12px;margin-left: 1px; font-family: Open Sans Condensed Light !important;font-weight: bold;"><span style="color:#213f7b;font-family: Open Sans Condensed !important;font-weight: bold;" >Location:</span>Vancouver</p>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 ">
+                <p style="font-size: 28px;margin-left: -17px;color: #ce5503;font-weight:bold; ">$650,000</p>
+                <img src="assets/images/pdf.jpg" width="" height="70px"  id="icon" alt="User Icon" />
+              </div>
+              <div class="col-9 col-sm-9 col-md-9 pddingtop">
+                <p style="font-family: Open Sans Condensed Light !important;text-align: justify;text-justify: inter-word;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots2">...</span><span id="moretext2">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum     dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                <button type="button" class="btn btn-primary" onclick="myFunction3()" class="myBtnread2" style="padding:10px;">Read more...</button>
+              </div>
+              <script>
+            function myFunction3() {
+              var dots = document.getElementById("dots2");
+              var moreText = document.getElementById("moretext2");
+              var btnText = document.getElementsByClassName("myBtnread2");
+
+              if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+              } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+              }
+            }
+          </script>-
+            </div>
+          </div>
+            </div>
+          </div>-->
+            <!--- 4cloumn section----->
+    <!--    <div class="container-fluid" style="margin-top: 18px;">
+              <div class="row">-->
+              <!----first cloumn end--->
+            <!--   <div class="col-12 col-md-3" style="height:100%;">
+                  <h3 style="font-family: 'Oswald', sans-serif;font-size:23px;color:#213f7b;">FEATURES</h3>
+                   <ul style="font-family: Open Sans Condensed Light !important;">
+                       <li>Coffee Shop with Kitchen</li>
+                       <li>Truck Repair Business</li>
+                       <li>On-line Gambling Business</li>
+                       <li>Thai Restaurant</li>
+                       <li>Print Shop on Vancouver Island</li>
+                       <li>Print Shop on Vancouver Island</li>
+                   </ul>
+
+                  <h3 style="font-family: 'Oswald', sans-serif;font-size:23px;color:#213f7b;">FINANCIALS</h3>
+                  <div class="table-responsive">
+                    <table class="table table-condensed">
+                      <thead>
+                        <tr style="background-color:#7f7f7f;  font-family: 'Oswald', sans-serif;">
+                          <th>Year</th>
+                          <th>Revenue</th>
+                          <th>EBITDA</th>
+                        </tr>
+                      </thead>
+                      <tbody style="font-family: Open Sans Condensed Light !important;">
+                        <tr>
+                          <td>2015</td>
+                          <td>$1,329,114</td>
+                          <td>$2,015,419</td>
+                        </tr>
+                         <tr>
+                          <td>2016</td>
+                          <td>$1,400,000</td>
+                          <td>$1,400,000</td>
+                        </tr>
+                         <tr>
+                          <td>2017</td>
+                          <td>$1,400,000</td>
+                          <td>$1,400,000</td>
+                        </tr>
+                         <tr>
+                          <td>2018</td>
+                          <td>$1,400,000</td>
+                          <td>$1,400,000</td>
+                        </tr>
+                         <tr>
+                          <td>2019</td>
+                          <td>$1,400,000</td>
+                          <td>$1,400,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>-->
+            <!---first column end--->
+             <!----second  cloumn start--->
+          <!--   <div class="col-12 col-md-3" style=" border-left: 1px solid; border-right: 1px solid;">
+               <h3 style="font-family: 'Oswald', sans-serif;font-size:23px;color:#213f7b;">BUSINESS SUMMARY</h3>
+                 <h2 style="font-size:20px;color:#0e0e0e;font-family: 'Oswald', sans-serif;">Sales Type</h2>
+                   <p style="margin-top: -10px;font-family: Open Sans Condensed Light !important; margin-top:1px;">Share Sale</p>
+                 <h2 style="font-family: 'Oswald', sans-serif;font-size:20px;color:#0e0e0e;">Premises</h2>
+                   <p style="margin-top: -10px;font-family: Open Sans Condensed Light !important; margin-top:1px;"> Nem ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                 <h2 style="font-family: 'Oswald', sans-serif;font-size:20px;color:#0e0e0e;">Working Capital</h2>
+                   <p style="margin-top: -10px;font-family: Open Sans Condensed Light !important; margin-top:1px;"> Nem ut perspiciatis unde</p>
+                 <h2 style="font-size:20px;color:#0e0e0e;font-family: 'Oswald', sans-serif;">Included in the Asking Price</h2>
+                   <ul style="font-family: Open Sans Condensed Light !important;">
+                      <li>Coffee Shop with Kitchen</li>
+                      <li>Truck Repair Business</li>
+                      <li>On-line Gambling Business</li>
+                   </ul>
+             </div>-->
+            <!---second column end--->
+             <!----third cloumn start--->
+           <!--  <div class="col-12 col-md-6">
+              <div class="row">
+                   <div class="col-12 col-md-7 ">
+                   <div id="container2" style="height:250px;"></div>
+                   </div>
+
+                   <div class="col-12 col-md-10">
+                     <div class="chartContainer2"></div>
+                   </div>
+                     <div class="col-12" style="margin:auto; padding:5px;">
+                     <button id="more-info-btn" class="btn btn-primary" style="margin-top: 200px;float: right;margin-bottom: 8px;padding:5px;">More Info</button>
+                   </div>
+                 </div>
+            </div>-->
+          <!--</div>
+          </div>
+          </div>-->
+          </div>
+          </div>
+       
+          <!--- 4 column section end------>
+      </div>
+      
+       <!-----second tab end------->
+</div>
+      <!-----------MATCH section end-------->
+</div>
+
+
+
+        <!-----------OPPORTUNITIES section Start-------->
+        
+     <div id="OPPORTUNITIES" class="tab-pane opper_tab fade not_acyive">
+<div id="oprid"></div>
+             <div id="oppr_list">
+             <div class="row mt-2" >
+    
+<div class="col-md-2" style="width:182px;">
+               <img src="https://crm.omniumbusiness.com/uploads/gallery/_25.jpg" width="150px" style="width:100%;margin-top:13px;margin-left:13px" height="150px"  id="icon" alt="User Icon">
+    
+</div>
+
+<div class="col-md-10 " style="margin-top:27px;">
+    
+
+    <p style="font-size:20px;margin-left: -3px;font-weight: bold;"><a class="opr " data="142"  href="list_get.php?id=142&pre=opr"> 
+    
+    Specialized Tech Company    (Ref.Id #142)</a></p>
+
+
+
+
+
+
+    <div class="row">
+        
+    <div class="col-md-4">
+            <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">Asking Price:</span> <span style="font-weight: bolder;font-size: 18px;"> $8,778,000</span>
+                         </p>
+
+            </div>
+    
+        <div class="col-md-4">
+            <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">REVENUE:</span> <span style="font-weight: bolder;font-size: 18px;"> $12,500,000</span>
+                         </p>
+
+            </div>
+            <div class="col-md-4">
+                                  <p id="below-heading-values">
+                          <span id="below-heading2" style="color:#213f7b;">EBITDA:</span> <span style="font-weight: bolder;font-size: 18px;"> $1,497,000 </span>
+                          </p>
+
+            </div>
+            <div class="col-md-4">
+            <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Location:</span>
+                                     <span style="font-weight: bolder;font-size: 18px;"> Ontario     </span>     </p>
+
+            </div>
+    
+    <div class="col-md-12">
+            <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;font-weight:bolder">Description: </span> <span style="font-weight: bolder;font-size: 18px;"> Algorithm development for lossless compression of data</span>
+                         </p>
+            
+            </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+ <div class="row mt-2" >
+    
+<div class="col-md-2" style="width:182px;">
+               <img src="https://crm.omniumbusiness.com/uploads/gallery/_24.jpg" width="150px" style="width:100%;margin-top:13px;margin-left:13px" height="150px"  id="icon" alt="User Icon">
+    
+</div>
+
+<div class="col-md-10 " style="margin-top:27px;">
+    
+
+    <p style="font-size:20px;margin-left: -3px;font-weight: bold;"><a class="opr " data="241"  href="list_get.php?id=241&pre=opr"> 
+    
+    Virtual Reality Software Provider    (Ref.Id #241)</a></p>
+
+
+
+
+
+
+    <div class="row">
+        
+    <div class="col-md-4">
+            <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">Asking Price:</span> <span style="font-weight: bolder;font-size: 18px;"> $1,180,000</span>
+                         </p>
+
+            </div>
+    
+        <div class="col-md-4">
+            <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;">REVENUE:</span> <span style="font-weight: bolder;font-size: 18px;"> $2,450,000</span>
+                         </p>
+
+            </div>
+            <div class="col-md-4">
+                                  <p id="below-heading-values">
+                          <span id="below-heading2" style="color:#213f7b;">EBITDA:</span> <span style="font-weight: bolder;font-size: 18px;"> $263,000 </span>
+                          </p>
+
+            </div>
+            <div class="col-md-4">
+            <p id="below-heading-values">
+                          <span id = "below-heading3" style="color:#213f7b;">Location:</span>
+                                     <span style="font-weight: bolder;font-size: 18px;"> Capital     </span>     </p>
+
+            </div>
+    
+    <div class="col-md-12">
+            <p id="below-heading-values">
+                          <span id="below-heading" 
+                          style="color:#213f7b;font-weight:bolder">Description: </span> <span style="font-weight: bolder;font-size: 18px;"> Producers of virtual reality software and hardware</span>
+                         </p>
+            
+            </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+ 
+</div>
+     </div>       
+        <!-----------OPPORTUNITIES section end-------->
+
+
+
+
+
+
+    <!-----------Registered section Start-------->
+    <div id="Registered" class="tab-pane fade register_tab not_acyive">
+
+            <div class="container-fluid" style="margin-left:2%;margin-right: 3%;">
+       
+        <div>
+            <p style="font-size:23px;color:#213f7b;font-weight: bold;
+             margin-top:5%; margin-bottom:14px; ">PERSONAL INFORMATION</p>
+              <form class="form-group" method="POST" action="">
+                <div class="row">
+                  <div class="col-md-6"style="margin-top: 15px;">
+                    <label for="email"style="font-weight: 800;">Prefix:</label>
+                    <select class=" selectcls" name="prefix" id="exampleFormControlSelect1" style="width: 100%;" >
+
+                        <option value="" selected>Select Prefix</option>
+                        <option value="1st Lt" >1st Lt</option>
+                        <option value="Adm" >Adm</option>
+                        <option value="Atty" >Atty</option>
+                        
+                        <option value="Brother" >Brother</option>
+                        <option value="Capt" >Capt</option>
+                        <option value="Chief" >Chief</option>
+                        <option value="Cmdr" >Cmdr</option>
+                        <option value="Col" >Col</option>
+                        <option value="Dean" >Dean</option>
+                        <option value="Dr" >Dr</option>
+                        <option value="Elder" >Elder</option>
+                        <option value="Father" >Father</option>
+                        <option value="Gen" >Gen</option>
+                        <option value="Gov" >Gov</option>
+                        
+                        <option value="Hon" >Hon</option>
+                        <option value="Lt Col" >Lt Col</option>
+                        <option value="Maj" >Maj</option>
+                        <option value="MSgt" >MSgt</option>
+                        <option value="Mr" >Mr</option>
+                        <option value="Mrs" >Mrs</option>
+                        <option value="Ms" >Ms</option>
+                        <option value="Prince" >Prince</option>
+                        
+                        <option value="Sister" >Sister</option>
+                        <option value="Prof" >Prof</option>
+                        <option value="Rabbi" >Rabbi</option>
+                        <option value="Rev" >Rev</option>
+                      </select>
+                  </div>
+                  <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="text" style="font-weight: 800;">First Name<span style="color:red;">*</span>:</label>
+                     <input type="text" name="firstName" class="form-control" id="text" value="ans" required>
+                  </div>
+
+                  <div class="col-12 col-md-6" style="margin-top: 15px;">
+                    <label for="text"style="font-weight: 800;">Preferred Name:</label>
+                   <input type="text" name="preferredName" class="form-control" value="" id="text" >
+                  </div>
+
+                 <!--- row end ---->
+
+                  <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email"style="font-weight: 800;">Middle Name</label>
+                     <input type="text" name="middleName" class="form-control" id="text" value="">
+                  </div>
+                  <div class="col-12 col-md-6" style="margin-top: 15px;">
+                     <label for="text"style="font-weight: 800;">Last Name<span style="color:red;">*</span>:</label>
+                     <input type="text" name="lastName" class="form-control" id="text" value="mustafa" required>
+                  </div>
+
+                   <!--- row end------>
+
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Suffix:</label>
+                    <input type="text" name="suffix" class="form-control" id="email" value="">
+                   </div>
+
+
+
+                    <!-------row end---->
+
+                    <div class="col-md-6"style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">Gender:</label>
+                      <select class=" selectcls" name="gender" id="exampleFormControlSelect1" style="width: 100%;">
+                        <option value="" selected>Select Gender</option>
+                        <option value="male" >Male</option>
+                        <option value="female" >Female</option>
+                        <option value="Other" >Other</option>
+                        </select>
+                    </div>
+
+
+                 <!---- row end------>
+
+
+                   <div class="col-12 col-md-6" style="margin-top: 15px;">
+                     <label for="text"style="font-weight: 800;">City:
+                     
+                     <span style="color:red;">*</span>
+                     
+                     
+                     
+                     
+                     </label>
+                    <input type="text" name="city" class="form-control" id="text" value="lahore" required>
+                   </div>
+
+                 <!-------row end---->
+
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Home Address 1<span style="color:red;">*</span>:</label>
+                     <textarea name="address1" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" required> lahore </textarea>
+
+                     <div class="col-12" style="margin-top: 15px;">
+                       <label for="text"style="font-weight: 800;">Home Address 2:</label>
+                       <textarea name="address2" class="form-control rounded-0" id="exampleFormControlTextarea2"   rows="3" ></textarea>
+                     </div>
+
+                     <div class="col-12"style="margin-top: 15px;">
+                       <label for="text" style="font-weight: 800;">Direct Phone:</label>
+                       <input type="number" value=""  name="d_number"   class="form-control" id="number">
+
+                       <div class="col-12"style="margin-top: 15px;">
+                         <label for="email" style="font-weight: 800;">Office Phone:</label>
+                        <input type="number" value="" name="office_number" class="form-control" id="number">
+                       </div>
+                       <div class="col-12" style="margin-top: 15px;">
+                         <label for="text"style="font-weight: 800;">Mobile Phone:</label>
+                        <input type="number" name="mobile_number"  value="" class="form-control" id="number">
+                       </div>
+
+
+                        <!-------row end---->
+
+                       <div class="col-12"style="margin-top: 15px;">
+                         <label for="email" style="font-weight: 800;">Home Phone:</label>
+                        <input type="number" value="" name="home_number" class="form-control" id="number" >
+                       </div>
+                       <div class="col-12" style="margin-top: 15px;">
+                         <label for="text"style="font-weight: 800;">Fax:</label>
+                        <input type="number" value="" name="fax" class="form-control" id="number">
+                       </div>
+                       <div class="col-12"style="margin-top: 15px;">
+                         <label for="text" style="font-weight: 800;">Occupation:</label>
+                         <input type="text" value="" name="occupation" class="form-control" id="text" >
+                        </div>
+                      </div>
+                   </div>
+
+                   <div class="col-md-6"style="margin-top: 15px;">
+                     <label for="email"style="font-weight: 800;">Prov/State:
+                     <span style="color:red;">*</span>
+                     </label>
+                     
+                     <select name="state" class=" selectcls" id="exampleFormControlSelect1" style="width: 100%;" required>
+                         <option value="">Select Prov/State</option>
+                       <option value="AB" >AB</option>
+                       <option value="BC"   >BC</option>
+                        <option value="MB"  >MB</option>
+                        <option value="NB"  selected>NB</option>
+                        
+                        <option value="NL"  >NL</option>
+                        <option value="NT"  >NT</option>
+                        <option value="NS"  >NS</option>
+                        <option value="NU"  >NU</option>
+                        <option value="ON"  >ON</option>
+                        <option value="PE"  >PE</option>
+                        
+                        <option value="QC"  >QC</option>
+                        <option value="SK"  >SK</option>
+                        <option value="YT"  >YT</option>
+                        <option value="AL"  >AL</option>
+                        <option value="AK"  >AK</option>
+                        <option value="AS"  >AS</option>
+                        <option value="AZ"  >AZ</option>
+                        <option value="AR"  >AR</option>
+                        <option value="AA"  >AA</option>
+                        <option value="AE"  >AE</option>
+                        <option value="AP"  >AP</option>
+                        <option value="CA"  >CA</option>
+                        <option value="CO"  >CO</option>
+                        
+                        <option value="CT"  >CT</option>
+                        <option value="DE"  >DE</option>
+                        <option value="DC"  >DC</option>
+                        <option value="FM"  >FM</option>
+                        <option value="FL"  >FL</option>
+                        <option value="GA"  >GA</option>
+                        <option value="GU"  >GU</option>
+                        <option value="HI"  >HI</option>
+                        
+                        <option value="ID"  >ID</option>
+                        <option value="IL"  >IL</option>
+                        <option value="IN"  >IN</option>
+                        <option value="IA"  >IA</option>
+                        <option value="KS"  >KS</option>
+                        <option value="KY"  >KY</option>
+                        <option value="LA"  >LA</option>
+                        <option value="ME"  >ME</option>
+                        <option value="MH"  >MH</option>
+                        <option value="MD"  >MD</option>
+                        <option value="MA"  >MA</option>
+                        <option value="MI"  >MI</option>
+                        <option value="MN"  >MN</option>
+                        <option value="MS"  >MS</option>
+                        <option value="MO"  >MO</option>
+                        <option value="MT"  >MT</option>
+                        <option value="NE"  >NE</option>
+                        <option value="NV"  >NV</option>
+                        <option value="NH"  >NH</option>
+                        <option value="NJ"  >NJ</option>
+                        <option value="NM"  >NM</option>
+                        <option value="NY"  >NY</option>
+                        <option value="NC"  >NC</option>
+                        <option value="ND"  >ND</option>
+                        <option value="MP"  >MP</option>
+                        <option value="OH"  >OH</option>
+                        <option value="OK"  >OK</option>
+                        
+                        <option value="OR"  >OR</option>
+                        <option value="PA"  >PA</option>
+                        <option value="PR"  >PR</option>
+                        <option value="PW"  >PW</option>
+                        <option value="RI"  >RI</option>
+                        <option value="SC"  >SC</option>
+                        <option value="SD"  >SD</option>
+                        <option value="TN"  >TN</option>
+                        <option value="TX"  >TX</option>
+                        <option value="UT"  >UT</option>
+                        <option value="VA"  >VA</option>
+                        <option value="VI"  >VI</option>
+                        
+                        <option value="VT"  >VT</option>
+                        <option value="WA"  >WA</option>
+                        <option value="WI"  >WI</option>
+                        <option value="WV"  >WV</option>
+                        <option value="WY"  >WY</option>
+                        
+                       </select>
+                   </div>
+
+
+
+                   <!-------row end---->
+
+
+                    <div class="col-12 col-md-6"style="margin-top: 15px;">
+                      <label for="text" style="font-weight: 800;">Postal/Zip:
+                      <span style="color:red;">*</span>
+                      </label>
+                      <input type="text" value="22222" name="zip" class="form-control" id="text" required >
+                     </div>
+
+                   <!---- row end------>
+
+                    <div class="col-md-6"style="margin-top: 15px;">
+                      <label for="Country" style="font-weight: 800;">Country:
+                      <span style="color:red;">*</span>
+                      </label>
+                      <select class="selectcls" id="exampleFormControlSelect1" name='c_country' style="width: 100%;" required>
+                        <option value="">Select Your Country</option>
+                        <option value="US"  selected>US</option>
+                        <option value="Australia"  >Australia</option>
+                         <option value="England"  >England</option>
+                         <option value="Canada"  >Canada</option>
+                        </select>
+                    </div>
+
+
+
+
+                 <!---- row end------>
+
+
+
+
+                 <!-------row end---->
+
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Email<span style="color:red;">*</span>:</label>
+                    <input type="email" value="malik123@gmail.com" name="email" class="form-control" id="email" required>
+
+                    <div class="col-12" style="margin-top: 15px;">
+                      <label for="text"style="font-weight: 800;">Email 2:</label>
+                     <input type="email" value="" name="email1" class="form-control" id="email">
+                    </div>
+                   </div>
+
+
+
+                 <!-------row end---->
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;margin-bottom: 0px;">Linkedin:</label>
+                     <p style="fontSize:12px !important;">(Please copy and paste LinkedIn Profile URL)</p>
+                    <input type="text" value="" name="linkedin_url" class="form-control" id="text" >
+                   </div>
+                   <div class="col-12 col-md-6" style="margin-top: 15px;">
+                     <label for="text"style="font-weight: 800;margin-bottom: 0px !important;">Facebook:</label>
+                     <p style="fontSize:12px !important;">(Please copy and paste Facebook Profile URL)</p>
+                    <input type="text" value="" name="facebook_url"  class="form-control" id="text" >
+                   </div>
+
+                 <!-------row end---->
+                    <div class="col-md-6"style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">Preferred Method of Contact<span style="color:red;">*</span>:</label>
+                       <!-- Multiple Select -->
+                       
+                                              
+                        <select class="js-example-basic-multiple" multiple="multiple"  multiple name="p_m_contact[]"  style="width:100%;" required >
+                          <option  value="">Select Preferred Method of Contact</option>
+                          <option value="Email" selected>Email</option>
+                          <option value="Phone" selected>Phone</option>
+                          <option value="Fax" >Fax</option>
+                          <option value="Text" >Text</option>
+                          <option value="Mail" >Mail</option>
+
+                        </select>
+
+                    </div>
+                    
+
+
+
+                      <div class="col-12 col-md-6"style="margin-top: 15px;">
+                        <label for="email" style="font-weight: 800;">Title:</label>
+                       <input type="text" value="" name="title" class="form-control" id="text" >
+                      </div>
+                  </div>
+                   <!---- row end------>
+                   <!--- personal data section ----->
+                   <p style="font-size:23px;color:#213f7b;font-weight: bold;
+             margin-top:5%; margin-bottom:14px; "> COMPANY INFORMATION</p>
+             <div class="row">
+               <div class="col-12 col-md-6"style="margin-top: 15px;">
+                      <label for="text" style="font-weight: 800;">Name of Company Making Purchase (If Applicable):</label>
+                      <input type="text" value="" name="c_name" class="form-control" id="text" >
+                     </div>
+                    <div class="col-md-6"style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">Industries Currently Operating In:</label>
+                       <!-- Multiple Select -->
+                                               <select name="c_b_category[]" style="width:100%;" class="js-example-basic-multiple" multiple="multiple">
+
+                        <option value="">Select Industries Curently Operating In</option>
+
+
+                        <option value="Crop Production"   >Crop Production</option>
+                        <option value="Animal Production and Aquaculture"   >Animal Production and Aquaculture</option>
+                        <option value="Forestry and Logging"   >Forestry and Logging</option>
+                        <option value="Fishing, Hunting and Trapping"   >Fishing, Hunting and Trapping</option>
+                        <option value="Support Activities for Agriculture and Forestry"   >Support Activities for Agriculture and Forestry</option>
+                        <option value="Oil and Gas Extraction"   >Oil and Gas Extraction</option>
+                        <option value="Mining (Except Oil and Gas)"   >Mining (Except Oil and Gas)</option>
+                        <option value="Support Activities for Mining"   >Support Activities for Mining</option>
+                        <option value="Utilities"   >Utilities</option>
+                        <option value="Construction of Buildings"   >Construction of Buildings</option>
+                        <option value="Heavy and Civil Engineering Construction"   >Heavy and Civil Engineering Construction</option>
+                        <option value="Specialty Trade Contractors"   >Specialty Trade Contractors</option>
+                        <option value="Food Manufacturing"   >Food Manufacturing</option>
+                        <option value="Beverage and Tobacco Product Manufacturing"   >Beverage and Tobacco Product Manufacturing</option>
+                        <option value="Textile Mills"   >Textile Mills</option>
+                        <option value="Textile Product Mills"  >Textile Product Mills</option>
+                        <option value="Apparel Manufacturing"   >Apparel Manufacturing</option>
+                        <option value="Leather and Allied Product Manufacturing"   >Leather and Allied Product Manufacturing</option>
+                        <option value="Wood Product Manufacturing"   >Wood Product Manufacturing</option>
+                        <option value="Paper Manufacturing"   >Paper Manufacturing</option>
+                        <option value="Printing and Related Support Activities"   >Printing and Related Support Activities</option>
+                        <option value="Petroleum and Coal Products Manufacturing"   >Petroleum and Coal Products Manufacturing</option>
+                        <option value="Chemical Manufacturing"   >Chemical Manufacturing</option>
+                        <option value="Plastics and Rubber Products Manufacturing"   >Plastics and Rubber Products Manufacturing</option>
+                        <option value="Nonmetallic Mineral Product Manufacturing"   >Nonmetallic Mineral Product Manufacturing</option>
+                        <option value="Primary Metal Manufacturing"   >Primary Metal Manufacturing</option>
+                        <option value="Fabricated Metal Product Manufacturing"   >Fabricated Metal Product Manufacturing</option>
+                        <option value="Machinery Manufacturing"   >Machinery Manufacturing</option>
+                        <option value="Computer and Electronic Product Manufacturing"   >Computer and Electronic Product Manufacturing</option>
+                        
+                        <option value="Electrical Equipment, Appliance, and Component Manufacturing"   >Electrical Equipment, Appliance, and Component Manufacturing</option>
+                        <option value="Transportation Equipment Manufacturing"   >Transportation Equipment Manufacturing</option>
+                        <option value="Furniture and Related Product Manufacturing"   >Furniture and Related Product Manufacturing</option>
+                        <option value="Miscellaneous Manufacturing"   >Miscellaneous Manufacturing</option>
+                        <option value="Merchant Wholesalers, Durable Goods"   >Merchant Wholesalers, Durable Goods</option>
+                        <option value="Merchant Wholesalers, Nondurable Goods"   >Merchant Wholesalers, Nondurable Goods</option>
+                        <option value="Wholesale Electronic Markets and Agents and Brokers"   value="">Wholesale Electronic Markets and Agents and Brokers</option>
+                        <option value="Motor Vehicle and Parts Dealers"   >Motor Vehicle and Parts Dealers</option>
+                        <option value="Furniture and Home Furnishings Store"   >Furniture and Home Furnishings Store</option>
+                        <option value="Electronics and Appliance Stores"   >Electronics and Appliance Stores</option>
+                        <option value="Building Material and Garden Equipment and Supplies Dealers"   >Building Material and Garden Equipment and Supplies Dealers</option>
+                        <option value="Food and Beverage Stores"   >Food and Beverage Stores</option>
+                        <option value="Health and Personal Care Stores"   >Health and Personal Care Stores</option>
+                        <option value="Gasoline Stations"   >Gasoline Stations</option>
+                        <option value="Clothing and Clothing Accessories Stores"   >Clothing and Clothing Accessories Stores</option>
+                        <option value="Sporting Goods, Hobby, Musical Instrument, and Book Stores"  >Sporting Goods, Hobby, Musical Instrument, and Book Stores</option>
+                        <option value="General Merchandise Stores"   >General Merchandise Stores</option>
+                        <option value="Miscellaneous Store Retailers"   >Miscellaneous Store Retailers</option>
+                        <option value="Nonstore Retailers"   >Nonstore Retailers</option>
+                        <option value="Air Transportation"   >Air Transportation</option>
+                        <option value="Rail Transportation"   >Rail Transportation</option>
+                        <option value="Water Transportation"   >Water Transportation</option>
+                        <option value="Truck Transportation"  >Truck Transportation</option>
+                        <option value="Transit and Ground Passenger Transportation"   >Transit and Ground Passenger Transportation</option>
+                        <option value="Pipeline Transportation"   >Pipeline Transportation</option>
+                        <option value="Scenic and Sightseeing Transportation"   >Scenic and Sightseeing Transportation</option>
+                        <option value="Support Activities for Transportation"   >Support Activities for Transportation</option>
+                        <option value="Postal Service"   >Postal Service</option>
+                        <option value="Couriers and Messengers"   >Couriers and Messengers</option>
+                        <option value="Warehousing and Storage"   >Warehousing and Storage</option>
+                        <option value="Publishing Industries (except Internet)"   >Publishing Industries (except Internet)</option>
+                        <option value="Motion Picture and Sound Recording Industries"   >Motion Picture and Sound Recording Industries</option>
+                        <option value="Broadcasting (except Internet)"   >Broadcasting (except Internet)</option>
+                        <option value="Telecommunications"   >Telecommunications</option>
+                        <option value="Data Processing, Hosting, and Related Services"   >Data Processing, Hosting, and Related Services</option>
+                        <option value="Other Information Services"   >Other Information Services</option>
+                        <option value="Monetary Authorities - Central Bank"   >Monetary Authorities - Central Bank</option>
+                        <option value="Credit Intermediation and Related Activities"   >Credit Intermediation and Related Activities</option>
+                        <option value="Securities, Commodity Contracts, and Other Financial Investments and Related Activities"   >Securities, Commodity Contracts, and Other Financial Investments and Related Activities</option>
+                        
+                        
+                        
+                        <option value="Insurance Carriers and Related Activities "   >Insurance Carriers and Related Activities </option>
+                        <option value="Funds, Trusts, and Other Financial Vehicles"  >Funds, Trusts, and Other Financial Vehicles</option>
+                        <option value="Real Estate"   >Real Estate</option>
+                        <option value="Rental and Leasing Services"   >Rental and Leasing Services</option>
+                        <option value="Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)"   >Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)</option>
+                        <option value="Professional, Scientific, and Technical Services"   >Professional, Scientific, and Technical Services</option>
+                        <option value="Management of Companies and Enterprises"   >Management of Companies and Enterprises</option>
+                        
+                        
+                        <option value="Administrative and Support Services"   >Administrative and Support Services</option>
+                        <option value="Waste Management and Remediation Services"   >Waste Management and Remediation Services</option>
+                        <option value="Educational Services"   >Educational Services</option>
+                        <option value="Ambulatory Health Care Services"   >Ambulatory Health Care Services</option>
+                        <option value="Hospitals"   >Hospitals</option>
+                        <option value="Nursing and Residential Care Facilities"   >Nursing and Residential Care Facilities</option>
+                        <option value="Social Assistance"   >Social Assistance</option>
+                        <option value="Performing Arts, Spectator Sports, and Related Industries"   >Performing Arts, Spectator Sports, and Related Industries</option>
+                        
+                        
+                        <option value="Museums, Historical Sites, and Similar Institutions"   >Museums, Historical Sites, and Similar Institutions</option>
+                        <option value="Amusement, Gambling, and Recreation Industries"   >Amusement, Gambling, and Recreation Industries</option>
+                        <option value="Accommodation"   >Accommodation</option>
+                        <option value="Food Services and Drinking Places"   >Food Services and Drinking Places</option>
+                        <option value="Repair and Maintenance"   >Repair and Maintenance</option>
+                        <option value="Personal and Laundry Services"   >Personal and Laundry Services</option>
+                        <option value="Religious, Grantmaking, Civic, Professional, and Similar Organizations"   >Religious, Grantmaking, Civic, Professional, and Similar Organizations</option>
+                        
+                        
+                        <option value="Executive, Legislative, and Other General Government Support"   >Executive, Legislative, and Other General Government Support</option>
+                        <option value="Justice, Public Order, and Safety Activities"   >Justice, Public Order, and Safety Activities</option>
+                        <option value="Administration of Human Resource Programs"   >Administration of Human Resource Programs</option>
+                        <option value="Administration of Environmental Quality Programs"   >Administration of Environmental Quality Programs</option>
+                        <option value="Administration of Housing Programs, Urban Planning, and Community Development"   >Administration of Housing Programs, Urban Planning, and Community Development</option>
+                        <option value="Administration of Economic Programs"   >Administration of Economic Programs</option>
+                        <option value="Space Research and Technology"   >Space Research and Technology</option>
+                        <option value="National Security and International Affairs"   >National Security and International Affairs</option>
+
+
+
+
+
+                        </select>
+
+                    </div>
+
+                  </div>
+                   <!---- row end------>
+                     <div class="row" >
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Address 1:</label>
+                     <textarea  name="c_address1" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" >  </textarea>
+                   </div>
+                   <div class="col-12 col-md-6" style="margin-top: 15px;">
+                     <label for="text"style="font-weight: 800;">Address 2:</label>
+                     <textarea name="c_address2" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" >    </textarea>
+                   </div>
+
+                 </div>
+                    <!-------row end---->
+                  <div class="row">
+                    <div class="col-12 col-md-6"style="margin-top: 15px;">
+                      <label for="text" style="font-weight: 800;">City:</label>
+                      <input type="text" value="" name="c_city" class="form-control" id="text">
+                    </div>
+                    <div class="col-md-6"style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">Prov/State:</label>
+                      <select name="c_state" class=" selectcls" id="exampleFormControlSelect1" style="width: 100%;">
+
+
+
+
+
+
+
+                        <option value="" selected>Select Prov/State</option>
+
+                       <option value="AB" >AB</option>
+                       <option value="BC"   >BC</option>
+                        <option value="MB"  >MB</option>
+                        <option value="NB"  >NB</option>
+                        
+                        <option value="NL"  >NL</option>
+                        <option value="NT"  >NT</option>
+                        <option value="NS"  >NS</option>
+                        <option value="NU"  >NU</option>
+                        <option value="ON"  >ON</option>
+                        <option value="PE"  >PE</option>
+                        
+                        <option value="QC"  >QC</option>
+                        <option value="SK"  >SK</option>
+                        <option value="YT"  >YT</option>
+                        <option value="AL"  >AL</option>
+                        <option value="AK"  >AK</option>
+                        <option value="AS"  >AS</option>
+                        <option value="AZ"  >AZ</option>
+                        <option value="AR"  >AR</option>
+                        <option value="AA"  >AA</option>
+                        <option value="AE"  >AE</option>
+                        <option value="AP"  >AP</option>
+                        <option value="CA"  >CA</option>
+                        <option value="CO"  >CO</option>
+                        
+                        <option value="CT"  >CT</option>
+                        <option value="DE"  >DE</option>
+                        <option value="DC"  >DC</option>
+                        <option value="FM"  >FM</option>
+                        <option value="FL"  >FL</option>
+                        <option value="GA"  >GA</option>
+                        <option value="GU"  >GU</option>
+                        <option value="HI"  >HI</option>
+                        
+                        <option value="ID"  >ID</option>
+                        <option value="IL"  >IL</option>
+                        <option value="IN"  >IN</option>
+                        <option value="IA"  >IA</option>
+                        <option value="KS"  >KS</option>
+                        <option value="KY"  >KY</option>
+                        <option value="LA"  >LA</option>
+                        <option value="ME"  >ME</option>
+                        <option value="MH"  >MH</option>
+                        <option value="MD"  >MD</option>
+                        <option value="MA"  >MA</option>
+                        <option value="MI"  >MI</option>
+                        <option value="MN"  >MN</option>
+                        <option value="MS"  >MS</option>
+                        <option value="MO"  >MO</option>
+                        <option value="MT"  >MT</option>
+                        <option value="NE"  >NE</option>
+                        <option value="NV"  >NV</option>
+                        <option value="NH"  >NH</option>
+                        <option value="NJ"  >NJ</option>
+                        <option value="NM"  >NM</option>
+                        <option value="NY"  >NY</option>
+                        <option value="NC"  >NC</option>
+                        <option value="ND"  >ND</option>
+                        <option value="MP"  >MP</option>
+                        <option value="OH"  >OH</option>
+                        <option value="OK"  >OK</option>
+                        
+                        <option value="OR"  >OR</option>
+                        <option value="PA"  >PA</option>
+                        <option value="PR"  >PR</option>
+                        <option value="PW"  >PW</option>
+                        <option value="RI"  >RI</option>
+                        <option value="SC"  >SC</option>
+                        <option value="SD"  >SD</option>
+                        <option value="TN"  >TN</option>
+                        <option value="TX"  >TX</option>
+                        <option value="UT"  >UT</option>
+                        <option value="VA"  >VA</option>
+                        <option value="VI"  >VI</option>
+                        
+                        <option value="VT"  >VT</option>
+                        <option value="WA"  >WA</option>
+                        <option value="WI"  >WI</option>
+                        <option value="WV"  >WV</option>
+                        <option value="WY"  >WY</option>
+                        </select>
+                    </div>
+
+                  </div>
+               <!--- end row----->
+                <div class="row">
+                    <div class="col-12 col-md-6"style="margin-top: 15px;">
+                      <label for="text" style="font-weight: 800;">Postal/Zip:</label>
+                      <input type="text" name="c_zip" value="" class="form-control" id="text">
+                    </div>
+                    <div class="col-md-6"style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">Country:</label>
+                      <select name="c_country1" class=" selectcls" id="exampleFormControlSelect1" style="width: 100%;" >
+
+
+                        <option value="" selected>Select Country</option>
+
+   <option value="US"  >US</option>
+                        <option value="Australia"  >Australia</option>
+                         <option value="England"  >England</option>
+                         <option value="Canada"  >Canada</option>
+                        </select>
+                    </div>
+
+                  </div>
+               <!--- end row----->
+                <div class="row" >
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Corporate Email:</label>
+                    <input type="email" name="c_corporate_email" value="" class="form-control" id="email" >
+                   </div>
+                   <div class="col-12 col-md-6" style="margin-top: 15px;">
+                     <label for="text"style="font-weight: 800;">Website:</label>
+                    <input type="text"  value="" name="website"  class="form-control" id="text">
+                   </div>
+
+                  </div>
+                  <!-----end row---->
+                   <div class="row" >
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Annual Company Revenue:</label>
+                    <input type="number" value="" name="a_c_revenue" class="form-control" id="email" >
+                   </div>
+                   <div class="col-12 col-md-6" style="margin-top: 15px;">
+                     <label for="text" style="font-weight: 800;">Number of Employees:</label>
+                    <input type="number" value="" name="c_num_emploees" class="form-control" id="text" >
+                   </div>
+
+                  </div>
+                     <!-----end row---->
+                  <div class="row "  >
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Name of Owner:</label>
+                    <input type="text" value="" name="c_name_owner" class="form-control" id="email" >
+                   </div>
+                   
+
+                  </div>
+                  <!-----end row---->
+                  <div class="row" style="margin-top: 15px;">
+                    <div class="col-xs-12">
+                       <label for="email"style="font-weight: 800;">Company Type:</label>
+                      <select name="c_type" class=" selectcls" id="exampleFormControlSelect1" style="width: 100%;">
+                        <option value="" selected>Select Company Type</option>
+                         <option value="Resource"  >Resource</option>
+                        <option value="Manufacturing"  >Manufacturing</option>
+                         <option value="Distribution / Wholesale"  >Distribution / Wholesale</option>
+                         <option value="Retail"  >Retail</option>
+                         <option value="Service"  >Service</option>
+                         <option value="Other"  >Other</option>
+                        </select>
+                    </div>
+                  </div>
+
+            <!-----row end--------->
+            <h3 style="font-size:23px;color:#213f7b;font-weight: bold;margin-top:5%; margin-bottom:5px;">Additional Background Details</h3>
+            <p style="font-size:16px;font-weight: bold;margin-top:1%; margin-bottom:10px;">If you have any additional details you wish to share, please include it here</p>
+             <div class="row" >
+                   <div class="col-xs-12"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">PARAGRAPH:</label>
+                     <textarea name="c_paragraph" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" ></textarea>
+                   </div>
+
+
+                 </div>
+                 <!---checkboxes----->
+
+                 
+                 <h3 style="font-size:23px;color:#213f7b;font-weight: bold;margin-top:5%; margin-bottom:5px;">Communication</h3>
+                  <input name="communication1"  style="margin-top: 15px;" type="checkbox" id="vehicle1" value="Email"  >
+                  <label for="vehicle1"> Do Not Email</label><br>
+                  <input type="checkbox" id="vehicle2" name="communication2" value="Mail" 
+                                    >
+                  <label for="vehicle2"> Do Not Mail</label><br>
+                  <input type="checkbox" id="vehicle3" name="communication3" value="Fax"
+                                                      >
+                  <label for="vehicle3">Do Not Fax</label><br>
+                  <input type="checkbox" id="vehicle3" name="communication4" value="Call"
+                                    >
+                  <label for="vehicle3">Do Not Call</label><br>
+          
+                   <button class="btn btn-primary" type="submit" name="register" style="float: right;margin-top: 20px;margin-bottom: 20px;font-size: 20px;padding:10px;">Register</button>
+
+             </form>
+         </div>
+      </div>
+    </div>
+
+
+     <!-----------Registered section end-------->
+
+
+
+
+     <!-----------Search section Start-------->
+    <div id="Search" class="tab-pane fade serch_tab not_acyive">
+
+              <!--- form section start----->
+                        <div class="container-fluid" style="margin-bottom: 20px;">
+          <form method="POST" action="" enctype="multipart/form-data">
+           <p style="font-size:23px;color:#213f7b;font-weight: bold;
+               margin-top:5%; margin-bottom:14px; ">Preferred Geographic Region
+          </p>
+          
+           <div class="row">
+            <div class="col-md-6" style="margin-top: 15px;">
+              <input type='radio' value='one' id='radio' name='radio'        onclick='British()' required>British Columbia
+              </br>
+              <div id='BritishColumbia'>
+                  <div class='row'>
+                      <div class='col-md-3'>
+                  <input type='checkbox' value='Alberni-Clayoquot' name='check28[]' >Alberni-Clayoquot</input>
+              </div>
+              <div class='col-md-3'>
+                  <input type='checkbox' value='Bulkley-Nechako' name='check28[]'  >Bulkley-Nechako</input>
+              </div>
+               <div class='col-md-3'>
+                 <input type='checkbox' value='Capital' name='check28[]' >Capital</input>
+              </div>
+               <div class='col-md-3'>
+                 <input type='checkbox' value='Cariboo' name='check28[]'>Cariboo</input>
+              </div>
+              </div></br>
+                <div class='row'>
+                      <div class='col-md-3'>
+                   <input type='checkbox' value='Central Coast' name='check28[]'>Central Coast</input>
+              </div>
+              <div class='col-md-3'>
+                 <input type='checkbox' value='Central Kootenay' name='check28[]'>Central Kootenay</input>
+              </div>
+              <div class='col-md-3'>
+                   <input type='checkbox' value='Central Okanagan' name='check28[]'>Central Okanagan</input>
+              </div>
+              <div class='col-md-3'>
+                 <input type='checkbox' value='Columbia Shuswap' name='check28[]'>Columbia Shuswap</input>
+              </div>
+              </div></br>
+                 <div class='row'>
+                      <div class='col-md-3'>
+                   <input type='checkbox' value='Comox Valley' name='check28[]'>Comox Valley</input>
+              </div>
+              <div class='col-md-3'>
+                  <input type='checkbox' value='Cowichan Valley' name='check28[]' >Cowichan Valley</input>
+              </div>
+              <div class='col-md-3'>
+                   <input type='checkbox' value='East Kootenay' name='check28[]' >East Kootenay</input>
+              </div>
+              <div class='col-md-3'>
+                   <input type='checkbox' value='AFraser Valley' name='check28[]' >AFraser Valley</input>
+              </div>
+              </div></br>
+               <div class='row'>
+                      <div class='col-md-3'>
+                <input type='checkbox' value='Fraser-Fort George' name='check28[]' >Fraser-Fort George</input>
+              </div>
+              <div class='col-md-3'>
+                 <input type='checkbox' value='Kitimat-Stikine' name='check28[]' >Kitimat-Stikine</input>
+              </div>
+              <div class='col-md-3'>
+                <input type='checkbox' value='Kootenay Boundary' name='check28[]' >Kootenay Boundary</input>
+              </div>
+              <div class='col-md-3'>
+                  <input type='checkbox' value='Metro Vancouver' name='check28[]' >Metro Vancouver</input>
+              </div>
+              </div></br>
+               <div class='row'>
+                      <div class='col-md-3'>
+                 <input type='checkbox' value='Mount Waddington' name='check28[]'  >Mount Waddington</input>
+              </div>
+              <div class='col-md-3'>
+                  <input type='checkbox' value='Nanaimo' name='check28[]'   >Nanaimo</input>
+              </div>
+              <div class='col-md-3'>
+                  <input type='checkbox' value='North Coast' name='check28[]'  >North Coast</input>
+              </div>
+              <div class='col-md-3'>
+                   <input type='checkbox' value='North Okanagan' name='check28[]'  >North Okanagan</input>
+              </div>
+              </div></br>
+               <div class='row'>
+                      <div class='col-md-3'>
+                   <input type='checkbox' value='Northern Rockies' name='check28[]'  >Northern Rockies</input>
+              </div>
+              <div class='col-md-3'>
+                   <input type='checkbox' value='Okanagan-Similkameen' name='check28[]'  >Okanagan-Similkameen</input>
+              </div>
+              <div class='col-md-3'>
+                   <input type='checkbox' value='APeace River' name='check28[]'   >APeace River</input>
+              </div>
+              <div class='col-md-3'>
+                    <input type='checkbox' value='Qathet' name='check28[]'   >Qathet</input>
+              </div>
+              </div></br>
+               <div class='row'>
+                      <div class='col-md-3'>
+                   <input type='checkbox' value='Squamish-Lillooet' name='check28[]'   >Squamish-Lillooet</input>
+              </div>
+              <div class='col-md-3'>
+                   <input type='checkbox' value='Strathcona' name='check28[]'   >Strathcona</input>
+              </div>
+              <div class='col-md-3'>
+                 <input type='checkbox' value='Sunshine Coast' name='check28[]'   >Sunshine Coast</input>
+              </div>
+              <div class='col-md-3'>
+                    <input type='checkbox' value='Thompson-Nicola' name='check28[]'   >Thompson-Nicola </input>
+              </div>
+              </div>
+             
+             </br>
+             </div>
+              <input type='radio' value='two' onchange="changing_reg()" id='radio' name='radio'   onclick='Other()'> </input>Other
+              </br>
+                     
+
+              <div id='Other'>
+              <div class='row'>
+                      <div class='col-md-3'>
+                
+                    <input type='checkbox' value='Ontario' name='check29[]' 
+                                              >Ontario</input>
+              </div>
+              <div class='col-md-3'>
+                    <input type='checkbox' value='Quebect' name='check29[]'  >Quebect</input>
+              </div>
+               <div class='col-md-3'>
+                    <input type='checkbox' value='Nova Scotia' name='check29[]'  >Nova Scotia</input>
+              </div>
+               <div class='col-md-3'>
+                  <input type='checkbox' value='New Brunswick' name='check29[]'  >New Brunswick</input>
+                  </div>
+                  </div>
+                  </br>
+                   <div class='row'>
+                      <div class='col-md-3'>
+                   <input type='checkbox' value='Manitoba' name='check29[]'  >Manitoba</input>
+              </div>
+
+                         
+              <div class='col-md-3'>
+                   <input type='checkbox' value='Prince Edward Island' name='check29[]'  >Prince Edward Island</input>
+              </div>
+               <div class='col-md-3'>
+                    <input type='checkbox' value='Saskatchewan' name='check29[]' >Saskatchewan</input>
+              </div>
+               <div class='col-md-3'>
+                   <input type='checkbox' value='Alberta' name='check29[]' >Alberta</input>
+                  </div>
+                  </div>
+                  </br>
+                   <div class='row'>
+                      <div class='col-md-3'>
+                     <input type='checkbox' value='Newfoundland' name='check29[]' > Newfoundland </input>
+              </div>
+              <div class='col-md-3'>
+                  <input type='checkbox' value='Labrador' name='check29[]' >Labrador</input>
+              </div>
+              </div>
+              </br>
+              </div>
+               <input type='radio' value='All' id='radio'   name='radio' onclick='No()' >No Preference</input>
+              </br>
+              <div id='No'>
+              <div class='row'>
+                      <div class='col-md-3'>
+                    <input type='hidden' value='All' name='check39' checked></input>
+              </div>
+             
+          </div>
+          </div>
+          </div>
+          </div>
+            <!---- row end----->
+          <p style="font-size:23px;color:#213f7b;font-weight: bold;
+               margin-top:5%; margin-bottom:14px; ">Business Detail
+          </p>
+          <div class="row">
+            <div class="col-md-6"style="margin-top: 15px;">
+              <label for="email"style="font-weight: 800;">Industry Description<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+                <select class="js-example-basic-multiple" multiple="multiple" name="c_industry[]" style="width:100%;" required >
+                                    <option>Select Industry Description</option>
+                <option value='Crop Production' >Crop Production</option>
+                  <option value="Animal Production and Aquaculture" >Animal Production and Aquaculture</option>
+                  <option value="Forestry And Logging" >Forestry And Logging</option>
+                  <option value="Fishing, Hunting and Trapping" >Fishing, Hunting and Trapping</option>
+                    <option value="Support Activities for Agriculture and Forestry" >Support Activities for Agriculture and Forestry</option>
+                    <option value="Oil and Gas Extraction" >Oil and Gas Extraction</option>
+                    <option value="Mining (Except Oil and Gas)" >Mining (Except Oil and Gas)</option>
+                     <option value="Support Activities for Mining" >Support Activities for Mining</option>
+                     <option value="Utilities" >Utilities</option>
+                     <option value="Construction of Buildings" >Construction of Buildings</option>
+                      <option value="Heavy and Civil Engineering Construction">Heavy and Civil Engineering Construction</option>
+                       <option value="Specialty Trade Contractors" >Specialty Trade Contractors</option>
+                        <option value="Food Manufacturing">Food Manufacturing</option>
+                        <option value="Beverage and Tobacco Product Manufacturing" >Beverage and Tobacco Product Manufacturing</option>
+                         <option value="Textile Mills" >Textile Mills</option>
+                          <option value="Textile Product Mills">Textile Product Mills</option>
+                           <option value="Apparel Manufacturing" >Apparel Manufacturing</option>
+                            <option value="Leather and Allied Product Manufacturing" >Leather and Allied Product Manufacturing</option>
+                            <option value="Wood Product Manufacturing" >Wood Product Manufacturing</option>
+                             <option value="Paper Manufacturing" >Paper Manufacturing</option>
+                              <option value="Printing and Related Support Activities" >Printing and Related Support Activities</option>
+                               <option value="Petroleum and Coal Products Manufacturing" >Petroleum and Coal Products Manufacturing</option>
+                                <option value="Chemical Manufacturing">Chemical Manufacturing</option>
+                                 <option value="Plastics and Rubber Products Manufacturing" >Plastics and Rubber Products Manufacturing</option>
+                                 <option value="Nonmetallic Mineral Product Manufacturing" >Nonmetallic Mineral Product Manufacturing</option>
+                                  <option value="Primary Metal Manufacturing">Primary Metal Manufacturing</option>
+                                   <option value="Fabricated Metal Product Manufacturing" >Fabricated Metal Product Manufacturing</option>
+                                   <option value="Machinery Manufacturing">Machinery Manufacturing</option>
+                                    <option value="Computer and Electronic Product Manufacturing" >Computer and Electronic Product Manufacturing</option>
+                   
+                   <option value="Electrical Equipment, Appliance, and Component Manufacturing" >Electrical Equipment, Appliance, and Component Manufacturing</option>
+                   
+                   <option value="Transportation Equipment Manufacturing" >Transportation Equipment Manufacturing</option>  
+                    <option value="Furniture and Related Product Manufacturing">Furniture and Related Product Manufacturing</option> 
+                     <option value="Miscellaneous Manufacturing" >Miscellaneous Manufacturing</option> 
+                      <option value="Merchant Wholesalers, Durable Goods" >Merchant Wholesalers, Durable Goods</option> 
+                      <option value="Merchant Wholesalers, Nondurable Goods" >Merchant Wholesalers, Nondurable Goods</option>
+                      
+                      <option value="Wholesale Electronic Markets and Agents and Brokers" >Wholesale Electronic Markets and Agents and Brokers</option>
+                      
+                      <option value="Motor Vehicle and Parts Dealers" >Motor Vehicle and Parts Dealers</option>
+                      <option value="Furniture and Home Furnishings Store">Furniture and Home Furnishings Store</option>
+                      <option value="Electronics and Appliance Stores" >Electronics and Appliance Stores</option>
+                      <option value="Building Material and Garden Equipment and Supplies Dealers" >Building Material and Garden Equipment and Supplies Dealers</option>
+                       <option value="Food and Beverage Stores" >Food and Beverage Stores</option>
+                       <option value="Health and Personal Care Stores" >Health and Personal Care Stores</option>
+                        <option value="Gasoline Stations" >Gasoline Stations</option>
+                        <option value="Clothing and Clothing Accessories Stores" >Clothing and Clothing Accessories Stores</option>
+         <option value="Sporting Goods, Hobby, Musical Instrument, and Book Stores" >Sporting Goods, Hobby, Musical Instrument, and Book Stores</option>  
+          <option value="General Merchandise Stores" >General Merchandise Stores</option>  
+          <option value="Miscellaneous Store Retailers" >Miscellaneous Store Retailers</option>  
+           <option value="Nonstore Retailers" >Nonstore Retailers</option> 
+            <option value="Air Transportation" >Air Transportation</option> 
+              <option value="Rail Transportation" >Rail Transportation</option> 
+              <option value="Water Transportation" >Water Transportation</option> <option value="Truck Transportation" >Truck Transportation</option> 
+              <option value="Transit and Ground Passenger Transportation" >Transit and Ground Passenger Transportation</option> 
+              <option value="Pipeline Transportation" >Pipeline Transportation</option>
+              <option value="Scenic and Sightseeing Transportation" >Scenic and Sightseeing Transportation</option> 
+              <option value="Support Activities for Transportation" >Support Activities for Transportation</option>
+              
+              <option value="Postal Service" >Postal Service</option>
+              
+              <option value="Couriers and Messengers" >Couriers and Messengers</option>
+              <option value="Warehousing and Storage" >Warehousing and Storage</option>
+              <option value="Publishing Industries (except Internet)" >Publishing Industries (except Internet)</option>
+               <option value="Motion Picture and Sound Recording Industries" >Motion Picture and Sound Recording Industries</option>
+                <option value="Broadcasting (except Internet)" >Broadcasting (except Internet)</option>
+                 <option value="Telecommunications">Telecommunications</option>
+              <option value="Data Processing, Hosting, and Related Services">Data Processing, Hosting, and Related Services</option>
+               <option value="Other Information Services">Other Information Services</option>
+               <option value="Monetary Authorities - Central Bank">Monetary Authorities - Central Bank</option>
+               <option value="Credit Intermediation and Related Activities">Credit Intermediation and Related Activities</option>
+           <option value="Securities, Commodity Contracts, and Other Financial Investments and Related Activities">Securities, Commodity Contracts, and Other Financial Investments and Related Activities</option>
+     <option value="Insurance Carriers and Related Activities">Insurance Carriers and Related Activities</option>      
+     <option value="Funds, Trusts, and Other Financial Vehicles">Funds, Trusts, and Other Financial Vehicles</option>      
+            <option value="Real Estate" >Real Estate</option>
+             <option value="Rental and Leasing Services">Rental and Leasing Services</option>
+             <option value="Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)">Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)</option>
+              <option value="Professional, Scientific, and Technical Services">Professional, Scientific, and Technical Services</option>
+               <option value="Management of Companies and Enterprises">Management of Companies and Enterprises</option>
+               <option value="Administrative and Support Services">Administrative and Support Services</option>
+    <option value="Waste Management and Remediation Services
+">Waste Management and Remediation Services
+</option>   
+     <option value="Educational Services">Educational Services</option>   
+      <option value="Ambulatory Health Care Services">Ambulatory Health Care Services</option>   
+     <option value="Hospitals">Hospitals</option>          
+     <option value="Nursing and Residential Care Facilities">Nursing and Residential Care Facilities</option>
+     <option value="Social Assistance">Social Assistance</option>
+      <option value="Performing Arts, Spectator Sports, and Related Industries">Performing Arts, Spectator Sports, and Related Industries</option>
+       <option value="Museums, Historical Sites, and Similar Institutions">Museums, Historical Sites, and Similar Institutions</option>
+       <option value="Amusement, Gambling, and Recreation Industries">Amusement, Gambling, and Recreation Industries</option>
+       <option value="Accommodation">Accommodation</option>
+        <option value="Food Services and Drinking Places">Food Services and Drinking Places</option>
+            <option value="Repair and Maintenance">Repair and Maintenance</option>
+   <option value="Personal and Laundry Services">Personal and Laundry Services</option>   
+   <option value="Religious, Grantmaking, Civic, Professional, and Similar Organizations">Religious, Grantmaking, Civic, Professional, and Similar Organizations</option> 
+   <option value="Executive, Legislative, and Other General Government Support">Executive, Legislative, and Other General Government Support</option>
+   <option value="Justice, Public Order, and Safety Activities">Justice, Public Order, and Safety Activities</option>
+   <option value="Administration of Human Resource Programs">Administration of Human Resource Programs</option>
+   <option value="Administration of Environmental Quality Programs">Administration of Environmental Quality Programs</option>
+   <option value="Administration of Housing Programs, Urban Planning, and Community Development">Administration of Housing Programs, Urban Planning, and Community Development</option>
+    <option value="Administration of Economic Programs">Administration of Economic Programs</option>
+    
+    <option value="Space Research and Technology">Space Research and Technology</option>
+    
+    <option value="National Security and International Affairs">National Security and International Affairs</option>
+    
+                </select>
+            </div>
+            <div class="col-md-6"style="margin-top: 15px;">
+              <label for="email"style="font-weight: 800;">Type Of Business<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+            
+                        
+                <select multiple='multiple' class="js-example-basic-multiple" name="c_typebusiness[]" style="width:100%;" required>
+                
+                 
+                                 <option value="">Select Type Of Business</option>
+                  <option value="Resource"  >Resource</option>
+                 
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Distribution/Wholesales" >Distribution/Wholesales</option>
+                  <option value="Retail">Retail</option>
+                 <option value="Service">Service</option>
+                <option value="Other">Other</option>
+            
+            
+                 
+                </select>
+             </div>
+          </div>
+          
+            <!---- row end----->
+          <div class="row">
+              <div class="col-xs-12"style="margin-top: 15px;">
+              <label for="email"style="font-weight: 800;">Management Structure<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+                               <select multiple='multiple' name="c_managementstructure[]" class="js-example-basic-multiple"style="width:100%;" required >
+                    
+                  <option value="">Select Management Structure</option>
+                  <option value="Owner Operator">Owner Operator</option>
+                  <option value="Established Managment Team">Established Managment Team</option>
+                  <option value="Owner Managment/team">Owner Managment/team</option>
+                    <option value="Other">Other</option>
+                    
+                </select>
+             </div>
+          </div>
+          <!--- row end---->
+            <p style="font-size:23px;color:#213f7b;font-weight: bold;
+               margin-top:5%; margin-bottom:14px; ">Financial Details
+          </p>
+          <div class="row" style="margin-top: 15px;">
+              <div class="col-12 col-md-6">
+               <label for="email" style="font-weight: 800;">Price Range (Min.)<span style="color:red;">*</span></label>
+
+                
+                
+                <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Price Range(Min)" type="number" name="c_recommendedpricingMin"  value="" class="form-control" id="text" required onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                
+                
+                
+              </div>
+               <div class="col-12 col-md-6">
+               <label for="email" style="font-weight: 800;">Price Range (Max.)<span style="color:red;">*</span></label>
+
+                
+                
+                
+                <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Price Range(Max)" type="number" name="c_recommendedpricingmax"  value="" class="form-control" id="text" required onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                
+                
+                
+                
+                </div>
+
+          </div>
+             <!---- row end------>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-12 col-md-6">
+                <label for="email" style="font-weight: 800;">Revenue (Min.)</label>
+
+              
+              
+              
+              
+                              <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Revenue(Min)"  type="number" name="revenue_min" value="" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              </div>
+               <div class="col-12 col-md-6">
+                <label for="email" style="font-weight: 800;">Revenue (Max.)</label>
+
+      
+                                    <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Revenue(Max)"  type="number" name="revenue_max" value=""  class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                </div>
+            </div>
+             <!---- row end------>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-12 col-md-6">
+               <label for="email" style="font-weight: 800;">Income (Min.)</label>
+
+
+
+
+            <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Income (Min)"  type="number" name="income_min" value=""class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+
+
+
+
+              </div>
+               <div class="col-12 col-md-6">
+               <label for="email" style="font-weight: 800;">Income (Max.)</label>
+
+
+
+            <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Income (Max)" type="number" name="income_max" value="" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                </div>
+            </div>
+             <!---- row end------>
+             <div class="row" style="margin-top: 15px;">
+              <div class="col-12 col-md-6">
+                <label for="email" style="font-weight: 800;">EBITDA (Min.)</label>
+
+                
+                
+                
+                      <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter EBITDA (Min)"  type="number" name="ebitda_min"  value="" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                
+                
+                
+                
+                
+                
+                
+              </div>
+               <div class="col-12 col-md-6">
+                <label for="email" style="font-weight: 800;">EBITDA (Max)</label>
+
+      
+      
+      
+                            <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter EBITDA (Max)"   type="number"  name="ebitda_max"  value="" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+      
+      
+      
+      
+      
+      
+                </div>
+            </div>
+             <!---- row end------>
+              <p style="font-size:23px;color:#213f7b;font-weight: bold;
+               margin-top:5%; margin-bottom:14px; ">Other
+          </p>
+            <div class="row">
+             <div class="col-md-6"style="margin-top: 15px;">
+               <label for="email" style="font-weight: 800;">Property Included<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+                <select class=" selectcls" name="property_inc" id="exampleFormControlSelect1" required style="width: 100%;">
+                  <option value="">Select Property Included</option>
+                  <option value="yes" >Yes</option>
+                  <option value="no" >No</option>
+                  <option value="Not Applicable" >Not Applicable</option>
+
+                </select>
+              </div>
+              <div class="col-md-6"style="margin-top: 15px;">
+              <label for="email"style="font-weight: 800;">Management In Place<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+                  <select class=" selectcls" name="management_place" id="exampleFormControlSelect1" required style="width: 100%;">
+                         <option value="">Select Management In Place</option>
+                  <option value="yes" >Yes</option>
+                  <option value="no" >No</option>
+                  <option value="Not Applicable" >Not Applicable</option>
+
+                </select>
+             </div>
+          </div>
+
+          <!--- row end---->
+            <div class="row">
+             <div class="col-md-6"style="margin-top: 15px;">
+               <label for="email"style="font-weight: 800;">Intellectual Property<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+                <select class=" selectcls" name="intellectual_property" id="exampleFormControlSelect1" required style="width: 100%;">
+<option value="">Select Intellectual Property</option>
+                  <option value="yes" >Yes</option>
+                  <option value="no" >No</option>
+                  <option value="Not Applicable"  >Not Applicable</option>
+
+                </select>
+              </div>
+              <div class="col-md-6"style="margin-top: 15px;">
+              <label for="email"style="font-weight: 800;">Unionized<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+                  <select class=" selectcls" name="unionized" id="exampleFormControlSelect1" required style="width: 100%;">
+                  <option value="">Select Unionized</option>    
+                  <option value="yes"  >Yes</option>
+                  <option value="no"  >No</option>
+                  <option value="Not Applicable"  >Not Applicable</option>
+
+                </select>
+             </div>
+          </div>
+          <!----- row end---->
+           <div class="row" >
+                  <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email"style="font-weight: 800;">Minimum Number of Employees:</label>
+                     <input type="number" name="min_num_emp" value=""  class="form-control" id="text">
+                  </div>
+                  <div class="col-12 col-md-6" style="margin-top: 15px;">
+                     <label for="email"style="font-weight: 800;">Maximum Number of Employees:</label>
+                     <input type="number" name="max_num_emp" value="" class="form-control" id="text">
+                  </div>
+
+                </div>
+          <!----row end----->
+            <div class="row">
+             <div class="col-xs-12"style="margin-top: 15px;">
+               <label for="email"style="font-weight: 800;">Timing<span style="color:red;">*</span>:</label>
+               <!-- Multiple Select -->
+                <select class=" selectcls" required name="timing" id="exampleFormControlSelect1" style="width: 100%;">
+<option value="">Select Timing</option>
+                  <option value="0 - 3 months"  >0 - 3 months</option>
+                  <option value="3-6 months"  >3-6 months</option>
+                  <option value="6-12 months"  >6-12 months</option>
+
+
+<option value="12-24 months"  >12-24 months</option>
+<option value="24+ months"  >24+ months</option>
+                </select>
+              </div>
+            </div>
+             <div class="row">
+             
+            </div>
+                  <button class="btn btn-primary" type="submit"  name="search_criteria" id="s_c_submit" style="display:none">Submit</button>
+            
+      <button class="btn btn-primary" type="button" id="s_criteria" style="float: right;margin-top: 20px;margin-bottom: 20px;font-size: 24px;">Submit</button>
+        </form>
+      </div>
+      <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+    <script>
+        $(document).ready(function () {
+            $("#s_criteria").click(function() {
+
+
+var check_one = $('input[name="check28[]"]:checked').length;
+var check_two = $('input[name="check29[]"]:checked').length;
+ var check_all = $("input[name='radio']:checked").val();
+
+if(check_one > 0 || check_two > 0){
+$("#s_c_submit").click();
+}else if(check_all=='All'){
+    $("#s_c_submit").click();
+    
+}else{
+    alert('Select atleast one Country');
+}
+
+
+
+        });
+});
+
+
+    </script>
+
+
+
+      <!-- container fluid end---->
+
+    </div>
+
+     <!-----------Search section end-------->
+
+
+
+     <!-----------Qualified section Start-------->
+
+    <div id="Qualified" class="tab-pane fade not_acyive qualified_tab" style="margin-bottom:20px;">
+      <div class="container-fluid" style="padding-right:0px;margin-top:25px;">
+
+      </div>
+           
+                               <form method="POST" action="qulify_submit.php"  enctype="multipart/form-data">
+      <div class="container-fluid" style="margin-left: 2%;margin-right: 3%;">
+          
+          <p style="font-size:23px;color:#213f7b;font-weight: bold;
+             margin-top:6%; margin-bottom:57px; ">
+             Do You Currently Own A Business?
+           </p>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <label for="email"style="font-weight: 800;">Do You Currently Own A Business?</label>
+           <br>
+           
+            <input type="radio" id="yes" name="own_business" value="yes" checked >
+            <l abel for="male" style="font-weight: 800;">Yes</label><br>
+            <input type="radio" id="No" name="own_business" value="No" >
+            <label for="female" style="font-weight: 800;">No</label><br>
+            <!---first radio button end---->
+            </div>
+            <div class="col-12 col-md-4">
+                <label for="email"style="font-weight: 800;">
+                  Have You Owned A Business InThe Past?
+                </label>
+               <br>
+              
+        
+                <input type="radio" id="yes" name="owned_business_past" value="Yes" checked>
+                <label for="male" style="font-weight: 800;">Yes</label><br>
+                <input type="radio" id="No" name="owned_business_past" value="No" >
+                <label for="female" style="font-weight: 800;" >No</label><br>
+                <!---- second radio button end---->
+            </div>
+
+          </div>
+          <!---- row end----->
+           <div class="row">
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">
+                      When Did You First Start Your Search For A Business?
+                    </label>
+                    <input type="Date" value="2022-03-12" name="Date" class="form-control" id="date" 
+                    
+                   </div>
+                   <div class="col-12 col-md-6" style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">
+                        Education Level <small>(Please choose the highest level obtained)</small>
+                      </label>
+                      <select name="search_business" class=" selectcls" id="exampleFormControlSelect1" style="width: 100%;">
+                        <option value=""> Select Education Level </option>
+                        <option value="High school" >High school</option>
+                        <option value="Trade/technical/vocational training">Trade/technical/vocational training</option>
+                         <option value="Associate degree">Associate degree</option>
+                        <option value="Bachelor’s degree">Bachelor’s degree</option>
+                        <option value="Master’s degree"selected>Master’s degree</option>
+                         <option value="Professional degree">Professional degree</option>
+                        <option value="Doctorate degree">Doctorate degree</option>
+                        </select>
+                   </div>
+                  </div>
+                  <!---row end ------->
+            <div class="row ">
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                <label for="email"style="font-weight: 800;">Current Work Status:</label>
+                <select class=" selectcls" name="current_work" id="exampleFormControlSelect1" style="width: 100%;" required>
+                  <option value="">Select Current Work Status</option>
+                  <option value="Umemployed" >Umemployed</option>
+                  <option value="Part Time" >Part Time</option>
+                  <option value="Full Time" >Full Time</option>
+                  <option value="Retired" >Retired</option>
+                  <option value="Self Employed" selected>Self Employed</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">
+                        Experience Level of Current or Most Recent Position:
+                      </label>
+                      <select class=" selectcls" name="recent_position" id="exampleFormControlSelect1" style="width: 100%;" required>
+                          <option value="">Select Experience Level of Current or Most Recent Position</option>
+                          <option value="Intern">Intern</option>
+                          <option value="Entry-level"selected>Entry-level</option>
+                           <option value="Associate">Associate</option>
+                          <option value="Manager">Manager</option>
+                          <option value="Senior manage">Senior manager</option>
+                           <option value="Experienced">Experienced</option>
+                           <option value="Director">Director</option>
+                          <option value="Vice presiden">Vice president</option>
+                          <option value="Senior vice president">Senior vice president</option>
+                      </select>
+              </div>
+
+            </div>
+             <div class="row" style="margin-top: 15px;">
+            <div class="col-12 col-md-3">
+              <label for="email"style="font-weight: 800;">
+                Have You Filed For Bankruptcy Before?
+              </label>
+           <br>
+            <input type="radio" id="yes" name="bankruptcy" value="yes" checked>
+            <label for="male" style="font-weight: 800;">Yes</label><br>
+            <input type="radio" id="No" name="bankruptcy" value="No" >
+            <label for="female" style="font-weight: 800;">No</label><br>
+            <!---first radio button end---->
+            </div>
+            <div class="col-12 col-md-3">
+                <label for="email"style="font-weight: 800;">Do You Have A 3<sup>rd</sup> Party Partner?</label>
+               <br>
+                
+                <input type="radio" id="yes" name="partner" value="yes"  > 
+                <label for="male" style="font-weight: 800;">Yes</label><br>
+                <input type="radio" id="No" name="partner" value="No"checked>
+                <label for="female" style="font-weight: 800;">No</label><br>
+                <!---- second radio button end---->
+            </div>
+
+          </div>
+            <!---- row end----->
+          <div class="row" style="margin-top:15px;">
+            <div class="col-xs-12">
+               <label for="email" style="font-weight: 800;">3rd Party Partner Email
+                <small>(Please provide the email of your 3<sup>rd</sup> party partner)</small>
+               </label>
+                    <input type="email" name="email" value="" class="form-control" id="email">
+            </div>
+          </div>
+
+                  <!---row end ------->
+            <p style="font-size:23px;color:#213f7b;font-weight: bold;
+             margin-top:6%; margin-bottom:57px; ">Financial Information</p>
+             <div class="row "  >
+                   <div class="col-12 col-md-6"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Maximum Down Payment:</label>
+                     
+             
+                    
+                    <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Maximum Down Payment"   type="number"   name="maximum_down_payment" class="form-control" value="80000000000000" id="text" required onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                   </div>
+                   <div class="col-12 col-md-6" style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">Source Of Down Payment:</label>
+                      <select multiple="multiple" name="source_of_down_payment" class="js-example-basic-multiple selectcls" id="exampleFormControlSelect1" style="width: 100%;">
+                        <option value="">Select Source Of Down Payment</option>
+                        <option value="Home Equity" >Home Equity</option>
+                        <option  value="Self-funded" >Self-funded</option>
+                        <option value="Friend/Relative" >Friend/Relative</option>
+                        <option value="Governmental Grants" >Governmental Grants</option>
+                        <option value="Corp. Relationship" >Corp. Relationship</option>
+                        <option value="Personal Loans/Credit Card" >Personal Loans/Credit Card</option>
+                        <option value="Other" selected>Other</option>
+                  </select>
+                   </div>
+
+              </div>
+                  <!---row end ------->
+              <div class="row" style="margin-top:15px;">
+                <div class="col-xs-12 col-md-6">
+                   <label for="email"style="font-weight: 800;">Is It Available Today?</label>
+               <br>
+               
+                <input type="radio" id="yes" name="available_today" value="yes" checked>
+                <label for="male" style="font-weight: 800;">Yes</label><br>
+                <input type="radio" id="No" name="available_today" value="No">
+                <label for="female" style="font-weight: 800;">No</label><br>
+                <!---- second radio button end---->
+
+                </div>
+              </div>
+               <!----- row end---->
+               <div class="row">
+                    <div class="col-xs-12"style="margin-top: 15px;">
+                      <label for="email"style="font-weight: 800;">
+                        Where Will The Source Of The Balance Come From?
+                      </label>
+                       <!-- Multiple Select -->
+                        <select multiple="multiple" class="js-example-basic-multiple" name="source_of_balance" style="width:100%;" required>
+                          <option value="">Select Source Of The Balance</option>
+                          <option value="Bank Financing" >Bank Financing</option>
+                          <option value="Mezzanine Financing">Mezzanine Financing</option>
+                         <option value="ABL Financing">ABL Financing</option>
+                        <option value="Equity Partner"selected> Equity Partner</option>
+                       <option value="Venture Capital"> Venture Capital</option>
+                      <option value="Angel Investor"> Angel Investor</option>
+                         <option value="Business Incubators">Business Incubators</option>
+                         <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                  </div>
+                   <!---- row end------>
+
+                    <p style="font-size:23px;color:#213f7b;font-weight: bold;
+             margin-top:5%; margin-bottom:14px; ">
+             Are You A Strategic Buyer or Entrepreneurial Buyer?
+           </p>
+           <div class="row" style="margin-left: 1px;">
+
+            <div class="form-check">
+            <input class="form-check-input buyer_sel1" onclick="Strategic()" type="radio" name="strategic" checked value="Strategic"  
+             id="defaultCheck1">
+             
+             
+             
+             <script>
+        $(document).ready(function () {
+            $('.buyer_sel1').click();
+
+        });
+
+
+
+    </script>
+             
+                          
+            <label class="form-check-label" for="defaultCheck1">
+              Strategic
+            </label>
+          </div>
+          <div class="form-check">
+            <input type="radio"   name="strategic" value="Entrepreneurial"  class="form-check-input buyer_sel2" onclick="Entrepreneurial()"  
+             id="defaultCheck2" >
+            <label class="form-check-label" for="defaultCheck2">
+              Entrepreneurial
+                </label>
+                
+                                
+          </div>
+
+           </div>
+
+            <div style="display: none;" id="Entrepreneurial">
+             <div class="row" >
+              <p style="font-size:23px;color:#213f7b;font-weight: bold;
+             margin-top:5%; margin-bottom:14px; margin-left: 11px;">Entrepreneurial Buyer – Personal Financials</p>
+                   <div class="col-xs-12"style="margin-top: 15px;">
+                     <label for="email" style="font-weight: 800;">Professional Experience
+                      <small>
+                        (Please describe the details of your professional experience)
+                    </small>
+                     </label>
+                     <textarea class="form-control rounded-0" name="professional_experience" id="exampleFormControlTextarea2" rows="3">
+                                                                                                                                                                                              </textarea>
+                   </div>
+            </div>
+                   <!----- row end----->
+            <div class="row" >
+              <div class="col-12 col-md-6"style="margin-top: 15px;">
+                <label for="email" style="font-weight: 800;">Monthly Income:</label>
+
+                
+                
+                
+                
+                
+                
+                <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Monthly Income"    type="number"  name="monthly_income"  class="form-control" id="text" value=""  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+              </div>
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                <label for="text"style="font-weight: 800;">Total Assets
+                  <small>(Enterthe dollar amount of all your assets)</small>
+                </label>
+
+              <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Total Assets" type="number" name="total_assets" class="form-control" id="text" value="" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+              
+              </div>
+            </div>
+                     <!-------row end----->
+            <div class="row">
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                <label for="email" style="font-weight: 800;"> Total Liabilities
+                  <small>(Enter the dollar amount of all your liabilities)</small>
+                </label>
+                
+                
+                
+                <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Total Liabilities"  type="number" name="total_liabilities" class="form-control" id="text" value="" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                
+                
+                
+              </div>
+            </div>
+                    <!-------row end---->
+                    </div>
+
+              <div style="display:none" id="Strategic">
+
+            <div class="row" >
+                <p style="font-size:23px;color:#213f7b;font-weight: bold;  margin-top:5%; margin-bottom:14px;margin-left: 11px;">
+                     Strategic Buyer – Company Financials
+
+            </p>
+              <div class="col-12 col-md-6"style="margin-top: 15px;">
+                <label for="email" style="font-weight: 800;">Revenue
+                  <small>
+                   (Provide details of revenue for most recent year)
+                  </small>
+                </label>
+
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Revenue"   type="number"   name="revenue" value="80000"class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+
+
+
+
+              </div>
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                  <label for="text"style="font-weight: 800;">COGS
+                    <small>
+                    (Provide details of COGS for most recent year)</small>
+                  </label>
+                  
+                  
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter COGS"   type="number"   name="cogs" class="form-control" value="886540000" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                  
+                  
+                  
+              </div>
+            </div>
+             <!--- row end ---->
+            <div class="row" >
+              <div class="col-12 col-md-6"style="margin-top: 15px;">
+                <label for="email" style="font-weight: 800;">Expenses
+                 <small>(Provide details of expenses for most recent year)</small>
+                </label>
+
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Expenses"   type="number" name="expenses" class="form-control" value="5600"id="text"  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+              </div>
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                  <label for="text"style="font-weight: 800;">Income:</label>
+
+              
+              <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Income"   type="number" name="income" class="form-control" id="text" value="8888754456456546" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+              
+              </div>
+            </div>
+              <!--- row end ---->
+            <div class="row" >
+              <div class="col-12 col-md-6"style="margin-top: 15px;">
+                <label for="email" style="font-weight: 800;">Current Assets
+                  <small>(Provide details of the current total value of all assets)</small>
+                </label>
+
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Current Assets"   type="number" name="current_assets" value="8000000" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                  
+                  
+              </div>
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                  <label for="text"style="font-weight: 800;">Non-Current Assets
+                   <small>
+                   (Provide details of the noncurrent total value of all assets)</small>
+                  </label>
+
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Non-Current Assets" type="number"  name="non_current_assets" value="5546500" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                  
+                  
+              </div>
+            </div>
+            <!--- row end ---->
+            <div class="row" >
+              <div class="col-12 col-md-6"style="margin-top: 15px;">
+                <label for="email" style="font-weight: 800;">Current Liabilities
+                  <small>(Provide details on the total value of all current liabilities)</small>
+                </label>
+
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Current Liabilities"  type="number" name="current_liabilities" value="8000000" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                  
+                  
+              </div>
+              <div class="col-12 col-md-6" style="margin-top: 15px;">
+                  <label for="text"style="font-weight: 800;">Non-Current Liabilities
+                    <small>(Provide details on the total value of all non-current liabilities)</small>
+                  </label>
+
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Non-Current Liabilities" type="number" name="non_current_liabilities" value="44564"class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                  
+                  
+              </div>
+            </div>
+              <!--- row end ---->
+            <div class="row">
+              <div class="col-xs-12"style="margin-top: 15px;">
+                <label for="email" style="font-weight: 800;">Additional Financing
+                <small>(Provide details if you have any additional sources of financing)</small>
+                </label>
+
+                  
+                  
+                  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">$</span>
+  <input placeholder="Enter Additional Financing" type="number" name="additional_financing" value="8888884560" class="form-control" id="text" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+</div>
+                  
+                  
+              
+              <div class="col-xs-12"style="margin-top: 15px;">
+                 <h3 style='text-bold'>Please upload the image</h3>
+                  <input type="file" name="image" value="310320221648709645_">
+                  <!--image value-->
+                  
+            </div>
+              </div>
+            </div>
+            </div>
+            <!--- row end ---->
+            <div style="border-style: dotted;  border-width: 2px;margin-top: 25px;padding: 16px;">
+              <p style="margin-top:15px; font-size: 15px;"> <strong>NOTE:</strong> Omnium Mergers and Acquisitions is unable to provide any confidential business information
+              to any party that has not signed the Buyer’s Non-Disclosure Agreement and filled out the Buyer’s
+              Qualification Form. All information provided to us will be held in the strictest confidence in
+              accordance with our Privacy Policy and will be used to evaluate the individual, or company, as a
+              purchaser of a business.
+              </p>
+              <div class="checkbox" >
+               <strong><u>Acceptance</u></strong>
+                 <label style="font-size: 15px;"><input type="checkbox" value="yes" required>I certify that the above facts are true to the best of my knowledge and belief. I understand that decisions with financial consequences could be made based upon the information provided.</label>
+               </div>
+            </div>
+              <button type="submit" name="qualify" class="btn btn-primary" style="float: right;margin-top: 20px;margin-bottom: 20px;font-size: 24px;">Submit</button>
+      
+
+      </div>
+    </div>
+      </form>
+
+     <!-----------OPPORTUNITIES section end-------->
+
+
+
+
+          <!-----------Premium section Start-------->
+    <div id="Premium" class="tab-pane fade not_acyive">
+
+      <p>Premium</p>
+    </div>
+
+     <!-----------Premium section end-------->
+
+
+
+
+
+
+  </div>
+  <!-----------TAb section end-------->
+
+<input type="hidden" name="city" id="user_name" value="Kirby Francis" >
+<input type="hidden" name="email" id="user_email" value="anaqvi527@gmail.com" >
+<input type="hidden" name="city" id="user_city" value="" >
+<input type="hidden" name="city" id="user_address" value="" >
+<input type="hidden" name="city" id="user_phone" value="+1 (699) 307-6094" >
+<input type="hidden" name="city" id="user_state" value="" >
+<input type="hidden" name="city" id="user_zipcode" value="" >
+
+
+</div>
+
+</div>
+<!------- Container section end---->
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+</script>
+<script type="text/javascript">
+
+  function myfun()
+  {
+     
+
+    myid.style.display="blocl";
+    tab1.style.display="none";
+  }
+  function myfun1()
+  {
+    myid.style.display="none";
+    tab1.style.display="block";
+
+  }
+</script>
+<script type="text/javascript">
+  function myfunmatch()
+  {
+
+      matchid.style.display="block";
+      tab2.style.display="none";
+
+  }
+  function innermatch()
+  {
+    tab2.style.display="block";
+    matchid.style.display="none";
+  }
+</script>
+<script type="text/javascript">
+  function  myopperunity()
+  {
+    OPPORTUNITIESid.style.display="block";
+    tab3.style.display="none";
+  }
+  function opperfun()
+  {
+    tab3.style.display="block";
+    OPPORTUNITIESid.style.display="none";
+  }
+</script>
+
+
+
+
+	
+<script>
+     $(document).ready(function(){
+    	$('#country').change(function(){
+			var id=$(this).val();
+			if(id=='-1'){
+				$('#state').html('<option value="-1">Select State</option>');
+			}else{
+				$("#divLoading").addClass('show');
+				$('#state').html('<option value="-1">Select State</option>');
+				$('#city').html('<option value="-1">Select City</option>');
+				$.ajax({
+					type:'post',
+					url:'get_data.php',
+					data:'id='+id+'&type=state',
+					success:function(result){
+						$("#divLoading").removeClass('show');
+						$('#state').append(result);
+					}
+				});
+			}
+		});
+		jQuery('#state').change(function(){
+			var id=jQuery(this).val();
+			if(id=='-1'){
+				jQuery('#city').html('<option value="-1">Select City</option>');
+			}else{
+				$("#divLoading").addClass('show');
+				jQuery('#city').html('<option value="-1">Select City</option>');
+				jQuery.ajax({
+					type:'post',
+					url:'get_data.php',
+					data:'id='+id+'&type=city',
+					success:function(result){
+						$("#divLoading").removeClass('show');
+						jQuery('#city').append(result);
+					}
+				});
+			}
+		});
+		});
+</script>
+    <script>
+// id="user_name
+// id="user_city
+// "user_address
+// d="user_phone
+// d="user_state
+// "user_zipcode
+    $(document).ready(function(){
+    
+            var lists;
+              lists=$('#myid').html()
+        // $('.list').click(function(){
+        //  var name = $('#user_name').val();
+        //  var city = $('#user_city').val();
+        //  var email = $('#user_email').val();
+        //  var address = $('#user_address').val();
+        //  var phone = $('#user_phone').val();
+        //  var state = $('#user_state').val();
+        //  var zipcode= $('#user_zipcode').val();
+        //     var id=$(this).attr('data');
+        //         jQuery.ajax({
+        //             type:'post',
+        //             url:'list_get.php',
+        //             data:{
+        //                 'id':id,
+        //                 'email':email,
+        //                 'name':name,
+        //                 'city':city,
+        //                 'address':address,
+        //                 'phone':phone,
+        //                 'state':state,
+        //                 'zipcode':zipcode
+                        
+        //             },
+        //             success:function(result){
+        //                 //alert(result);
+        //                 $("#myid").empty();
+        //                 $('#myid').append(result);
+        //             }
+        //         });
+        // });
+        
+        // $('.opr').click(function(){
+      
+        //     var id=$(this).attr('data');
+        //         jQuery.ajax({
+        //             type:'post',
+        //             url:'oppr_get.php',
+        //             data:{
+        //                 'id':id,
+                        
+                        
+        //             },
+        //             success:function(result){
+        //                 //alert(result);
+                        
+        //                 $("#oppr_list").empty();
+        //                 $("#oprid").empty();
+        //                 $('#oprid').append(result);
+        //             }
+        //         });
+        // });
+
+    });
+    </script>
+   <script>
+
+    $(document).ready(function(){
+            $("#oprid").empty();
+ $('.oppr').click(function(){
+
+            var id=$(this).attr('data');
+               
+                jQuery.ajax({
+                    type:'post',
+                    url:'oppr_get.php',
+                    data:{
+                        'id':id
+                    },
+                    success:function(result){
+                       // alert(result);
+                        $("#OPPORTUNITIESid").empty();
+                        $('#OPPORTUNITIESid').append(result);
+                    }
+                });
+        });
+
+    });
+    </script>
+    <script>
+
+    $(document).ready(function(){
+            
+ $('.match').click(function(){
+
+         var name = $('#user_name').val();
+         var city = $('#user_city').val();
+         var email = $('#user_email').val();
+         var address = $('#user_address').val();
+         var phone = $('#user_phone').val();
+         var state = $('#user_state').val();
+         var zipcode= $('#user_zipcode').val();
+            var id=$(this).attr('data');
+               
+                jQuery.ajax({
+                    type:'post',
+                    url:'match_get.php',
+                     data:{
+                        'id':id,
+                        'email':email,
+                        'name':name,
+                        'city':city,
+                        'address':address,
+                        'phone':phone,
+                        'state':state,
+                        'zipcode':zipcode
+                        
+                    },
+                    success:function(result){
+                       // alert(result);
+                        $("#matchid").empty();
+                        $('#matchid').append(result);
+                    }
+                });
+        });
+
+    });
+    </script>
+    <script>
+    $('#BritishColumbia').hide();
+    $('#Other').hide();
+    $('#No').hide();
+        function British()
+        {
+            $('#BritishColumbia').toggle();
+            $('#Other').hide();
+            $('#No').hide();
+            $( "input[name='check29[]']" ).prop( "checked", false );
+        }
+        </script>
+        <script>
+        function Other()
+        {
+             $('#Other').toggle();
+             $('#BritishColumbia').hide();
+             $('#No').hide();
+             
+             $( "input[name='check28[]']" ).prop( "checked", false );
+             
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+$( document ).ready(function() {
+    $(document).on('click', '.buyer_sel', function() {
+     var checked = $(this).attr("checked");
+            alert(checked);        
+    });
+});  
+        
+        
+        
+        function No()
+        {
+             $('#No').toggle();
+             $('#BritishColumbia').hide();
+             $('#Other').hide();
+        }
+        </script>
+</script>
+   <script src="assets/jQuery.print.js">
+   </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+    <script>
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $( ".not_acyive" ).removeClass("active" );
+        $( ".not_acyive_tab" ).removeClass("active in" );
+        $('.js-example-basic-multiple').select2();
+        
+                             $( ".dashy" ).addClass( "active" );
+                    $( ".dashy_tab" ).addClass( "active in" );
+                        
+                        
+                    
+                    
+            });
+
+    
+        function Strategic(){
+           $('#Entrepreneurial').css("display","none");
+           $('#Strategic').css("display","block");
+            
+        }    
+        function Entrepreneurial(){
+            $('#Strategic').css("display","none");
+           $('#Entrepreneurial').css("display","block");
+            
+        }    
+</script>
+</body>
+</html>
