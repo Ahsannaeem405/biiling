@@ -40,6 +40,7 @@ $annotation = $client->annotateImage(
    fopen('test.png', 'r'),
    [Type::TEXT_DETECTION]
 );
+        dd($annotation);
 
 
       $res=$annotation->getFullTextAnnotation();
