@@ -42,7 +42,8 @@ $annotation = $client->annotateImage(
 );
 
 
-      dd($annotation->getFullTextAnnotation());
+      $res=$annotation->getFullTextAnnotation();
+     dd( $res->getText());
 
 
 
