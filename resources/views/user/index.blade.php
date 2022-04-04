@@ -631,6 +631,7 @@ $(document).ready(function() {
      alert('successfully clicked');
    e.preventDefault();
    var img=$('#scan_img3').val();
+   alert(img);
    var _token = $("input[name='_token']").val();
 var op="";
    $.ajax({
