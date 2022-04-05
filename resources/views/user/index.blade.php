@@ -223,7 +223,7 @@
       </div>
 
          
-      <div class="row signRow" style="display: none;">
+      <div class="row signRow">
         <div class="col-md-12">
           <div class="container">
             <canvas id="" width="" height="130px">
@@ -672,7 +672,7 @@ $(document).ready(function() {
   
 
   $('.sig-pop1').click(function(){
-    $('html, body, #signModal1').css({
+    $('html, body').css({
     overflow: 'hidden',
     height: '100%'
 });
