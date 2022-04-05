@@ -125,7 +125,7 @@
                         <!-- <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="" id="blah"> -->
                         <input type="hidden" name="scam_so" id="scan_img3">
                           <button  type="button" id="form" style="display: none;">Upload </button>
-                          <div class="spinner-border text-success loader2" style="display: none;"></div>
+                          <div class="spinner-border text-success loader2" style="display: none;margin-right: auto;margin-left: auto;"></div>
                     </div>
                   </div>
 
@@ -138,9 +138,9 @@
                      
 
                       <div class="form-group text-left" id="imeidiv">
-                        <label for="imei">Enter imei No:</label>
+                        <label for="imei">Enter IMEI No:</label>
                         <div style="display:flex;">
-                        <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
+                        <input type="text" name="imei" class="form-control app_imi" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
 
                       </div>
                       <button class="btn btn-primary" type="button" name="barcodefield" id="barcodefield" style="">verify barcode</button>
@@ -746,8 +746,14 @@ $('.btn-close').click(function(){
    $(document).on('click', '.scan_img2', function () {
      $(".scan_img").click();
    });
+    $(document).on('change', '.select_imi', function () {
+       var value=$(this).val();
+       $(".app_imi").val(value);
+   });
+
+   
    $("#form").on('click',(function(e) {
-   $('.sel_imi').empty();
+   $('.select_imi').empty();
 
    $(".loader2").css("display", "block");
    e.preventDefault();
@@ -762,10 +768,10 @@ $('.btn-close').click(function(){
     {
       $(".loader2").css("display", "none");
       for (var i = 0; i < data['msg'].length; i++) {
-                                    op +='<option value="">'+data['msg'][i]+'</option>';
+                                    op +='<option value="'+data['msg'][i]+'">'+data['msg'][i]+'</option>';
       }
-       $('.sel_imi').append( '<label for="">Please Select Company:</label>'+
-                          '<select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
+       $('.sel_imi').append( '<label for="" style="float:left;">Please Select IMEI:</label>'+
+                          '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
     },
     error: function()
     {
