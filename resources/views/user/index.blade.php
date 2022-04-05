@@ -90,6 +90,7 @@ img{
                     <div class="col-md-6 m-auto">
 
                         <i class="fas fa-camera open_cam scan_img2" style="font-size: 40px; color: rgb(0, 105, 217);"></i><br><br>
+                        <p>Choose image</p>
 
                         <!-- <section class="section section_came" id="section_cameye" style="display:none;"> -->
                           <!-- <div class="container">
@@ -848,7 +849,7 @@ $('.close_md, #save2').click(function(){
                                     op +='<option value="'+data['msg'][i]+'">'+data['msg'][i]+'</option>';
       }
        $('.sel_imi').append( '<label for="" style="float:left;">Please Select IMEI:</label>'+
-                          '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
+                          '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="">Select an IMEI</option>'+op+'</select>');
     },
     error: function()
     {
