@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'LENOVO','service_id' => '22'],
             ['name' => 'SAMSUNG','service_id' => '1'],
             ['name' => 'DOOGEE','service_id' => '56'],
+            ['name' => 'IPHONE','service_id' => '30'],
 
             
             ['name' => 'ALCATEL','service_id' => '17'],

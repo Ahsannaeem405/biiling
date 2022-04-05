@@ -1,6 +1,13 @@
 @extends('user.layout1')
   @section('css')
   <link rel="stylesheet" href="{{asset('assets/css/bulma.min.css')}}">
+  <style>
+img{
+  position: unset !important;
+}
+
+
+    </style>
 @endsection
 @section('content')
     <div class="container mt-3">
@@ -192,7 +199,7 @@
                       <div class=" form-group text-left">
                         <label for="Name">Seller's Signature:</label>
                       </div>
-                      <button type="button" class="btn btn-primary sig-pop1" id="">Add Signature</button>
+                      <button type="button" class="btn btn-primary sig-pop1" id="">Add Signature</button><br>
 
 
 
@@ -214,8 +221,7 @@
   <canvas id="signature-pad1" class="signature-pad" width=400 height=200></canvas>
 </div>
 <div>
-  <button class="btn btn-primary" type="button" id="save1">Save changes</button>
-  <button class="btn btn-secondary" type="button" id="clear1">Clear</button>
+  
   
 </div>
 
@@ -223,8 +229,9 @@
     
       </div>
       <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary btn-close" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> -->
+      <button class="btn btn-primary" type="button" id="save1">Save changes</button>
+      <button class="btn btn-secondary" type="button" id="clear1">Clear</button>
+      
       </div>
     </div>
   </div>
@@ -250,8 +257,7 @@
   <canvas id="signature-pad2" class="signature-pad" width=400 height=200></canvas>
 </div>
 <div>
-  <button class="btn btn-primary" type="button" id="save2">Save changes</button>
-  <button class="btn btn-secondary" type="button" id="clear2">Clear</button>
+  
   
 </div>
 
@@ -259,8 +265,8 @@
     
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-close2" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <button class="btn btn-primary" type="button" id="save2">Save changes</button>
+      <button class="btn btn-secondary" type="button" id="clear2">Clear</button>
       </div>
     </div>
   </div>
@@ -309,7 +315,7 @@
 
 
                       <!--  signature end  -->
-                      <button type="submit" class="btn btn-primary text-center" id="billbutton" disabled >Submit Information</button>
+                      <button type="submit" class="btn btn-primary text-center" id="billbutton" disabled style="display: block; margin: auto; margin-top: 20px;">Submit Information</button>
                     </form>
                   </div><!--tab1 close-->
                 </div>
@@ -643,9 +649,7 @@ $(document).ready(function() {
   $("div#qr-reader__dashboard_section_csr > div button").click(function(){
 
     var x = document.getElementById("section_cameye");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } 
+    
 
     setTimeout(function() { 
       
@@ -662,7 +666,9 @@ $(document).ready(function() {
   // alert(length);
 
 
-  }, 4000);
+  }, 1000);
+  alert('dd');
+  $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(1)").click();
   });
 
 
@@ -717,21 +723,24 @@ $(document).ready(function() {
 
 $('.btn-close, #save1').click(function(){
   $('#signModal1').modal('hide');
-  $('html, body, #signModal2').css({
-    overflow: 'auto',
-    height: 'auto'
-});
+//   $('html, body, #signModal2').css({
+//     overflow: 'auto',
+//     height: 'auto'
+// });
 });
 
 $('.btn-close2, #save2').click(function(){
   $('#signModal2').modal('hide');
-  $('html, body').css({
-    overflow: 'auto',
-    height: 'auto'
-});
+//   $('html, body').css({
+//     overflow: 'auto',
+//     height: 'auto'
+// });
 });
 
-
+// $('.modal-dialog').click(function() {
+//    // do something here
+//    alert('body is clicke');
+// });
 
 
 

@@ -39,7 +39,6 @@
 
 .wrapper {
   position: relative;
-  width: 400px;
   height: 200px;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -56,7 +55,7 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  width:400px;
+  width:100%;
   height:200px;
 }
 

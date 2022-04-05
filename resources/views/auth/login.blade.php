@@ -8,7 +8,7 @@
               <div class="card-body text-center py-5 ">
                 <h3 class=" text-cenetr mb-3">{{ __('Login') }}</h3>
                 <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                       
                             <div class="row col-12 ">
                                 <label for="email">{{ __('Email') }}</label>
 
