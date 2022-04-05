@@ -206,12 +206,11 @@ img{
                       
 
 <!-- Modal start-->
-<div class="modal" id="signModal1" tabindex="-1">
-  <div class="modal-dialog">
+<div class="modal" id="signModal1" data-backdrop="static" tabindex="-1">
+  <div class="modal-dialog" style="margin-top: 100px;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Seller's signature</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
@@ -231,6 +230,8 @@ img{
       <div class="modal-footer">
       <button class="btn btn-primary" type="button" id="save1">Save changes</button>
       <button class="btn btn-secondary" type="button" id="clear1">Clear</button>
+      <button type="button" class="btn btn-secondary close_md" >Close</button>
+
       
       </div>
     </div>
@@ -242,12 +243,11 @@ img{
 
 
 <!-- Modal start-->
-<div class="modal" id="signModal2" tabindex="-1">
-  <div class="modal-dialog">
+<div class="modal" id="signModal2" data-backdrop="static" tabindex="-1">
+  <div class="modal-dialog" style="margin-top: 100px;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Representative's signature</h5>
-        <button type="button" class="btn-close2" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
@@ -267,6 +267,8 @@ img{
       <div class="modal-footer">
       <button class="btn btn-primary" type="button" id="save2">Save changes</button>
       <button class="btn btn-secondary" type="button" id="clear2">Clear</button>
+      <button type="button" class="btn btn-secondary close_md" >Close</button>
+
       </div>
     </div>
   </div>
@@ -626,7 +628,7 @@ $("#barcodefield").click(function(){
             }
         });
       } else {
-        alert('Please scan barcode or enter imei number');
+        alert('Please scan barcode or enter IMEI number');
       }
     } else {
       alert('please ' + optselect + ' company first');
@@ -661,14 +663,14 @@ $(document).ready(function() {
   }
 
 
-  $("div#qr-reader__dashboard_section_csr span:last-child button:first-child").css('display', 'block').css('margin',' auto');
+  $("div#qr-reader__dashboard_section_csr span:last-child button:first-child").css('display', 'none').css('margin',' auto');
+  $("div#qr-reader__dashboard_section_csr span:last-child button:first-child").click();
 
   // alert(length);
 
 
-  }, 4000);
-  alert('dd');
-  $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(1)").click();
+  }, 2000);
+  // alert('dd');
   });
 
 
@@ -680,12 +682,12 @@ $(document).ready(function() {
     // $(event.target).remove()
   });
 
-  $(document).on('click', '#qr-reader__dashboard_section_csr span:last-child button:first-child', function () {
-   var x = document.getElementById("section_cameye");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    }
-  });
+  // $(document).on('click', '#qr-reader__dashboard_section_csr span:last-child button:first-child', function () {
+  //  var x = document.getElementById("section_cameye");
+  //   if (x.style.display === "block") {
+  //     x.style.display = "none";
+  //   }
+  // });
 
 
 
@@ -721,20 +723,20 @@ $(document).ready(function() {
 
 
 
-$('.btn-close, #save1').click(function(){
+$('.close_md, #save1').click(function(){
   $('#signModal1').modal('hide');
-//   $('html, body, #signModal2').css({
-//     overflow: 'auto',
-//     height: 'auto'
-// });
+  $('html, body, #signModal2').css({
+    overflow: 'auto',
+    height: 'auto'
+});
 });
 
-$('.btn-close2, #save2').click(function(){
+$('.close_md, #save2').click(function(){
   $('#signModal2').modal('hide');
-//   $('html, body').css({
-//     overflow: 'auto',
-//     height: 'auto'
-// });
+  $('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+});
 });
 
 // $('.modal-dialog').click(function() {
