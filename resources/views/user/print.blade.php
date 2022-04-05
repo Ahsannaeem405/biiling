@@ -57,6 +57,7 @@ tr:nth-child(even) {
   
    @php 
                                 $mob=App\Models\Mobilecompanie::where('service_id',$service_id[$i])->first();
+                                
                                 @endphp
     <tr>
       <th scope="row">1</th>
