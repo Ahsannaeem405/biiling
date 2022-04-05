@@ -223,7 +223,7 @@
       </div>
 
          
-      <div class="row signRow">
+      <div class="row signRow" style="display: none;">
         <div class="col-md-12">
           <div class="container">
             <canvas id="" width="" height="130px">
