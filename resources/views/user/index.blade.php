@@ -680,16 +680,16 @@ $(document).ready(function() {
   $('#signModal1').modal('show');
   });
 
-  $('.sig-pop2').click(function(){
-  $('#signModal2').modal('show');
-  });
-
+  
 
 
 
 $('.btn-close').click(function(){
   $('#signModal1').modal('hide');
-  $('#signModal2').modal('hide');
+  $('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+});
 });
 
 
