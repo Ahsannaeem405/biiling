@@ -196,57 +196,79 @@
 
 
 
+                      
 
 <!-- Modal start-->
 <div class="modal" id="signModal1" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal for seller signature</h5>
+        <h5 class="modal-title">Seller's signature</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
 
-      <div class="row signRow">
-        <div class="col-md-12">
-          <div class="container">
-          <canvas id=""  height="130px">
-            Get a better browser, bro.
-          </canvas>
-          </div>
-        
-          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
-          <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
-          <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5" ></textarea>
-        </div> 
-      </div>
+<div class="wrapper">
+ 
+  <canvas id="signature-pad1" class="signature-pad" width=400 height=200></canvas>
+</div>
+<div>
+  <button class="btn btn-primary" type="button" id="save1">Save changes</button>
+  <button class="btn btn-secondary" type="button" id="clear1">Clear</button>
+  
+</div>
 
          
-      <div class="row signRow">
-        <div class="col-md-12">
-          <div class="container">
-            <canvas id="" width="" height="130px">
-              Get a better browser, bro.
-            </canvas>
-          </div>
-          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
-          <button type="button" class="btn btn-default sig-clearBtn" id="" >Clear Signature</button>
-          <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5" ></textarea>
-        </div> 
-      </div>
-      
+    
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-close" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-secondary btn-close" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
 </div>
 <!-- modal end -->
 
-                      
+
+
+
+<!-- Modal start-->
+<div class="modal" id="signModal2" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Representative's signature</h5>
+        <button type="button" class="btn-close2" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+<div class="wrapper">
+ 
+  <canvas id="signature-pad2" class="signature-pad" width=400 height=200></canvas>
+</div>
+<div>
+  <button class="btn btn-primary" type="button" id="save2">Save changes</button>
+  <button class="btn btn-secondary" type="button" id="clear2">Clear</button>
+  
+</div>
+
+         
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-close2" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <textarea class="form-control d-none" id="texta1" name="url1" rows="5" ></textarea>
+    <textarea class="form-control d-none" id="texta2" name="url2" rows="5" ></textarea>
+      
+                       
                       
 
 
@@ -258,7 +280,7 @@
                       
 
 
-
+<!--
 <div class="modal" id="signModal2" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -280,7 +302,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- modal end -->
 
                       
@@ -672,7 +694,7 @@ $(document).ready(function() {
   
 
   $('.sig-pop1').click(function(){
-    $('html, body').css({
+    $('html, body, #signModal1').css({
     overflow: 'hidden',
     height: '100%'
 });
@@ -680,19 +702,34 @@ $(document).ready(function() {
   $('#signModal1').modal('show');
   });
 
-  
+  $('.sig-pop2').click(function(){
+
+    $('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+    });
+
+  $('#signModal2').modal('show');
+  });
 
 
 
-$('.btn-close').click(function(){
+
+$('.btn-close, #save1').click(function(){
   $('#signModal1').modal('hide');
-  $('html, body').css({
+  $('html, body, #signModal2').css({
     overflow: 'auto',
     height: 'auto'
 });
 });
 
-
+$('.btn-close2, #save2').click(function(){
+  $('#signModal2').modal('hide');
+  $('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+});
+});
 
 
 
@@ -799,172 +836,6 @@ $('.btn-close').click(function(){
 <script>
   
 
-  (function($) {
-  
-  $('.signRow').each(function(){
-   
-    
-    
-    // make dynamic pad id  
-    $(this).find('canvas').attr('id', 'signPad' + $(this).index());
-    var padId = $(this).find('canvas').attr('id');
-
-    // make dynamic submit BTN id  
-    $(this).find('.sig-submitBtn').attr('id', 'sig-submitBtn' + $(this).index());
-    var padSubmitId = $(this).find('.sig-submitBtn').attr('id');
-
-    // make dynamic clear BTN id  
-    $(this).find('.sig-clearBtn').attr('id', 'sig-clearBtn' + $(this).index());
-    var padClearId = $(this).find('.sig-clearBtn').attr('id');
-
-    // make dynamic data url id  
-    $(this).find('.sig-dataUrl').attr('id', 'sig-dataUrl' + $(this).index());
-    var padDataUrlId = $(this).find('.sig-dataUrl').attr('id');
-
-    // make dynamic img id  
-    $(this).find('.sig-image').attr('id', 'sig-image' + $(this).index());
-    var padImageId = $(this).find('.sig-image').attr('id');
-    
-
-    window.requestAnimFrame = (function (callback) {
-      return window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.oRequestAnimationFrame ||
-        window.msRequestAnimaitonFrame ||
-        function (callback) {
-          window.setTimeout(callback, 1000 / 60);
-        };
-    })();
-
-
-    var canvas = document.getElementById(padId);
-    var ctx = canvas.getContext("2d");
-    ctx.strokeStyle = "#222222";
-    ctx.lineWidth = 4;
-
-    var drawing = false;
-    var mousePos = {
-      x: 0,
-      y: 0
-    };
-    var lastPos = mousePos;
-
-    canvas.addEventListener("mousedown", function (e) {
-      drawing = true;
-      lastPos = getMousePos(canvas, e);
-    }, false);
-
-    canvas.addEventListener("mouseup", function (e) {
-      drawing = false;
-    }, false);
-
-    canvas.addEventListener("mousemove", function (e) {
-      mousePos = getMousePos(canvas, e);
-    }, false);
-
-    // Add touch event support for mobile
-    canvas.addEventListener("touchstart", function (e) {
-
-    }, false);
-
-    canvas.addEventListener("touchmove", function (e) {
-      var touch = e.touches[0];
-      var me = new MouseEvent("mousemove", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      canvas.dispatchEvent(me);
-    }, false);
-
-    canvas.addEventListener("touchstart", function (e) {
-      mousePos = getTouchPos(canvas, e);
-      var touch = e.touches[0];
-      var me = new MouseEvent("mousedown", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      canvas.dispatchEvent(me);
-    }, false);
-
-    canvas.addEventListener("touchend", function (e) {
-      var me = new MouseEvent("mouseup", {});
-      canvas.dispatchEvent(me);
-    }, false);
-
-    function getMousePos(canvasDom, mouseEvent) {
-      var rect = canvasDom.getBoundingClientRect();
-      return {
-        x: mouseEvent.clientX - rect.left,
-        y: mouseEvent.clientY - rect.top
-      }
-    }
-
-    function getTouchPos(canvasDom, touchEvent) {
-      var rect = canvasDom.getBoundingClientRect();
-      return {
-        x: touchEvent.touches[0].clientX - rect.left,
-        y: touchEvent.touches[0].clientY - rect.top
-      }
-    }
-
-    function renderCanvas() {
-      if (drawing) {
-        ctx.moveTo(lastPos.x, lastPos.y);
-        ctx.lineTo(mousePos.x, mousePos.y);
-        ctx.stroke();
-        lastPos = mousePos;
-      }
-    }
-
-    // Prevent scrolling when touching the canvas
-    document.body.addEventListener("touchstart", function (e) {
-      if (e.target == canvas) {
-        e.preventDefault();
-      }
-    }, false);
-    document.body.addEventListener("touchend", function (e) {
-      if (e.target == canvas) {
-        e.preventDefault();
-      }
-    }, false);
-    document.body.addEventListener("touchmove", function (e) {
-      if (e.target == canvas) {
-        e.preventDefault();
-      }
-    }, false);
-
-    (function drawLoop() {
-      requestAnimFrame(drawLoop);
-      renderCanvas();
-    })();
-
-    function clearCanvas() {
-      canvas.width = canvas.width;
-    }
-
-    // Set up the UI
-    var sigText = document.getElementById(padDataUrlId);
-    var sigImage = document.getElementById(padImageId);
-    var clearBtn = document.getElementById(padClearId);
-    var submitBtn = document.getElementById(padSubmitId);
-
-    clearBtn.addEventListener("click", function (e) {
-      clearCanvas();
-      // sigText.innerHTML = "Data URL for your signature will go here!";
-      sigImage.setAttribute("src", "");
-    }, false);
-
-    submitBtn.addEventListener("click", function (e) {
-      var dataUrl = canvas.toDataURL();
-      sigText.innerHTML = dataUrl;
-      sigImage.setAttribute("src", dataUrl);
-    }, false);
-
-    
-  }); // each function  end
-  
-})(jQuery);
 
 
 function encodeImageFileAsURL(element) {
@@ -986,4 +857,64 @@ function encodeImageFileAsURL(element) {
 
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.3/dist/signature_pad.umd.min.js"></script>
+
+
+
+<script>
+
+
+var signaturePad1 = new SignaturePad(document.getElementById('signature-pad1'), {
+  backgroundColor: 'rgba(255, 255, 255, 0)',
+  penColor: 'rgb(0, 0, 0)'
+});
+var saveButton1 = document.getElementById('save1');
+var cancelButton1 = document.getElementById('clear1');
+var texta1 = document.getElementById('texta1');
+
+saveButton1.addEventListener('click', function (event) {
+
+  var data1 = signaturePad1.toDataURL('image/png');
+
+  texta1.setAttribute("value", data1);
+// Send data to server instead...
+  // window.open(data);
+});
+
+cancelButton1.addEventListener('click', function (event) {
+  signaturePad1.clear();
+});
+</script>
+
+
+
+<script>
+var signaturePad2 = new SignaturePad(document.getElementById('signature-pad2'), {
+  backgroundColor: 'rgba(255, 255, 255, 0)',
+  penColor: 'rgb(0, 0, 0)'
+});
+var saveButton2 = document.getElementById('save2');
+var cancelButton2 = document.getElementById('clear2');
+var texta2 = document.getElementById('texta2');
+
+saveButton2.addEventListener('click', function (event) {
+  var canvas = document.getElementById('signature-pad2');
+
+  var dataURL = canvas.toDataURL();
+  // console.log(dataURL);
+
+  // var data2 = signaturePad2.toDataURL('image/png');
+
+  texta2.setAttribute("value", dataURL);
+// Send data to server instead...
+  // window.open(data);
+});
+
+cancelButton2.addEventListener('click', function (event) {
+  signaturePad2.clear();
+});
+</script>
+
+
+
 @endsection
