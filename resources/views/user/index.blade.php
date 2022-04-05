@@ -666,7 +666,7 @@ $(document).ready(function() {
   // alert(length);
 
 
-  }, 1000);
+  }, 4000);
   alert('dd');
   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(1)").click();
   });
@@ -805,6 +805,9 @@ $('.btn-close2, #save2').click(function(){
    
    $("#form").on('click',(function(e) {
    $('.select_imi').empty();
+   $('.sel_imi').empty();
+
+   
 
    $(".loader2").css("display", "block");
    e.preventDefault();
