@@ -273,8 +273,8 @@ img{
     </div>
   </div>
 </div>
-    <textarea class="form-control d-none" id="texta1" name="url1" rows="5" ></textarea>
-    <textarea class="form-control d-none" id="texta2" name="url2" rows="5" ></textarea>
+    <textarea class="form-control d-none" id="texta1" name="url1" rows="5"></textarea>
+    <textarea class="form-control d-none" id="texta2" name="url2" rows="5"></textarea>
       
                        
                       
@@ -315,7 +315,7 @@ img{
 
                       
 
-
+<!-- action="{{route('newbill')}}" -->
                       <!--  signature end  -->
                       <button type="submit" class="btn btn-primary text-center" id="billbutton" disabled style="display: block; margin: auto; margin-top: 20px;">Submit Information</button>
                     </form>
@@ -395,7 +395,7 @@ img{
    @for ($i=0; $i < count($imi); $i++)
   
    @php 
-                                $mob=App\Models\Mobilecompanie::find($service_id[$i]);
+                                $mob=App\Models\Mobilecompanie::where('service_id',$service_id[$i])->first();
                                 @endphp
     <tr>
       <th scope="row">1</th>
@@ -628,7 +628,7 @@ $("#barcodefield").click(function(){
             }
         });
       } else {
-        alert('Please scan barcode or enter IMEI number');
+        alert('Please Scan Barcode Or Enter IMEI Number.');
       }
     } else {
       alert('please ' + optselect + ' company first');
@@ -648,6 +648,27 @@ $("#barcodefield").click(function(){
 $(document).ready(function() {
 
   
+  $(document).on('click', '#billbutton', function (e) {
+    // alert('billbutton clicked');
+  $sign1 = $('#texta1').val();
+  $sign2 = $('#texta2').val();
+  // alert($sign2);
+  if ($sign2=="" || $sign1==""){
+
+  alert('Please write your signature first');
+  e.preventDefault();
+  }
+ 
+
+  
+
+ 
+  });
+
+
+
+
+
   $("div#qr-reader__dashboard_section_csr > div button").click(function(){
 
     var x = document.getElementById("section_cameye");
@@ -890,7 +911,7 @@ saveButton1.addEventListener('click', function (event) {
 
   var data1 = signaturePad1.toDataURL('image/png');
 
-  texta1.setAttribute("value", data1);
+  texta1.innerText = data1;
 // Send data to server instead...
   // window.open(data);
 });
@@ -919,7 +940,7 @@ saveButton2.addEventListener('click', function (event) {
 
   // var data2 = signaturePad2.toDataURL('image/png');
 
-  texta2.setAttribute("value", dataURL);
+  texta2.innerText = dataURL;
 // Send data to server instead...
   // window.open(data);
 });
