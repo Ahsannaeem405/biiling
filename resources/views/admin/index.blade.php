@@ -1,6 +1,13 @@
-@extends('admin.layout')
+@extends('admin.layout1')
   @section('css')
   <link rel="stylesheet" href="{{asset('assets/css/bulma.min.css')}}">
+  <style>
+img{
+  position: unset !important;
+}
+
+
+    </style>
 @endsection
 @section('content')
     <div class="container mt-3">
@@ -36,7 +43,7 @@
 
                   <div id="tab1" class=" mt-5 px-2 py-4 " >
                     <h4 class="text-center pb-3">Add New Bill</h4>
-                    <form class="text-center px-0 px-lg-5" method="POST" action="{{route('newbill2')}}" id="form-0">
+                    <form class="text-center px-0 px-lg-5" method="POST" action="{{route('newbill')}}" id="form-0">
                       @csrf
                       <div class="scanner text-center">
 
@@ -77,14 +84,15 @@
                         
                         {{-- <p id="para">Having problem while scaning barcode?</p> --}}
                        
-                    <hr>
+                      <hr>
                       </div>
+                    
                     <div class="col-md-6 m-auto">
 
-                        <i class="fas fa-camera open_cam" style="font-size: 40px;"></i>
+                        <i class="fas fa-camera open_cam scan_img2" style="font-size: 40px; color: rgb(0, 105, 217);"></i><br><br>
 
-                        <section class="section section_came" id="section_cameye" style="display:none;">
-                          <div class="container">
+                        <!-- <section class="section section_came" id="section_cameye" style="display:none;"> -->
+                          <!-- <div class="container">
                             <div class="columns">
                               <div class="column is-four-fifths">
                                 
@@ -116,16 +124,15 @@
                                 <div id="screenshots"></div>
                               </div>
                             </div>
-                          </div>
-                        </section>
+                          </div> -->
+                        <!-- </section> -->
 
-                        <canvas class="is-hidden" id="canvas"></canvas>
+                        <!-- <canvas class="is-hidden" id="canvas"></canvas> -->
                         <input type="file" name="file" class="scan_img d-none" id="imgInp" onchange="encodeImageFileAsURL(this)">
-                        <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="scan_img2" id="blah">
+                        <!-- <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-6.gif" class="" id="blah"> -->
                         <input type="hidden" name="scam_so" id="scan_img3">
-                          <button type="button" id="form" 
-                          > Upload </button>
-
+                          <button  type="button" id="form" style="display: none;">Upload </button>
+                          <div class="spinner-border text-success loader2" style="display: none;margin-right: auto;margin-left: auto;"></div>
                     </div>
                   </div>
 
@@ -138,9 +145,9 @@
                      
 
                       <div class="form-group text-left" id="imeidiv">
-                        <label for="imei">Enter imei No:</label>
+                        <label for="imei">Enter IMEI No:</label>
                         <div style="display:flex;">
-                        <input type="text" name="imei" class="form-control" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
+                        <input type="text" name="imei" class="form-control app_imi" id="imei" placeholder="IMEI" ><div class="spinner-border text-success loader" style="margin-left:-2rem;display:none;"></div></div>
 
                       </div>
                       <button class="btn btn-primary" type="button" name="barcodefield" id="barcodefield" style="">verify barcode</button>
@@ -164,10 +171,6 @@
                         <textarea class="form-control" id="address" name="address" placeholder="seller address" required></textarea>
                       </div>
                       <div class="form-group text-left">
-                        <label for="address">Sold Amount:</label>
-                        <input class="form-control" id="" name="amount" placeholder="Sold Amount" required>
-                      </div>
-                      <div class="form-group text-left">
                         <label for="license">Drivers License #:</label>
                         <input type="text" class="form-control" name="license" id="license" placeholder="license number" required>
                       </div>
@@ -175,9 +178,13 @@
                         <label for="dob">DOB:</label>
                         <input type="date" class="form-control" name="dob" id="dob">
                       </div>
+                      <div class="form-group text-left">
+                        <label for="address">Sold Amount:</label>
+                        <input class="form-control" id="" name="amount" placeholder="Sold Amount" required>
+                      </div>
                       
                       <!-- signature start -->
-                          <!-- Content -->
+                        	<!-- Content -->
                           <br>
                       <div class=" form-group text-left px-4">
                         <p>Seller hereby acknowledges that the above sale price represents the fair market value of said item or items. </p>
@@ -192,40 +199,125 @@
                       <div class=" form-group text-left">
                         <label for="Name">Seller's Signature:</label>
                       </div>
+                      <button type="button" class="btn btn-primary sig-pop1" id="">Add Signature</button><br>
 
-                      <div class="row signRow">
-                        <div class="col-md-12">
-                          <div class="container">
-                          <canvas id=""  height="130px">
-                            Get a better browser, bro.
-                          </canvas>
-                          </div>
+
+
+                      
+
+<!-- Modal start-->
+<div class="modal" id="signModal1" data-backdrop="static" tabindex="-1">
+  <div class="modal-dialog" style="margin-top: 100px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Seller's signature</h5>
+      </div>
+      <div class="modal-body">
+
+
+<div class="wrapper">
+ 
+  <canvas id="signature-pad1" class="signature-pad" width=400 height=200></canvas>
+</div>
+<div>
+  
+  
+</div>
+
+         
+    
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-primary" type="button" id="save1">Save changes</button>
+      <button class="btn btn-secondary" type="button" id="clear1">Clear</button>
+      <button type="button" class="btn btn-secondary close_md" >Close</button>
+
+      
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal end -->
+
+
+
+
+<!-- Modal start-->
+<div class="modal" id="signModal2" data-backdrop="static" tabindex="-1">
+  <div class="modal-dialog" style="margin-top: 100px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Representative's signature</h5>
+      </div>
+      <div class="modal-body">
+
+
+<div class="wrapper">
+ 
+  <canvas id="signature-pad2" class="signature-pad" width=400 height=200></canvas>
+</div>
+<div>
+  
+  
+</div>
+
+         
+    
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-primary" type="button" id="save2">Save changes</button>
+      <button class="btn btn-secondary" type="button" id="clear2">Clear</button>
+      <button type="button" class="btn btn-secondary close_md" >Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+    <textarea class="form-control d-none" id="texta1" name="url1" rows="5"></textarea>
+    <textarea class="form-control d-none" id="texta2" name="url2" rows="5"></textarea>
+      
                        
-                          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
-                          <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5" ></textarea>
-                        </div> 
-                      </div>
-                      <div class="form-group text-left">
-                        <label for="Name">Representative's Signature:</label>
-                      </div>
-                      <div class="row signRow">
-                        <div class="col-md-12">
-                          <div class="container">
-                            <canvas id="" width="" height="130px">
-                              Get a better browser, bro.
-                            </canvas>
-                          </div>
-                          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
-                          <button type="button" class="btn btn-default sig-clearBtn" id="" >Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5" ></textarea>
-                        </div> 
-                      </div>
                       
 
 
+                      <div class="form-group text-left">
+                        <label for="Name">Representative's Signature:</label>
+                      </div>
+                      <button type="button" class="btn btn-primary sig-pop2" id="">Add Signature</button>
+
+                      
+
+
+<!--
+<div class="modal" id="signModal2" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal  for repres signature</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+     
+
+         
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-close" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- modal end -->
+
+                      
+
+<!-- action="{{route('newbill')}}" -->
                       <!--  signature end  -->
-                      <button type="submit" class="btn btn-primary text-center" id="billbutton" disabled >Submit Information</button>
+                      <button type="submit" class="btn btn-primary text-center" id="billbutton" disabled style="display: block; margin: auto; margin-top: 20px;">Submit Information</button>
                     </form>
                   </div><!--tab1 close-->
                 </div>
@@ -303,10 +395,10 @@
    @for ($i=0; $i < count($imi); $i++)
   
    @php 
-                                $mob=App\Models\Mobilecompanie::find($service_id[$i]);
+                                $mob=App\Models\Mobilecompanie::where('service_id',$service_id[$i])->first();
                                 @endphp
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$i+1}}</th>
       <td>@if($mob!=null)
         {{$mob->name}}
       @endif</td>
@@ -410,7 +502,7 @@
 
 }
 var html5QrcodeScanner = new Html5QrcodeScanner(
-  "qr-reader", { fps: 10, qrbox: 250 });
+	"qr-reader", { fps: 10, qrbox: 250 });
 html5QrcodeScanner.render(onScanSuccess);
 
 
@@ -536,7 +628,7 @@ $("#barcodefield").click(function(){
             }
         });
       } else {
-        alert('Please scan barcode or enter imei number');
+        alert('Please Scan Barcode Or Enter IMEI Number.');
       }
     } else {
       alert('please ' + optselect + ' company first');
@@ -550,18 +642,37 @@ $("#barcodefield").click(function(){
 
 </script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
 $(document).ready(function() {
 
   
+  $(document).on('click', '#billbutton', function (e) {
+    // alert('billbutton clicked');
+  $sign1 = $('#texta1').val();
+  $sign2 = $('#texta2').val();
+  // alert($sign2);
+  if ($sign2=="" || $sign1==""){
+
+  alert('Please write your signature first');
+  e.preventDefault();
+  }
+ 
+
+  
+
+ 
+  });
+
+
+
+
+
   $("div#qr-reader__dashboard_section_csr > div button").click(function(){
 
     var x = document.getElementById("section_cameye");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } 
+    
 
     setTimeout(function() { 
       
@@ -573,12 +684,14 @@ $(document).ready(function() {
   }
 
 
-  $("div#qr-reader__dashboard_section_csr span:last-child button:first-child").css('display', 'block').css('margin',' auto');
+  $("div#qr-reader__dashboard_section_csr span:last-child button:first-child").css('display', 'none').css('margin',' auto');
+  $("div#qr-reader__dashboard_section_csr span:last-child button:first-child").click();
 
   // alert(length);
 
 
-  }, 4000);
+  }, 2000);
+  // alert('dd');
   });
 
 
@@ -590,32 +703,111 @@ $(document).ready(function() {
     // $(event.target).remove()
   });
 
-  $(document).on('click', '#qr-reader__dashboard_section_csr span:last-child button:first-child', function () {
-   var x = document.getElementById("section_cameye");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    }
-  });
-  $(document).on('click', '.open_cam', function () {
-  $("#qr-reader__dashboard_section_csr > div button").click();
-  $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+  // $(document).on('click', '#qr-reader__dashboard_section_csr span:last-child button:first-child', function () {
+  //  var x = document.getElementById("section_cameye");
+  //   if (x.style.display === "block") {
+  //     x.style.display = "none";
+  //   }
+  // });
+
+
+
+
+
+
+
+
+
+
+
   
 
-  setTimeout(function() { 
-    $("#btnChangeCamera").click();
-
-    var x = document.getElementById("section_cameye");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-
-    
-    
-  }, 2000);
-
+  $('.sig-pop1').click(function(){
+    $('html, body, #signModal1').css({
+    overflow: 'hidden',
+    height: '100%'
 });
+
+  $('#signModal1').modal('show');
+  });
+
+  $('.sig-pop2').click(function(){
+
+    $('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+    });
+
+  $('#signModal2').modal('show');
+  });
+
+
+
+
+$('.close_md, #save1').click(function(){
+  $('#signModal1').modal('hide');
+  $('html, body, #signModal2').css({
+    overflow: 'auto',
+    height: 'auto'
+});
+});
+
+$('.close_md, #save2').click(function(){
+  $('#signModal2').modal('hide');
+  $('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+});
+});
+
+// $('.modal-dialog').click(function() {
+//    // do something here
+//    alert('body is clicke');
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   $(document).on('click', '.open_cam', function () {
+//   $("#qr-reader__dashboard_section_csr > div button").click();
+//   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
+  
+
+//   setTimeout(function() { 
+//     $("#btnChangeCamera").click();
+
+//     var x = document.getElementById("section_cameye");
+//     if (x.style.display === "none") {
+//       x.style.display = "block";
+//     } else {
+//       x.style.display = "none";
+//     }
+
+    
+    
+//   }, 2000);
+
+// });
 
   $(document).on('click', '.sig-submitBtn', function () {
      Swal.fire(
@@ -623,41 +815,45 @@ $(document).ready(function() {
       
     )
    });
+
+
    $(document).on('click', '.scan_img2', function () {
      $(".scan_img").click();
    });
+    $(document).on('change', '.select_imi', function () {
+       var value=$(this).val();
+       $(".app_imi").val(value);
+   });
+
+   
    $("#form").on('click',(function(e) {
+   $('.select_imi').empty();
+   $('.sel_imi').empty();
+
+   
+
+   $(".loader2").css("display", "block");
    e.preventDefault();
    var img=$('#scan_img3').val();
    var _token = $("input[name='_token']").val();
-var op="";
+   var op="";
    $.ajax({
    url: '{{URL::to('scan_img')}}',
-
    type: "POST",
    data: {_token: "{{ csrf_token() }}",'img': img},
-
-  
-   
     success: function(data)
     {
+      $(".loader2").css("display", "none");
       for (var i = 0; i < data['msg'].length; i++) {
-                               
-
-                                    op +='<option value="">'+data['msg'][i]+'</option>';
-                           
-                                
+                                    op +='<option value="'+data['msg'][i]+'">'+data['msg'][i]+'</option>';
       }
-       $('.sel_imi').append( '<label for="">Please Select Company:</label>'+
-                          '<select type="text" name="mobcompany" class="form-control" aria-label="Default select example" id="mobile">'+op+'</select>');
-       
-
-      
-
-                            
-    
+       $('.sel_imi').append( '<label for="" style="float:left;">Please Select IMEI:</label>'+
+                          '<select type="text" name="mobcompany" class="form-control select_imi" aria-label="Default select example" id="mobile"><option value="">Select An IMEI</option>'+op+'</select>');
     },
-             
+    error: function()
+    {
+      alert('something went wrong');
+    },
   });
  }));
   
@@ -675,172 +871,6 @@ var op="";
 <script>
   
 
-  (function($) {
-  
-  $('.signRow').each(function(){
-   
-    
-    
-    // make dynamic pad id  
-    $(this).find('canvas').attr('id', 'signPad' + $(this).index());
-    var padId = $(this).find('canvas').attr('id');
-
-    // make dynamic submit BTN id  
-    $(this).find('.sig-submitBtn').attr('id', 'sig-submitBtn' + $(this).index());
-    var padSubmitId = $(this).find('.sig-submitBtn').attr('id');
-
-    // make dynamic clear BTN id  
-    $(this).find('.sig-clearBtn').attr('id', 'sig-clearBtn' + $(this).index());
-    var padClearId = $(this).find('.sig-clearBtn').attr('id');
-
-    // make dynamic data url id  
-    $(this).find('.sig-dataUrl').attr('id', 'sig-dataUrl' + $(this).index());
-    var padDataUrlId = $(this).find('.sig-dataUrl').attr('id');
-
-    // make dynamic img id  
-    $(this).find('.sig-image').attr('id', 'sig-image' + $(this).index());
-    var padImageId = $(this).find('.sig-image').attr('id');
-    
-
-    window.requestAnimFrame = (function (callback) {
-      return window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.oRequestAnimationFrame ||
-        window.msRequestAnimaitonFrame ||
-        function (callback) {
-          window.setTimeout(callback, 1000 / 60);
-        };
-    })();
-
-
-    var canvas = document.getElementById(padId);
-    var ctx = canvas.getContext("2d");
-    ctx.strokeStyle = "#222222";
-    ctx.lineWidth = 4;
-
-    var drawing = false;
-    var mousePos = {
-      x: 0,
-      y: 0
-    };
-    var lastPos = mousePos;
-
-    canvas.addEventListener("mousedown", function (e) {
-      drawing = true;
-      lastPos = getMousePos(canvas, e);
-    }, false);
-
-    canvas.addEventListener("mouseup", function (e) {
-      drawing = false;
-    }, false);
-
-    canvas.addEventListener("mousemove", function (e) {
-      mousePos = getMousePos(canvas, e);
-    }, false);
-
-    // Add touch event support for mobile
-    canvas.addEventListener("touchstart", function (e) {
-
-    }, false);
-
-    canvas.addEventListener("touchmove", function (e) {
-      var touch = e.touches[0];
-      var me = new MouseEvent("mousemove", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      canvas.dispatchEvent(me);
-    }, false);
-
-    canvas.addEventListener("touchstart", function (e) {
-      mousePos = getTouchPos(canvas, e);
-      var touch = e.touches[0];
-      var me = new MouseEvent("mousedown", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      canvas.dispatchEvent(me);
-    }, false);
-
-    canvas.addEventListener("touchend", function (e) {
-      var me = new MouseEvent("mouseup", {});
-      canvas.dispatchEvent(me);
-    }, false);
-
-    function getMousePos(canvasDom, mouseEvent) {
-      var rect = canvasDom.getBoundingClientRect();
-      return {
-        x: mouseEvent.clientX - rect.left,
-        y: mouseEvent.clientY - rect.top
-      }
-    }
-
-    function getTouchPos(canvasDom, touchEvent) {
-      var rect = canvasDom.getBoundingClientRect();
-      return {
-        x: touchEvent.touches[0].clientX - rect.left,
-        y: touchEvent.touches[0].clientY - rect.top
-      }
-    }
-
-    function renderCanvas() {
-      if (drawing) {
-        ctx.moveTo(lastPos.x, lastPos.y);
-        ctx.lineTo(mousePos.x, mousePos.y);
-        ctx.stroke();
-        lastPos = mousePos;
-      }
-    }
-
-    // Prevent scrolling when touching the canvas
-    document.body.addEventListener("touchstart", function (e) {
-      if (e.target == canvas) {
-        e.preventDefault();
-      }
-    }, false);
-    document.body.addEventListener("touchend", function (e) {
-      if (e.target == canvas) {
-        e.preventDefault();
-      }
-    }, false);
-    document.body.addEventListener("touchmove", function (e) {
-      if (e.target == canvas) {
-        e.preventDefault();
-      }
-    }, false);
-
-    (function drawLoop() {
-      requestAnimFrame(drawLoop);
-      renderCanvas();
-    })();
-
-    function clearCanvas() {
-      canvas.width = canvas.width;
-    }
-
-    // Set up the UI
-    var sigText = document.getElementById(padDataUrlId);
-    var sigImage = document.getElementById(padImageId);
-    var clearBtn = document.getElementById(padClearId);
-    var submitBtn = document.getElementById(padSubmitId);
-
-    clearBtn.addEventListener("click", function (e) {
-      clearCanvas();
-      // sigText.innerHTML = "Data URL for your signature will go here!";
-      sigImage.setAttribute("src", "");
-    }, false);
-
-    submitBtn.addEventListener("click", function (e) {
-      var dataUrl = canvas.toDataURL();
-      sigText.innerHTML = dataUrl;
-      sigImage.setAttribute("src", dataUrl);
-    }, false);
-
-    
-  }); // each function  end
-  
-})(jQuery);
 
 
 function encodeImageFileAsURL(element) {
@@ -849,8 +879,11 @@ function encodeImageFileAsURL(element) {
               var reader = new FileReader();
               reader.onloadend = function() {
                 console.log('RESULT', reader.result);
-                $(".scan_img2").attr('src',reader.result);
+                // $(".scan_img2").attr('src',reader.result);
                 $("#scan_img3").val(reader.result);
+
+                $("#form").click();
+                
               }
               reader.readAsDataURL(file);
 
@@ -859,4 +892,64 @@ function encodeImageFileAsURL(element) {
 
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.3/dist/signature_pad.umd.min.js"></script>
+
+
+
+<script>
+
+
+var signaturePad1 = new SignaturePad(document.getElementById('signature-pad1'), {
+  backgroundColor: 'rgba(255, 255, 255, 0)',
+  penColor: 'rgb(0, 0, 0)'
+});
+var saveButton1 = document.getElementById('save1');
+var cancelButton1 = document.getElementById('clear1');
+var texta1 = document.getElementById('texta1');
+
+saveButton1.addEventListener('click', function (event) {
+
+  var data1 = signaturePad1.toDataURL('image/png');
+
+  texta1.innerText = data1;
+// Send data to server instead...
+  // window.open(data);
+});
+
+cancelButton1.addEventListener('click', function (event) {
+  signaturePad1.clear();
+});
+</script>
+
+
+
+<script>
+var signaturePad2 = new SignaturePad(document.getElementById('signature-pad2'), {
+  backgroundColor: 'rgba(255, 255, 255, 0)',
+  penColor: 'rgb(0, 0, 0)'
+});
+var saveButton2 = document.getElementById('save2');
+var cancelButton2 = document.getElementById('clear2');
+var texta2 = document.getElementById('texta2');
+
+saveButton2.addEventListener('click', function (event) {
+  var canvas = document.getElementById('signature-pad2');
+
+  var dataURL = canvas.toDataURL();
+  // console.log(dataURL);
+
+  // var data2 = signaturePad2.toDataURL('image/png');
+
+  texta2.innerText = dataURL;
+// Send data to server instead...
+  // window.open(data);
+});
+
+cancelButton2.addEventListener('click', function (event) {
+  signaturePad2.clear();
+});
+</script>
+
+
+
 @endsection

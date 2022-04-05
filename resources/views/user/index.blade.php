@@ -398,7 +398,7 @@ img{
                                 $mob=App\Models\Mobilecompanie::where('service_id',$service_id[$i])->first();
                                 @endphp
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$i+1}}</th>
       <td>@if($mob!=null)
         {{$mob->name}}
       @endif</td>
