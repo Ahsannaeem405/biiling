@@ -672,6 +672,11 @@ $(document).ready(function() {
   
 
   $('.sig-pop1').click(function(){
+    $('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+});
+
   $('#signModal1').modal('show');
   });
 
