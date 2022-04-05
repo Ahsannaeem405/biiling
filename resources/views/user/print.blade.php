@@ -56,7 +56,7 @@ tr:nth-child(even) {
    @for ($i=0; $i < count($imi); $i++)
   
    @php 
-                                $mob=App\Models\Mobilecompanie::find($service_id[$i]);
+                                $mob=App\Models\Mobilecompanie::where('service_id',$service_id[$i])->first();
                                 @endphp
     <tr>
       <th scope="row">1</th>
