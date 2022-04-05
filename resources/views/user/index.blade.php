@@ -672,7 +672,7 @@ $(document).ready(function() {
   
 
   $('.sig-pop1').click(function(){
-    $('html, body').css({
+    $('html, body, #signModal1').css({
     overflow: 'hidden',
     height: '100%'
 });
