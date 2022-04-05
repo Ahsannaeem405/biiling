@@ -192,35 +192,97 @@
                       <div class=" form-group text-left">
                         <label for="Name">Seller's Signature:</label>
                       </div>
+                      <button type="button" class="btn btn-primary sig-pop1" id="">Add Signature</button>
 
-                      <div class="row signRow">
-                        <div class="col-md-12">
-                          <div class="container">
-                          <canvas id=""  height="130px">
-                            Get a better browser, bro.
-                          </canvas>
-                          </div>
-                       
-                          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
-                          <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5" ></textarea>
-                        </div> 
-                      </div>
+
+
+
+<!-- Modal start-->
+<div class="modal" id="signModal1" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal for seller signature</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+      <div class="row signRow">
+        <div class="col-md-12">
+          <div class="container">
+          <canvas id=""  height="130px">
+            Get a better browser, bro.
+          </canvas>
+          </div>
+        
+          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
+          <button type="button" class="btn btn-default sig-clearBtn" id="">Clear Signature</button>
+          <textarea class="form-control sig-dataUrl d-none" id="" name="url1" rows="5" ></textarea>
+        </div> 
+      </div>
+
+         
+      <div class="row signRow">
+        <div class="col-md-12">
+          <div class="container">
+            <canvas id="" width="" height="130px">
+              Get a better browser, bro.
+            </canvas>
+          </div>
+          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
+          <button type="button" class="btn btn-default sig-clearBtn" id="" >Clear Signature</button>
+          <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5" ></textarea>
+        </div> 
+      </div>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-close" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal end -->
+
+                      
+                      
+
+
                       <div class="form-group text-left">
                         <label for="Name">Representative's Signature:</label>
                       </div>
-                      <div class="row signRow">
-                        <div class="col-md-12">
-                          <div class="container">
-                            <canvas id="" width="" height="130px">
-                              Get a better browser, bro.
-                            </canvas>
-                          </div>
-                          <button type="button" class="btn btn-primary sig-submitBtn" id="">Add Signature</button>
-                          <button type="button" class="btn btn-default sig-clearBtn" id="" >Clear Signature</button>
-                          <textarea class="form-control sig-dataUrl d-none" id="" name="url2" rows="5" ></textarea>
-                        </div> 
-                      </div>
+                      <button type="button" class="btn btn-primary sig-pop2" id="">Add Signature</button>
+
+                      
+
+
+
+<div class="modal" id="signModal2" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal  for repres signature</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+     
+
+         
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-close" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal end -->
+
                       
 
 
@@ -550,7 +612,7 @@ $("#barcodefield").click(function(){
 
 </script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -596,6 +658,62 @@ $(document).ready(function() {
       x.style.display = "none";
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  $('.sig-pop1').click(function(){
+  $('#signModal1').modal('show');
+  });
+
+  $('.sig-pop2').click(function(){
+  $('#signModal2').modal('show');
+  });
+
+
+
+
+$('.btn-close').click(function(){
+  $('#signModal1').modal('hide');
+  $('#signModal2').modal('hide');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   $(document).on('click', '.open_cam', function () {
 //   $("#qr-reader__dashboard_section_csr > div button").click();
 //   $("#qr-reader__dashboard_section_csr span:nth-child(2) button:nth-child(2)").click();
